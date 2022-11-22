@@ -33,7 +33,7 @@ const Modal = () => {
   return createPortal(
     <div className={css.Modal__backdrop} onClick={handleBackdropClick}>
       <div className={css.Modal__content}>
-        <h1>hey</h1>
+        <h1>Your recommended daily calorie intake is</h1>
         <button type="button" onClick={onClose}>
           Close
         </button>

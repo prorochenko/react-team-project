@@ -2,6 +2,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 // import { useDispatch } from 'react-redux';
 import { lazy } from 'react';
 
+import Modal from '../components/Modal/Modal';
 import { Layout } from './Layout';
 const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
@@ -18,6 +19,8 @@ export const App = () => {
 
   return (
     <>
+      {/* {shoModal&&} */}
+      {/* <Modal /> */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/calculator" />} />

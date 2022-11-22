@@ -1,3 +1,5 @@
+@import 'assets/styles/index.scss';
+
 .Modal__backdrop {
   position: fixed;
   top: 0;
@@ -19,4 +21,10 @@
   border-radius: 3px;
   background: #ffffff;
   box-shadow: 0px 22px 40px rgba(0, 0, 0, 0.1);
+  @include mq(mob-only) {
+    max-width: 320px;
+  }
+  @include mq(tab) {
+    max-width: 672px;
+  }
 }
