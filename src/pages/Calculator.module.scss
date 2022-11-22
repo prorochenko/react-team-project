@@ -1,0 +1,17 @@
+@import 'assets/styles/index.scss';
+
+.cfasc {
+  @include mq(tab) {
+  }
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  @include mq(tab) {
+    width: 768px;
+  }
+  @include mq(desk) {
+    width: 1280px;
+  }
+}
