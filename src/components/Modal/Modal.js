@@ -1,7 +1,9 @@
 import css from './Modal.module.scss';
 import { createPortal } from 'react-dom';
 import { useEffect, useState } from 'react';
-// import closeBtn from '../../assets/icons/symbol-def.svg#icon-Close';
+import { AiOutlineClose } from 'react-icons/ai';
+import { IoReturnDownBackSharp } from 'react-icons/io5';
+
 const modalRoot = document.querySelector('#modal-root');
 
 const Modal = () => {
@@ -33,21 +35,12 @@ const Modal = () => {
   return createPortal(
     <div className={css.Modal__backdrop} onClick={handleBackdropClick}>
       <div className={css.Modal__content}>
-        <button className={css.btnClose} onClick={onClose}>
-          <svg className={css.buttonclose__icon} width="25" height="25">
-            <use
-              href="../../assets/icons/symbol-defs.svg#icon-ticket1"
-              width="25px"
-              height="25px"
-            ></use>
-          </svg>
+        <button className={css.btnCloseMob} onClick={onClose}>
+          <IoReturnDownBackSharp />
         </button>
-        {/* <svg>
-          <path d="M24.653 2.795l-2.448-2.448-9.705 9.705-9.705-9.705-2.448 2.448 9.705 9.705-9.705 9.705 2.448 2.448 9.705-9.705 9.705 9.705 2.448-2.448-9.705-9.705 9.705-9.705z" />
-        </svg> */}
-        {/* <svg>
-          <use href="../../assets/icons/symbol-defs.svg#icon-Close"></use>
-        </svg> */}
+        <button className={css.btnClose} onClick={onClose}>
+          <AiOutlineClose />
+        </button>
         <div className={css.container}>
           <h1 className={css.title}>
             Your recommended daily calorie intake is
@@ -72,17 +65,6 @@ const Modal = () => {
               <li className={css.item}></li> <li className={css.item}></li>
               <li className={css.item}></li>
               <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
               <li className={css.item}></li>
             </ol>
           </div>

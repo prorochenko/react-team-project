@@ -6,7 +6,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(33, 33, 33, 0.12);
+  background: var(--modal-background-color);
 }
 
 .Modal__content {
@@ -24,7 +24,7 @@
   // padding: 12px;
   border-radius: 3px;
   background: #ffffff;
-  box-shadow: 0px 22px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--modal-box-shadow);
   @include mq(mob-only) {
     max-width: 320px;
   }
@@ -52,7 +52,7 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 1.4;
-    color: #212121;
+    color: var(--accent-text-color);
     padding: 0 20px;
   }
   @include mq(tab) {
@@ -69,7 +69,7 @@
   text-align: center;
   letter-spacing: 0.04em;
 
-  color: #264061;
+  color: var(--accent-background-color);
   margin: 0;
 
   @include mq(mob-only) {
@@ -87,7 +87,7 @@
 
   letter-spacing: 0.04em;
 
-  color: #212121;
+  color: var(--accent-text-color);
 }
 
 .list {
@@ -100,7 +100,7 @@
   line-height: 1.21;
   letter-spacing: 0.04em;
 
-  color: #9b9faa;
+  color: var(--item-list-color);
 }
 
 .btn {
@@ -117,7 +117,7 @@
 }
 
 .box {
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--modal-small-box-border);
   @include mq(mob-only) {
     width: 280px;
   }
@@ -131,12 +131,10 @@
   justify-content: center;
   align-items: center;
   position: absolute;
+  border: 0;
 
   @include mq(mob-only) {
-    top: 24px;
-    right: 24px;
-    width: 17px;
-    height: 17px;
+    display: none;
   }
   @include mq(tab) {
     top: 32px;
@@ -147,13 +145,13 @@
   @include mq(desk) {
     top: 32px;
     right: 32px;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
   }
 
-  // text-decoration: none;
+  text-decoration: none;
   cursor: pointer;
-  // background-color: inherit;
+  background-color: inherit;
   padding: 0;
 
   transition: transform 0.5s;
@@ -178,11 +176,24 @@
   }
 }
 
-.buttonclose__icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
+.btnCloseMob {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+
+  @include mq(mob-only) {
+    top: -35px;
+    left: 20px;
+    width: 25px;
+    height: 25px;
+  }
+  @include mq(tab) {
+    display: none;
+  }
 }
