@@ -5,7 +5,7 @@ import { lazy } from 'react';
 import { Layout } from './Layout';
 const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
-const Dairy = lazy(() => import('../pages/Dairy'));
+const Dairy = lazy(() => import('../pages/Diary'));
 const Calculator = lazy(() => import('../pages/Calculator'));
 
 export const App = () => {
