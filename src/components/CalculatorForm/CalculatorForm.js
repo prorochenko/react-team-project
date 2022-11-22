@@ -54,47 +54,46 @@ const CalculatorForm = () => {
                 name="desiredWeight"
               ></Field>
             </label>
-            <label>
-              <span className={scss.calculatorFormRadioText}>Blood type *</span>
-              <div className={scss.calculatorFormRadioBox}>
-                <div className={scss.calculatorFormRadioInputBox}>
-                  <Field
-                    className={scss.calculatorFormRadioInput}
-                    type="radio"
-                    name="bloodType"
-                    value="1"
-                  ></Field>
-                  <span>1</span>
-                </div>
-                <div className={scss.calculatorFormRadioInputBox}>
-                  <Field
-                    className={scss.calculatorFormRadioInput}
-                    type="radio"
-                    name="bloodType"
-                    value="2"
-                  ></Field>
-                  <span>2</span>
-                </div>
-                <div className={scss.calculatorFormRadioInputBox}>
-                  <Field
-                    className={scss.calculatorFormRadioInput}
-                    type="radio"
-                    name="bloodType"
-                    value="3"
-                  ></Field>
-                  <span>3</span>
-                </div>
-                <div className={scss.calculatorFormRadioInputBox}>
-                  <Field
-                    className={scss.calculatorFormRadioInput}
-                    type="radio"
-                    name="bloodType"
-                    value="4"
-                  ></Field>
-                  <span>4</span>
-                </div>
+
+            <span className={scss.calculatorFormRadioText}>Blood type *</span>
+            <div className={scss.calculatorFormRadioBox}>
+              <div className={scss.calculatorFormRadioInputBox}>
+                <Field
+                  className={scss.calculatorFormRadioInput}
+                  type="radio"
+                  name="bloodType"
+                  value="1"
+                ></Field>
+                <span>1</span>
               </div>
-            </label>
+              <div className={scss.calculatorFormRadioInputBox}>
+                <Field
+                  className={scss.calculatorFormRadioInput}
+                  type="radio"
+                  name="bloodType"
+                  value="2"
+                ></Field>
+                <span>2</span>
+              </div>
+              <div className={scss.calculatorFormRadioInputBox}>
+                <Field
+                  className={scss.calculatorFormRadioInput}
+                  type="radio"
+                  name="bloodType"
+                  value="3"
+                ></Field>
+                <span>3</span>
+              </div>
+              <div className={scss.calculatorFormRadioInputBox}>
+                <Field
+                  className={scss.calculatorFormRadioInput}
+                  type="radio"
+                  name="bloodType"
+                  value="4"
+                ></Field>
+                <span>4</span>
+              </div>
+            </div>
           </span>
 
           <button type="submit" className={scss.btnOrange}>
