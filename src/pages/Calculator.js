@@ -1,4 +1,4 @@
-import CalculatorForm from '../components/Calc/CalculatorForm';
+import CalculatorForm from '../components/CalculatorForm/CalculatorForm';
 import scss from './Calculator.module.scss';
 
 const Calculator = () => {
