@@ -1,0 +1,7 @@
+@import 'assets/styles/index.scss';
+
+.btn {
+  padding: 13px 25px;
+
+  @extend %btnOrange;
+}
