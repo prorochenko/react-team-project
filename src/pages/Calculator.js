@@ -1,10 +1,11 @@
-import Calc from '../components/Calc/Calc';
+import CalculatorForm from '../components/CalculatorForm/CalculatorForm';
+import scss from './Calculator.module.scss';
 
 const Calculator = () => {
   return (
-    <>
-      <Calc />
-    </>
+    <div className={scss.container}>
+      <CalculatorForm />
+    </div>
   );
 };
 export default Calculator;

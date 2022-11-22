@@ -5,11 +5,11 @@ const UserMenu = () => {
     <div>
       <p>Welcome, usrname</p>
       <button
-        className={scss.btnOrange}
+        className={scss.btn}
         type="button"
         // onClick={() => dispatch(logOut())}
       >
-        Logout
+        Exit
       </button>
     </div>
   );
