@@ -1,9 +1,9 @@
-import Calc from '../components/Calc/Calc';
+import CalculatorForm from '../components/Calc/CalculatorForm';
 
 const Calculator = () => {
   return (
     <>
-      <Calc />
+      <CalculatorForm />
     </>
   );
 };
