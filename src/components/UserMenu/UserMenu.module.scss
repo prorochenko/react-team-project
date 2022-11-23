@@ -1,1 +1,46 @@
-@import 'assets/styles/index.scss';
+.btn {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.93;
+  letter-spacing: 0.04em;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+
+  cursor: pointer;
+  color: #9b9faa;
+  margin-right: 40px;
+  // @extend %btnTransperent;
+}
+
+.text {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.93;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rightBar {
+  display: flex;
+  gap: 40px;
+}
+
+.user {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.93;
+  letter-spacing: 0.04em;
+
+  color: #212121;
+}

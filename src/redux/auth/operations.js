@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Notify } from 'notiflix';
 
-axios.defaults.baseURL = 'https://slimmom-backend.goit.global/api-docs/';
+axios.defaults.baseURL = 'https://slimmom-backend.goit.global';
 
 const token = {
   set(token) {
@@ -18,9 +18,9 @@ export const register = createAsyncThunk(
   'auth/register',
   async (credentials, e, thunkAPI) => {
     try {
-      const response = await axios.post('/users/signup', credentials);
+      const response = await axios.post('/auth/register', credentials);
       Notify.success(`Registration was successful!`);
-      token.set(response.data.token);
+
       return response.data;
     } catch (error) {
       Notify.failure('Ups, invalid data!');
@@ -34,9 +34,9 @@ export const logIn = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
     try {
-      const response = await axios.post('/users/login', credentials);
+      const response = await axios.post('/auth/login', credentials);
       Notify.success(`Successful authorization!`);
-      token.set(response.data.token);
+      token.set(response.data.accessToken);
       return response.data;
     } catch (error) {
       Notify.failure('Ups, invalid data!');

@@ -1,8 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { createSlice } from '@reduxjs/toolkit';
-
 import {
   persistStore,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -10,24 +9,21 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-const initialFilterState = '';
+import storage from 'redux-persist/lib/storage';
+import { persistAuthReducer } from './auth/authSlice';
 
-// import { contactsReducer } from './contactsSlice';
-// import { filterReducer } from './filterSlice';
-// import { persistedAuthReducer } from './auth/slice';
-const filterSlice = createSlice({
-  name: 'filter',
-  initialState: initialFilterState,
-  reducers: {
-    setFilter(state, action) {
-      return action.payload;
-    },
-  },
-});
-export const filterReducer = filterSlice.reducer;
+const testPersistConfig = {
+  key: 'test',
+  storage,
+};
 
 export const store = configureStore({
-  reducer: { filterReducer },
+  reducer: {
+    test: persistReducer(testPersistConfig, () => {
+      return null;
+    }),
+    auth: persistAuthReducer,
+  },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
       serializableCheck: {
