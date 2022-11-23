@@ -14,8 +14,8 @@ export const AppBar = () => {
       <div className={css.temp}>
         <Navigation />
         {isLoggedIn && <UserMenu />}
+        {!isLoggedIn && <AuthNav />}
       </div>
-      {!isLoggedIn && <AuthNav />}
     </header>
   );
 };
