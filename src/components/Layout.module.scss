@@ -7,5 +7,6 @@
 
   @include mq(desk) {
     grid-template-columns: 1fr 517px;
+    align-items: start;
   }
 }

@@ -4,15 +4,15 @@
   @include mq(tab) {
     padding-left: 32px;
     padding-right: 32px;
-    padding-top: 160px;
-    padding-bottom: 419px;
+    // padding-top: 160px;
+    // padding-bottom: 419px;
   }
 
   @include mq(desk) {
     padding-left: 16px;
     padding-right: 16px;
-    padding-top: 160px;
-    padding-bottom: 179px;
+    // padding-top: 160px;
+    // padding-bottom: 179px;
   }
 }
 
@@ -20,7 +20,7 @@
   width: 320px;
   padding-left: 20px;
   padding-right: 20px;
-  margin-top: 40px;
+  //   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
 
