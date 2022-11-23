@@ -44,6 +44,8 @@ export const authSlice = createSlice({
       state.user = initialState.user;
       state.token = null;
       state.isLoggedIn = false;
+      state.sid = '';
+      state.refreshToken = '';
     },
 
     [fetchRefreshToken.pending](state) {},
