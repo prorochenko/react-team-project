@@ -1,5 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { register, logIn, logOut, fetchCurrentUser } from './operations';
+import {
+  register,
+  logIn,
+  logOut,
+  fetchRefreshToken,
+  fetchCurrentUser,
+} from './operations';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
@@ -8,6 +14,8 @@ const initialState = {
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
+  sid: '',
+  refreshToken: '',
 };
 
 export const authSlice = createSlice({
@@ -28,6 +36,8 @@ export const authSlice = createSlice({
 
       state.token = action.payload.accessToken;
       state.isLoggedIn = true;
+      state.sid = action.payload.sid;
+      state.refreshToken = action.payload.refreshToken;
     },
 
     [logOut.fulfilled]: state => {
@@ -36,23 +46,25 @@ export const authSlice = createSlice({
       state.isLoggedIn = false;
     },
 
-    [fetchCurrentUser.pending](state) {
+    [fetchRefreshToken.pending](state) {},
+    [fetchRefreshToken.fulfilled](state, action) {
+      state.refreshToken = action.payload.newRefreshToken;
+      state.sid = action.payload.sid;
+      state.isLoggedIn = true;
       state.isRefreshing = true;
+    },
+    [fetchRefreshToken.rejected](state) {
+      state.isRefreshing = false;
     },
     [fetchCurrentUser.fulfilled](state, action) {
       state.user = action.payload;
-      state.isLoggedIn = true;
-      state.isRefreshing = false;
-    },
-    [fetchCurrentUser.rejected](state) {
-      state.isRefreshing = false;
     },
   },
 });
 const persistConfig = {
   key: 'token',
   storage,
-  whitelist: ['token'],
+  whitelist: ['sid', 'refreshToken'],
 };
 export const persistAuthReducer = persistReducer(
   persistConfig,

@@ -1,7 +1,9 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import { lazy } from 'react';
-
+import { selectIsRefreshing } from 'redux/auth/selectors';
+import { fetchRefreshToken, fetchCurrentUser } from 'redux/auth/operations';
 import Modal from '../components/Modal/Modal';
 import { Layout } from './Layout';
 const Login = lazy(() => import('../pages/Login'));
@@ -10,12 +12,19 @@ const Diary = lazy(() => import('../pages/Diary'));
 const Calculator = lazy(() => import('../pages/Calculator'));
 
 export const App = () => {
-  //Щоб не виходило при перезавантаженні.
-  // const dispatch = useDispatch();
+  const refresh = useSelector(selectIsRefreshing);
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchCurrentUser());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchRefreshToken());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (!refresh) {
+      return;
+    }
+    dispatch(fetchCurrentUser());
+  }, [refresh]);
 
   return (
     <>

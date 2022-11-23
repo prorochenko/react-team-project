@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Notify } from 'notiflix';
 
@@ -58,16 +59,35 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 
 // USER INFO
 export const fetchCurrentUser = createAsyncThunk(
+  'auth/user',
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get('/user');
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+//refreshtoken
+export const fetchRefreshToken = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
-    const tokenLocal = thunkAPI.getState().auth.token;
+    const state = thunkAPI.getState();
+    const persistedSid = state.auth.sid;
+    const persistedToken = state.auth.refreshToken;
+
     try {
-      if (tokenLocal) {
-        token.set(tokenLocal);
-        const response = await axios.get('/users/current');
+      if (persistedSid) {
+        token.set(persistedToken);
+        const response = await axios.post('/auth/refresh', {
+          sid: persistedSid,
+        });
+        token.set(response.data.newAccessToken);
+
         return response.data;
       }
-      throw new Error('Token NULL');
+      throw new Error('Sid NULL');
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
