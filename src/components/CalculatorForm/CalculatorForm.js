@@ -1,10 +1,18 @@
 import scss from './CalculatorForm.module.scss';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as yup from 'yup';
+
+const schema = yup.object().shape({
+  height: yup.number().min(100).max(250).required(),
+  age: yup.number().min(18).max(100).required(),
+  weight: yup.number().min(20).max(500).required(),
+  desiredWeight: yup.number().min(20).max(500).required(),
+});
 
 const initialValues = {
   height: '',
   age: '',
-  currentWeight: '',
+  weight: '',
   desiredWeight: '',
   bloodType: null,
 };
@@ -19,7 +27,11 @@ const CalculatorForm = () => {
       <h2 className={scss.calculatorFormTitle}>
         Calculate your daily calorie intake right now
       </h2>
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={schema}
+      >
         <Form className={scss.calculatorForm}>
           <span className={scss.calculatorFormInputContainer}>
             <label>
@@ -29,6 +41,11 @@ const CalculatorForm = () => {
                 placeholder="Height *"
                 name="height"
               ></Field>
+              <ErrorMessage
+                className={scss.errorMessage}
+                name="height"
+                component="div"
+              ></ErrorMessage>
             </label>
             <label>
               <Field
@@ -37,14 +54,24 @@ const CalculatorForm = () => {
                 placeholder="Age *"
                 name="age"
               ></Field>
+              <ErrorMessage
+                className={scss.errorMessage}
+                name="age"
+                component="div"
+              ></ErrorMessage>
             </label>
             <label>
               <Field
                 className={scss.calculatorFormInput}
                 type="text"
                 placeholder="Current weight *"
-                name="currentWeight"
+                name="weight"
               ></Field>
+              <ErrorMessage
+                className={scss.errorMessage}
+                name="weight"
+                component="div"
+              ></ErrorMessage>
             </label>
             <label>
               <Field
@@ -53,6 +80,11 @@ const CalculatorForm = () => {
                 placeholder="Desired weight *"
                 name="desiredWeight"
               ></Field>
+              <ErrorMessage
+                className={scss.errorMessage}
+                name="desiredWeight"
+                component="div"
+              ></ErrorMessage>
             </label>
             <div>
               <span className={scss.calculatorFormRadioText}>Blood type *</span>
