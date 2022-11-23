@@ -43,7 +43,7 @@ export const LoginForm = () => {
           </div>
 
           <div className={css.buttonSection}>
-            <button className={css.btnOrange} type="button">
+            <button className={css.btnOrange} type="submit">
               Login
             </button>
             <button className={css.btnTransperent} type="submit">
