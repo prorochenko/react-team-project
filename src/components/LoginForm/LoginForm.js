@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
 import css from './LoginForm.module.scss';
 
@@ -29,7 +30,7 @@ export const LoginForm = () => {
                 className={css.input}
                 type="email"
                 name="email"
-                placeholder="Name *"
+                placeholder="Email *"
               />
             </label>
             <label>
@@ -43,12 +44,12 @@ export const LoginForm = () => {
           </div>
 
           <div className={css.buttonSection}>
-            <button className={css.btnOrange} type="button">
+            <button className={css.btnOrange} type="submit">
               Login
             </button>
-            <button className={css.btnTransperent} type="submit">
+            <NavLink className={css.btnTransperent} to="/register">
               Register
-            </button>
+            </NavLink>
           </div>
         </form>
       </div>

@@ -1,6 +1,9 @@
 import scss from './UserMenu.module.scss';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { logOut } from 'redux/auth/operations';
+import { selectUser } from 'redux/auth/selectors';
 
 const NavItems = styled(NavLink)`
   color: #9b9faa;
@@ -15,6 +18,8 @@ const NavItems = styled(NavLink)`
 `;
 
 const UserMenu = () => {
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
   return (
     <div className={scss.box}>
       <div className={scss.nav}>
@@ -26,11 +31,11 @@ const UserMenu = () => {
         </NavItems>
       </div>
       <div className={scss.rightBar}>
-        <p className={scss.user}>Repeta</p>
+        <p className={scss.user}>{user.username}</p>
         <button
           className={scss.btn}
           type="button"
-          // onClick={() => dispatch(logOut())}
+          onClick={() => dispatch(logOut())}
         >
           Exit
         </button>
