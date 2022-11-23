@@ -8,34 +8,34 @@
     padding-bottom: 420px;
   }
 
-     @include mq(desk) {
-      padding-left: 16px;
-        padding-right: 16px;
-        padding-top: 160px;
-        padding-bottom: 255px;
-     }
+  @include mq(desk) {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 160px;
+    padding-bottom: 255px;
+  }
 }
 
 .container {
   width: 320px;
   padding-left: 20px;
   padding-right: 20px;
-    margin-top: 40px;
+  margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
 
   @include mq(tab) {
-    width: 768px;
+    // width: 768px;
     /* background-image: url(../../assets/images/leavesTab@1x.png); */
     background-repeat: no-repeat;
     margin-left: 0;
-      margin-right: 0;
-      padding-left: 0;
-      padding-right: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
-    @include mq(desk) {
-      width: 1200px;
-    }
+  @include mq(desk) {
+    // width: 1200px;
+  }
 }
 
 .register {
@@ -52,7 +52,7 @@
 }
 
 .header {
-    font-weight: 700;
+  font-weight: 700;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
@@ -67,10 +67,9 @@
 
 .buttonSection {
   margin-top: 60px;
-@include mq(tab) {
+  @include mq(tab) {
     display: flex;
-      gap: 32px;
-     
+    gap: 32px;
   }
 }
 
@@ -113,7 +112,7 @@
   @include mq(tab) {
     margin-left: 0;
     margin-right: 0;
-      width: 182px;
+    width: 182px;
   }
 }
 
@@ -128,8 +127,8 @@
   margin-top: 20px;
 
   @include mq(tab) {
-      margin-top: 0;
-        margin-left: 0;
-        margin-right: 0;
-    }
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

@@ -25,18 +25,18 @@
   margin-right: auto;
 
   @include mq(tab) {
-      width: 768px;
-      /* background-image: url(../../assets/images/leavesTab@1x.png); */
-      background-repeat: no-repeat;
-      margin-left: 0;
-      margin-right: 0;
-      padding-left: 0;
-      padding-right: 0;
-    }
-  
-    @include mq(desk) {
-      width: 1200px;
-    }
+    //   width: 768px;
+    /* background-image: url(../../assets/images/leavesTab@1x.png); */
+    background-repeat: no-repeat;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include mq(desk) {
+    //   width: 1200px;
+  }
 }
 
 .register {
@@ -47,9 +47,9 @@
   margin-right: auto;
 
   @include mq(tab) {
-      margin-left: 0;
-      margin-right: 0;
-    }
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .header {
@@ -62,8 +62,8 @@
   margin-bottom: 60px;
 
   @include mq(tab) {
-      text-align: left;
-    }
+    text-align: left;
+  }
 }
 
 .buttonSection {
@@ -72,7 +72,6 @@
   @include mq(tab) {
     display: flex;
     gap: 32px;
-
   }
 }
 
@@ -111,11 +110,10 @@
   margin-right: auto;
 
   @include mq(tab) {
-      margin-left: 0;
-      margin-right: 0;
-      width: 182px;
-    }
-  
+    margin-left: 0;
+    margin-right: 0;
+    width: 182px;
+  }
 }
 
 .btnTransperent {
@@ -129,8 +127,8 @@
   margin-top: 20px;
 
   @include mq(tab) {
-      margin-top: 0;
-      margin-left: 0;
-      margin-right: 0;
-    }
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
