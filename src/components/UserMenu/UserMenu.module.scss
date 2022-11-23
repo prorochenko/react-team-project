@@ -9,7 +9,7 @@
 
   cursor: pointer;
   color: #9b9faa;
-  margin-right: 40px;
+  // margin-right: 40px;
   // @extend %btnTransperent;
 }
 
@@ -24,6 +24,10 @@
 .nav {
   display: flex;
   gap: 16px;
+  height: 32px;
+  border-left: 2px solid #e0e0e0;
+  align-items: center;
+  padding-left: 20px;
 }
 
 .box {
@@ -34,14 +38,19 @@
 
 .rightBar {
   display: flex;
-  gap: 40px;
+  gap: 20px;
 }
 
 .user {
+  display: flex;
   font-weight: 700;
   font-size: 14px;
   line-height: 0.93;
   letter-spacing: 0.04em;
-
+  padding-right: 20px;
+  height: 32px;
+  border-right: 2px solid #e0e0e0;
   color: #212121;
+
+  align-items: center;
 }

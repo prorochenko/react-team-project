@@ -3,11 +3,14 @@ import { createPortal } from 'react-dom';
 import { useEffect, useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { IoReturnDownBackSharp } from 'react-icons/io5';
+// import { getProducts } from 'ourAPI';
 
 const modalRoot = document.querySelector('#modal-root');
 
 const Modal = () => {
   let [modal, setModal] = useState(true);
+  // const [products, serProducts] = useState([]);
+  // useEffect(() => getProducts().then(setProducts));
 
   const onClose = () => {
     setModal(false);
@@ -56,6 +59,9 @@ const Modal = () => {
           <div className={css.box}>
             <h2 className={css.subtitle}>Foods you should not eat</h2>
             <ol className={css.list}>
+              {/* {products.map(product => (
+                <li>{product.name}</li>
+              ))} */}
               <li className={css.item}>Flour products</li>
               <li className={css.item}></li>
               <li className={css.item}></li>

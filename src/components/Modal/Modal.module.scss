@@ -30,11 +30,12 @@
   min-height: 300px;
   // max-width: 600px;
   width: 100%;
-  margin-top: 250px;
-  margin-bottom: 50px;
+  // margin-top: 250px;
+  // margin-bottom: 50px;
   @include mq(mob-only) {
     width: 100vw;
-    // height: 100vh;
+    height: 100vh;
+    margin-top: 80px;
   }
   @include mq(tab) {
     max-width: 672px;
@@ -108,15 +109,17 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 1.21;
-
+  padding: 12px 0 20px 0;
   letter-spacing: 0.04em;
 
   color: var(--accent-text-color);
 }
 
 .list {
-  padding: 0 0 0 20px;
+  padding: 0 0 0 30px;
   margin: 0;
+  overflow-y: auto;
+  max-height: 112px;
 }
 .item {
   font-weight: 400;
