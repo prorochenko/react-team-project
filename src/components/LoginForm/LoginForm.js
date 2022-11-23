@@ -29,7 +29,7 @@ export const LoginForm = () => {
                 className={css.input}
                 type="email"
                 name="email"
-                placeholder="Name *"
+                placeholder="Email *"
               />
             </label>
             <label>
