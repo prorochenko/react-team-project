@@ -39,6 +39,7 @@ export const App = () => {
           <Route path="diary" element={<Diary />} />
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
+        {/* чи зробити тут сторінку 404? в path * */}
       </Routes>
     </>
   );
