@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import scss from './DiaryComp.module.scss';
 
 const DiaryComp = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -18,8 +19,7 @@ const DiaryComp = () => {
   }, [navigate, isLoggedIn]);
 
   return (
-    <div>
-      Diary Component
+    <div className={scss.box}>
       <DiaryDateCalendar />
       <DiaryAddProductForm />
       <DiaryProductsList />
