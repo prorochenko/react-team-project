@@ -22,9 +22,12 @@
     // padding-bottom: 80px;
   }
   @include mq(desk) {
-    margin: -100vh 0;
-    border-top: 100vh solid hsl(220, 11%, 95%);
-    border-bottom: 150px solid hsl(220, 11%, 95%);
+    height: 100vh;
+    margin: -307px 0;
+    padding-top: 307px;
+    // margin: -100vh 0;
+    // border-top: 100vh solid hsl(220, 11%, 95%);
+    // border-bottom: 150px solid hsl(220, 11%, 95%);
     z-index: -1;
   }
 }
@@ -172,23 +175,23 @@
   // }
 }
 
-@media screen and (min-width: 1279.98px) {
-  // .container {
-  //     width: 517px;
-  //     display: flex;
-  //     flex-direction: column;
-  // }
+// @media screen and (min-width: 1279.98px) {
+// .container {
+//     width: 517px;
+//     display: flex;
+//     flex-direction: column;
+// }
 
-  // .summarySection {
-  //     width: 288px;
-  //     margin-left: auto;
-  //     margin-right: auto;
-  // }
+// .summarySection {
+//     width: 288px;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
 
-  // .dietSection {
-  //     width: 288px;
-  //     margin-left: auto;
-  //     margin-right: auto;
+// .dietSection {
+//     width: 288px;
+//     margin-left: auto;
+//     margin-right: auto;
 
-  // }
-}
+// }
+// }
