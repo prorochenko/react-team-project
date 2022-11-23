@@ -7,3 +7,27 @@
   color: #9b9faa;
   // @extend %btnTransperent;
 }
+
+.text {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.93;
+  color: #212121;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rightBar {
+  display: flex;
+  gap: 40px;
+}
