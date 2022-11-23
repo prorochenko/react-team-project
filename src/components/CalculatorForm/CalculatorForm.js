@@ -1,6 +1,7 @@
 import scss from './CalculatorForm.module.scss';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+// import { RightSideBar } from '../RightSideBar/RightSideBar';
 
 const schema = yup.object().shape({
   height: yup.number().min(100).max(250).required(),
@@ -23,6 +24,7 @@ const CalculatorForm = () => {
     resetForm();
   };
   return (
+    // <div className={scss.box}>
     <div className={scss.calculatorFormContainer}>
       <h2 className={scss.calculatorFormTitle}>
         Calculate your daily calorie intake right now
@@ -135,6 +137,8 @@ const CalculatorForm = () => {
         </Form>
       </Formik>
     </div>
+    //   <RightSideBar />
+    // </div>
   );
 };
 export default CalculatorForm;
