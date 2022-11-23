@@ -1,19 +1,32 @@
 import scss from './UserMenu.module.scss';
 import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+
+const NavItems = styled(NavLink)`
+  color: #9b9faa;
+  text-decoration: none;
+  &.active {
+    color: #212121;
+  }
+  :hover:not(.active),
+  :focus-visible:not(.active) {
+    color: #9b9faa;
+  }
+`;
 
 const UserMenu = () => {
   return (
     <div className={scss.box}>
       <div className={scss.nav}>
-        <NavLink className={scss.text} to="/diary">
+        <NavItems className={scss.text} to="/diary">
           Diary
-        </NavLink>
-        <NavLink className={scss.text} to="/calculator">
+        </NavItems>
+        <NavItems className={scss.text} to="/calculator">
           Calculator
-        </NavLink>
+        </NavItems>
       </div>
       <div className={scss.rightBar}>
-        <p>Welcome, Repeta</p>
+        <p className={scss.user}>Welcome, Repeta</p>
         <button
           className={scss.btn}
           type="button"

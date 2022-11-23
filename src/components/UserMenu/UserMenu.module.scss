@@ -3,8 +3,13 @@
   font-size: 14px;
   line-height: 0.93;
   letter-spacing: 0.04em;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
 
+  cursor: pointer;
   color: #9b9faa;
+  margin-right: 40px;
   // @extend %btnTransperent;
 }
 
@@ -14,7 +19,6 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 0.93;
-  color: #212121;
 }
 
 .nav {
@@ -30,4 +34,13 @@
 .rightBar {
   display: flex;
   gap: 40px;
+}
+
+.user {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.93;
+  letter-spacing: 0.04em;
+
+  color: #212121;
 }
