@@ -61,7 +61,7 @@ const Modal = () => {
             <ol className={css.list}>
               {/* {products.map(product => (
                 <li>{product.name}</li>
-              ))} */}
+              ))} ++ сделать проверку, что когда данные есть, то тогда рендерить */}
               <li className={css.item}>Flour products</li>
               <li className={css.item}></li>
               <li className={css.item}></li>

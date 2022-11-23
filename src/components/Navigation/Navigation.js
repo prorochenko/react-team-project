@@ -13,7 +13,7 @@ export const Navigation = () => {
       <NavLink to="/">
         <picture>
           {/* <source
-            srcset="
+            srcSet="
                   ./images/hero/img_desk_001@1x.webp 1x,
                   ./images/hero/img_desk_001@2x.webp 2x
                 "
@@ -21,16 +21,16 @@ export const Navigation = () => {
             media="(min-width: 1280px)"
           />
           <source
-            srcset="
+            srcSet="
                   ./images/hero/img_desk_001@1x.png 1x,
                   ./images/hero/img_desk_001@2x.png 2x
                 "
             type="image/png"
             media="(min-width: 1280px)"
           />*/}
-          <source srcset={logo} type="image/png" media="(min-width: 768px)" />
+          <source srcSet={logo} type="image/png" media="(min-width: 768px)" />
           <source
-            srcset={logoSmall1x}
+            srcSet={logoSmall1x}
             type="image/png"
             media="(min-width: 320px)"
           />
