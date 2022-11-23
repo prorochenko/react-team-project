@@ -1,7 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { selectIsRefreshing } from 'redux/auth/selectors';
 import { fetchRefreshToken, fetchCurrentUser } from 'redux/auth/operations';
 import Modal from '../components/Modal/Modal';
@@ -30,9 +30,11 @@ export const App = () => {
     <>
       {/* {shoModal&&} */}
       {/* <Modal /> */}
+
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/calculator" />} />
+
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="calculator" element={<Calculator />} />

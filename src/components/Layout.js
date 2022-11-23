@@ -4,13 +4,14 @@ import { AppBar } from './AppBar/AppBar';
 import { Suspense } from 'react';
 import { RightSideBar } from './RightSideBar/RightSideBar';
 import css from './Layout.module.scss';
+import LoadingComponent from './Loader/Loader.jsx';
 
 export const Layout = () => {
   return (
     <div>
       <AppBar />
       <div className={css.box}>
-        <Suspense fallback={null}>
+        <Suspense fallback={<LoadingComponent />}>
           <Outlet />
         </Suspense>
         <RightSideBar />
