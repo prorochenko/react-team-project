@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { register } from 'redux/auth/operations';
 import css from './RegisterForm.module.scss';
 
@@ -52,9 +53,9 @@ export const RegisterForm = () => {
             </div>
 
             <div className={css.buttonSection}>
-              <button className={css.btnOrange} type="button">
+              <NavLink className={css.btnOrange} to="/login">
                 Вход
-              </button>
+              </NavLink>
               <button className={css.btnTransperent} type="submit">
                 Register
               </button>
