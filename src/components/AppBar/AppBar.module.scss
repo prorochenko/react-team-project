@@ -15,6 +15,7 @@
 .temp {
   display: grid;
   gap: 20px;
+  align-items: end;
   @include mq(mob-only) {
     grid-template-columns: 47px 1fr;
   }
