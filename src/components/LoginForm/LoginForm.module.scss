@@ -1,9 +1,26 @@
 @import 'assets/styles/index.scss';
 
+.box {
+  @include mq(tab) {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 160px;
+    padding-bottom: 420px;
+  }
+
+     @include mq(desk) {
+      padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 160px;
+        padding-bottom: 255px;
+     }
+}
+
 .container {
   width: 320px;
   padding-left: 20px;
   padding-right: 20px;
+    margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
 
@@ -11,7 +28,14 @@
     width: 768px;
     /* background-image: url(../../assets/images/leavesTab@1x.png); */
     background-repeat: no-repeat;
+    margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
   }
+    @include mq(desk) {
+      width: 1200px;
+    }
 }
 
 .register {
@@ -20,15 +44,34 @@
   width: 280px;
   margin-left: auto;
   margin-right: auto;
+
+  @include mq(tab) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .header {
+    font-weight: 700;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
   letter-spacing: 0.04em;
   color: #fc842d;
   margin-bottom: 60px;
+
+  @include mq(tab) {
+    text-align: left;
+  }
+}
+
+.buttonSection {
+  margin-top: 60px;
+@include mq(tab) {
+    display: flex;
+      gap: 32px;
+     
+  }
 }
 
 .input {
@@ -63,11 +106,15 @@
 
   margin-left: auto;
   margin-right: auto;
-  margin-top: 60px;
-
   width: 182px;
   height: 44px;
   padding: 13px 51px;
+
+  @include mq(tab) {
+    margin-left: 0;
+    margin-right: 0;
+      width: 182px;
+  }
 }
 
 .btnTransperent {
@@ -79,4 +126,10 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+
+  @include mq(tab) {
+      margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }

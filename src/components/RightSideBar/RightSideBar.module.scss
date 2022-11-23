@@ -1,0 +1,177 @@
+@import 'assets/styles/index.scss';
+
+.box {
+    background-color: #f0f1f3;
+    padding-top: 40px;
+
+    @include mq(tab) {
+        padding-top: 80px;
+            padding-bottom: 80px;
+    }
+}
+
+.container {
+    width: 320px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq(tab) {
+            width: 768px;
+                display: flex;
+                gap: 79px;
+        }
+
+@include mq(desk) {
+                 width: 517px;
+                 display: flex;
+                 flex-direction: column;
+}
+}
+
+
+  .summarySection {
+    @include mq(desk) {
+      width: 288px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+.header {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    color: #212121;
+
+    @include mq(tab) {
+    margin-bottom: 37px;
+    }
+}
+
+.table {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    color: #9b9faa;
+}
+
+/* .table:last-child{
+            padding-bottom: 0px;
+        } */
+
+.tableCellLeft {
+    max-width: 160px;
+    padding-bottom: 15px;
+
+@include mq(tab) {
+    max-width: 144px;
+}
+}
+
+.dietSection {
+    margin-top: 25px;
+    min-height: 104px;
+
+@include mq(tab) {
+    margin-top: 0;
+}
+
+@include mq(desk) {
+ width: 288px;
+ margin-left: auto;
+ margin-right: auto;
+}
+}
+
+.tableCellRight {
+    width: 160px;
+    text-align: right;
+    padding-bottom: 15px;
+
+@include mq(tab) {
+    max-width: 144px;
+}
+}
+
+.headerTwo {
+    /* margin-top: 25px; */
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    color: #212121;
+
+@include mq(tab) {
+    margin-bottom: 37px;
+}
+}
+
+.textDiet {
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    color: #9b9faa;
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 767.98px) {
+    // .container {
+    //     width: 768px;
+    //     display: flex;
+    //     gap: 79px;
+    // }
+
+    // .box {
+    //     padding-top: 80px;
+    //     padding-bottom: 80px;
+    // }
+
+    // .header {
+    //     margin-bottom: 37px;
+    // }
+
+    // .headerTwo {
+    //     margin-bottom: 37px;
+    // }
+
+    // .dietSection {
+    //     margin-top: 0;
+
+    // }
+
+    // .tableCellLeft {
+    //     max-width: 144px;
+
+    // }
+
+    // .tableCellRight {
+    //     max-width: 144px;
+    // }
+
+}
+
+@media screen and (min-width: 1279.98px) {
+    // .container {
+    //     width: 517px;
+    //     display: flex;
+    //     flex-direction: column;
+    // }
+
+    // .summarySection {
+    //     width: 288px;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    // }
+
+    // .dietSection {
+    //     width: 288px;
+    //     margin-left: auto;
+    //     margin-right: auto;
+
+    // }
+}
