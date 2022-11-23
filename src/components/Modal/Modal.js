@@ -49,7 +49,6 @@ const Modal = () => {
             <IoReturnDownBackSharp />
           </button>
         </div>
-
         <button className={css.btnClose} onClick={onClose}>
           <AiOutlineClose />
         </button>
@@ -80,19 +79,19 @@ const Modal = () => {
               <li className={css.item}></li> <li className={css.item}></li>
               <li className={css.item}></li>
               <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>{' '}
+              <li className={css.item}></li> <li className={css.item}></li>
               <li className={css.item}></li>
               <li className={css.item}></li>
               <li className={css.item}></li> <li className={css.item}></li>
               <li className={css.item}></li>
               <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>{' '}
+              <li className={css.item}></li> <li className={css.item}></li>
               <li className={css.item}></li>
               <li className={css.item}></li>
               <li className={css.item}></li> <li className={css.item}></li>
               <li className={css.item}></li>
               <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>{' '}
+              <li className={css.item}></li> <li className={css.item}></li>
               <li className={css.item}></li>
               <li className={css.item}></li>
               <li className={css.item}></li> <li className={css.item}></li>
