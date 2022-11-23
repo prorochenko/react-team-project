@@ -43,4 +43,15 @@
   align-items: center;
   text-align: center;
   letter-spacing: 0.04em;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(0, 0);
+
+  &:is(:hover, :focus) {
+    box-shadow: 0px 3px 10px rgba(252, 132, 45, 0.7);
+  }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0px 4px 13px rgba(252, 132, 45, 0.5);
+  }
 }
