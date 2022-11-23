@@ -21,8 +21,10 @@ const Modal = () => {
 
   useEffect(() => {
     document.addEventListener('keydown', escKeyDown);
+    document.body.style.overflow = 'hidden';
     return () => {
       document.removeEventListener('keydown', escKeyDown);
+      document.body.style.overflow = 'unset';
     };
   });
 
@@ -35,9 +37,12 @@ const Modal = () => {
   return createPortal(
     <div className={css.Modal__backdrop} onClick={handleBackdropClick}>
       <div className={css.Modal__content}>
-        <button className={css.btnCloseMob} onClick={onClose}>
-          <IoReturnDownBackSharp />
-        </button>
+        <div className={css.topbox}>
+          <button className={css.btnCloseMob} onClick={onClose}>
+            <IoReturnDownBackSharp />
+          </button>
+        </div>
+
         <button className={css.btnClose} onClick={onClose}>
           <AiOutlineClose />
         </button>
@@ -61,6 +66,24 @@ const Modal = () => {
               <li className={css.item}></li>
               <li className={css.item}></li>
               <li className={css.item}></li> <li className={css.item}></li>
+              <li className={css.item}></li>
+              <li className={css.item}></li> <li className={css.item}></li>
+              <li className={css.item}></li>
+              <li className={css.item}></li> <li className={css.item}></li>
+              <li className={css.item}></li> <li className={css.item}></li>{' '}
+              <li className={css.item}></li>
+              <li className={css.item}></li>
+              <li className={css.item}></li> <li className={css.item}></li>
+              <li className={css.item}></li>
+              <li className={css.item}></li> <li className={css.item}></li>
+              <li className={css.item}></li> <li className={css.item}></li>{' '}
+              <li className={css.item}></li>
+              <li className={css.item}></li>
+              <li className={css.item}></li> <li className={css.item}></li>
+              <li className={css.item}></li>
+              <li className={css.item}></li> <li className={css.item}></li>
+              <li className={css.item}></li> <li className={css.item}></li>{' '}
+              <li className={css.item}></li>
               <li className={css.item}></li>
               <li className={css.item}></li> <li className={css.item}></li>
               <li className={css.item}></li>
