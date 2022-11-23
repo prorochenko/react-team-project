@@ -26,7 +26,7 @@ const UserMenu = () => {
         </NavItems>
       </div>
       <div className={scss.rightBar}>
-        <p className={scss.user}>Welcome, Repeta</p>
+        <p className={scss.user}>Repeta</p>
         <button
           className={scss.btn}
           type="button"
