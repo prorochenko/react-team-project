@@ -4,10 +4,7 @@
   background-color: hsl(220, 11%, 95%);
   // padding-top: 40px;
   position: relative;
-  margin: -100vh 0;
-  border-top: 100vh solid hsl(220, 11%, 95%);
-  border-bottom: 40px solid hsl(220, 11%, 95%);
-  z-index: -1;
+
   // border-bottom: 600rem solid maroon;
   // box-shadow: 9000px 9000px 9000px 9000px #333;
   // &:before {
@@ -22,7 +19,13 @@
 
   @include mq(tab) {
     // padding-top: 80px;
-    padding-bottom: 80px;
+    // padding-bottom: 80px;
+  }
+  @include mq(desk) {
+    margin: -100vh 0;
+    border-top: 100vh solid hsl(220, 11%, 95%);
+    border-bottom: 287px solid hsl(220, 11%, 95%);
+    z-index: -1;
   }
 }
 
