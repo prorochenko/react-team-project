@@ -1,7 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import { selectIsRefreshing } from 'redux/auth/selectors';
 import { fetchRefreshToken, fetchCurrentUser } from 'redux/auth/operations';
 import Modal from '../components/Modal/Modal';
@@ -14,6 +14,7 @@ const Calculator = lazy(() => import('../pages/Calculator'));
 export const App = () => {
   const refresh = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
+  const showModal = useSelector(state => state.showModal);
 
   useEffect(() => {
     dispatch(fetchRefreshToken());
@@ -29,7 +30,7 @@ export const App = () => {
   return (
     <>
       {/* {shoModal&&} */}
-      {/* <Modal /> */}
+      {showModal && <Modal />}
 
       <Routes>
         <Route path="/" element={<Layout />}>

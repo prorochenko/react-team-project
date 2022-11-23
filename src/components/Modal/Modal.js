@@ -1,19 +1,23 @@
 import css from './Modal.module.scss';
 import { createPortal } from 'react-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { IoReturnDownBackSharp } from 'react-icons/io5';
 // import { getProducts } from 'ourAPI';
+import { useDispatch } from 'react-redux';
+import { toggle } from 'redux/store';
 
 const modalRoot = document.querySelector('#modal-root');
 
 const Modal = () => {
-  let [modal, setModal] = useState(true);
+  const dispatch = useDispatch();
+
+  // let [modal, setModal] = useState(true);
   // const [products, serProducts] = useState([]);
   // useEffect(() => getProducts().then(setProducts));
 
   const onClose = () => {
-    setModal(false);
+    dispatch(toggle(false));
   };
 
   const handleBackdropClick = e => {
