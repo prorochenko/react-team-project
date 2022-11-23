@@ -24,7 +24,7 @@ export const App = () => {
       return;
     }
     dispatch(fetchCurrentUser());
-  }, [refresh]);
+  }, [refresh, dispatch]);
 
   return (
     <>
