@@ -93,3 +93,28 @@ export const fetchRefreshToken = createAsyncThunk(
     }
   }
 );
+
+// USER INFO
+export const fetchCalculatorInfoNotId = createAsyncThunk(
+  'auth/user',
+  async (credentials, thunkAPI) => {
+    try {
+      const response = await axios.get('/user', credentials);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const fetchCalculatorInfoById = createAsyncThunk(
+  'auth/user',
+  async (credentials, userId, thunkAPI) => {
+    try {
+      const response = await axios.get(`/daily-rate/${userId}`, credentials);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
