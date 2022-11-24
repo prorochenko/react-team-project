@@ -1,20 +1,6 @@
 @import 'assets/styles/index.scss';
 
-.box {
-  @include mq(tab) {
-    padding-left: 32px;
-    padding-right: 32px;
-    // padding-top: 160px;
-    // padding-bottom: 419px;
-  }
 
-  @include mq(desk) {
-    padding-left: 16px;
-    padding-right: 16px;
-    // padding-top: 160px;
-    // padding-bottom: 179px;
-  }
-}
 
 .container {
   width: 320px;
@@ -25,16 +11,19 @@
   margin-right: auto;
 
   @include mq(tab) {
+    width: 704px;
+        padding-top: 140px;
     //   width: 768px;
-    /* background-image: url(../../assets/images/leavesTab@1x.png); */
+
     background-repeat: no-repeat;
     margin-left: 0;
     margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 
   @include mq(desk) {
+    padding-top: 80px;
     //   width: 1200px;
   }
 }

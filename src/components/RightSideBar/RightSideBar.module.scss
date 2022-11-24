@@ -1,5 +1,48 @@
 @import 'assets/styles/index.scss';
 
+
+.pictures {
+  @include mq(tab) {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 100vh;
+    padding-bottom: 570px;
+    height: 100vh;
+    margin-top: -900px;
+    z-index: -1;
+    background-image: url(../../assets/images/bananaDeskTab@1x.png), url(../../assets/images/strawberryBigDeskTab@1x.png), url(../../assets/images//vectorDeskTab@1x.png), url(../../assets//images/leavesTab@1x.png);
+    background-position: calc(100% - 0px) calc(100% + 104px), calc(100% + 61px) calc(100% - 231px), calc(100% + 32px) calc(100% + 185px), calc(100% - 12px) calc(100% - 229px);
+    background-size: 492px 431px, 355px 348px, 553px 750px, 740px 842px;
+    background-repeat: no-repeat;
+
+    @include mq(retina) {
+      background-image: url(../../assets/images/bananaDeskTab@2x.png),
+        url(../../assets/images/strawberryBigDeskTab@2x.png),
+        url(../../assets/images//vectorDeskTab@2x.png),
+        url(../../assets//images/leavesTab@2x.png);
+    }
+  }
+
+  @include mq(desk) {
+
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: -500px;
+    margin-top: -293px;
+    padding-top: 0;
+    padding-bottom: 495px;
+    background-image: url(../../assets//images/leavesDesk@1x.png), url(../../assets/images/bananaDeskTab@1x.png), url(../../assets/images/strawberryBigDeskTab@1x.png), url(../../assets/images//vectorDeskTab@1x.png);
+    background-position: calc(100% - 0px) calc(100% - 0px), calc(100% - 0px) calc(0% + 0px), calc(100% + 0px) calc(100% - 0px), 100% 100%;
+    background-size: 980px 820px, 492px 431px, 355px 348px, 602px 816px;
+
+    @include mq(retina) {
+        background-image: url(../../assets//images/leavesDesk@2x.png), url(../../assets/images/bananaDeskTab@2x.png),
+          url(../../assets/images/strawberryBigDeskTab@2x.png),
+          url(../../assets/images//vectorDeskTab@2x.png);
+      }
+  }
+}
+
 .box {
   background-color: hsl(220, 11%, 95%);
   // padding-top: 40px;
