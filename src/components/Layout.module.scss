@@ -6,6 +6,10 @@
   }
 
   @include mq(desk) {
+    min-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+    // justify-content: center;
     grid-template-columns: 1fr 517px;
     align-items: start;
   }
