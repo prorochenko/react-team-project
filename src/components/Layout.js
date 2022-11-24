@@ -2,16 +2,20 @@ import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AppBar } from './AppBar/AppBar';
 import { Suspense } from 'react';
-import RightBar from './RightSideBar/SideBar';
+import { RightSideBar } from './RightSideBar/RightSideBar';
+import css from './Layout.module.scss';
+import LoadingComponent from './Loader/Loader.jsx';
 
 export const Layout = () => {
   return (
     <div>
       <AppBar />
-      <RightBar />
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
+      <div className={css.box}>
+        <Suspense fallback={<LoadingComponent />}>
+          <Outlet />
+        </Suspense>
+        <RightSideBar />
+      </div>
       <Toaster position="top-right" reverseOrder={false} />
     </div>
   );

@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, createAction, createReducer } from '@reduxjs/toolkit';
 import {
   persistStore,
   persistReducer,
@@ -16,12 +16,21 @@ const testPersistConfig = {
   key: 'test',
   storage,
 };
+//modal
+export const toggle = createAction('showModal, toggle');
 
+const modalReducer = createReducer(false, {
+  [toggle]: (state, action) => !state,
+});
+
+//modal
 export const store = configureStore({
   reducer: {
+    showModal: modalReducer,
     test: persistReducer(testPersistConfig, () => {
       return null;
     }),
+
     auth: persistAuthReducer,
   },
   middleware(getDefaultMiddleware) {

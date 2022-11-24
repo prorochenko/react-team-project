@@ -1,6 +1,9 @@
 import scss from './CalculatorForm.module.scss';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggle } from 'redux/store';
+
 // import { RightSideBar } from '../RightSideBar/RightSideBar';
 
 const schema = yup.object().shape({
@@ -23,6 +26,13 @@ const CalculatorForm = () => {
     console.log(values);
     resetForm();
   };
+
+  const dispatch = useDispatch();
+
+  const onClick = () => {
+    dispatch(toggle(true));
+  };
+
   return (
     // <div className={scss.box}>
     <div className={scss.calculatorFormContainer}>
@@ -131,7 +141,7 @@ const CalculatorForm = () => {
             </div>
           </span>
 
-          <button type="submit" className={scss.btnOrange}>
+          <button type="submit" className={scss.btnOrange} onClick={onClick}>
             Start losing weight
           </button>
         </Form>

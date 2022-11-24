@@ -1,0 +1,25 @@
+@import 'assets/styles/index.scss';
+
+.box {
+  @include mq(mob-only) {
+    padding: 20px 0 16px 20px;
+  }
+  @include mq(tab) {
+    padding: 20px 32px 16px 32px;
+  }
+  @include mq(desk) {
+    padding: 80px 0 147px 16px;
+  }
+}
+
+.temp {
+  display: grid;
+  gap: 20px;
+  align-items: end;
+  @include mq(mob-only) {
+    grid-template-columns: 47px 1fr;
+  }
+  @include mq(tab) {
+    grid-template-columns: 167px 1fr;
+  }
+}

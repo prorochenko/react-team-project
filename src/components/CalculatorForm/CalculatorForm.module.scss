@@ -35,7 +35,7 @@
   @include mq(desk) {
     margin-left: 0;
     width: 763px;
-    padding: 100px 214px 151px 16px;
+    padding: 0 214px 0 16px;
   }
 }
 
@@ -151,7 +151,7 @@
     margin-left: 0;
   }
   @include mq(desk) {
-    margin-left: auto;
+    // margin-left: auto;
     margin-right: 0;
   }
 }
