@@ -6,16 +6,13 @@
   width: 320px;
   padding-left: 20px;
   padding-right: 20px;
-  //   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
 
   @include mq(tab) {
+    padding-top: 140px;
     width: 704px;
-        padding-top: 140px;
-    //   width: 768px;
-
-    background-repeat: no-repeat;
+    min-height: 509px;
     margin-left: 0;
     margin-right: 0;
     padding-left: 32px;
@@ -24,7 +21,7 @@
 
   @include mq(desk) {
     padding-top: 80px;
-    //   width: 1200px;
+    padding-bottom: 180px; 
   }
 }
 
@@ -57,7 +54,6 @@
 
 .buttonSection {
   margin-top: 60px;
-
   @include mq(tab) {
     display: flex;
     gap: 32px;
@@ -93,15 +89,12 @@
   @extend %btnOrange;
   width: 182px;
   height: 44px;
-  padding: 13px 51px;
-
   margin-left: auto;
   margin-right: auto;
 
   @include mq(tab) {
     margin-left: 0;
     margin-right: 0;
-    width: 182px;
   }
 }
 
@@ -110,7 +103,6 @@
 
   width: 182px;
   height: 44px;
-  padding: 13px 51px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
