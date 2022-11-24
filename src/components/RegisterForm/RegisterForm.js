@@ -1,15 +1,15 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { register } from 'redux/auth/operations';
 import css from './RegisterForm.module.scss';
-import { selectIsLoggedIn } from 'redux/auth/selectors';
-import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+// import { selectIsLoggedIn } from 'redux/auth/selectors';
+// import { useNavigate } from 'react-router-dom';
+// import { useEffect } from 'react';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector(selectIsLoggedIn);
-  const navigate = useNavigate();
+  // const isLoggedIn = useSelector(selectIsLoggedIn);
+  // const navigate = useNavigate();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -24,12 +24,12 @@ export const RegisterForm = () => {
     form.reset();
   };
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate('/');
-      return;
-    }
-  }, [navigate, isLoggedIn]);
+  // useEffect(() => {
+  //   if (isLoggedIn) {
+  //     navigate('/');
+  //     return;
+  //   }
+  // }, [navigate, isLoggedIn]);
 
   return (
     <div className={css.box}>
