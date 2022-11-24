@@ -1,20 +1,38 @@
 @import 'assets/styles/index.scss';
 
-.box {
-  @include mq(tab) {
-    padding-left: 32px;
-    padding-right: 32px;
-    // padding-top: 160px;
-    // padding-bottom: 420px;
-  }
+// .box {
+//   @include mq(tab) {
+//     padding-left: 32px;
+//     padding-right: 32px;
+//     padding-top: 160px;
+//     padding-bottom: 495px;
+//     // margin-top: -80px;
+//     background-image: url(../../assets/images/bananaDeskTab@1x.png), url(../../assets/images/strawberryBigDeskTab@1x.png), url(../../assets/images//vectorDeskTab@1x.png), url(../../assets//images/leavesTab@1x.png);
+//     background-position:calc(100% - 0px) calc(100% + 104px), calc(100% + 61px) calc(100% - 231px), calc(100% + 32px) calc(100% + 185px), calc(100% - 12px) calc(100% - 229px);
+//     // 32px 237px;
+// background-size: 492px 431px, 355px 348px, 553px 750px, 740px 842px;
+//     background-repeat: no-repeat;
+//     @include mq(retina) {
+//       background-image: url(../../assets/images/bananaDeskTab@2x.png),
+//         url(../../assets/images/strawberryBigDeskTab@2x.png),
+//         url(../../assets/images//vectorDeskTab@2x.png),
+//         url(../../assets//images/leavesTab@2x.png);
+//     }
+//   }
+       
+//   @include mq(desk) {
 
-  @include mq(desk) {
-    padding-left: 16px;
-    padding-right: 16px;
-    // padding-top: 160px;
-    // padding-bottom: 255px;
-  }
-}
+//     padding-left: 16px;
+//     padding-right: 16px;
+//         margin-top: -210px;
+//     padding-top: 270px;
+//     padding-bottom: 255px;
+//     background-image: url(../../assets/images/bananaDeskTab@1x.png), url(../../assets/images/strawberryBigDeskTab@1x.png), url(../../assets/images//vectorDeskTab@1x.png), url(../../assets//images/leavesDesk@1x.png);
+//       background-position: calc(100% - 0px) calc(100% + 104px), calc(100% + 61px) calc(100% - 231px), 100% 100%, calc(100% - 12px) calc(100% - 229px);
+//       // 32px 237px;
+//       background-size: 492px 431px, 355px 348px, 602px 816px, 980px 820px;
+//   }
+// }
 
 .container {
   width: 320px;
@@ -25,15 +43,16 @@
   margin-right: auto;
 
   @include mq(tab) {
-    // width: 768px;
-    /* background-image: url(../../assets/images/leavesTab@1x.png); */
+      padding-top: 140px;
+      width: 704px;
     background-repeat: no-repeat;
     margin-left: 0;
     margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 32px;
+    padding-right: 32px;
   }
   @include mq(desk) {
+        padding-top: 80px;
     // width: 1200px;
   }
 }
@@ -102,17 +121,17 @@
 
 .btnOrange {
   @extend %btnOrange;
-
   margin-left: auto;
   margin-right: auto;
   width: 182px;
   height: 44px;
-  padding: 13px 51px;
+  // padding: 13px 51px;
+  box-sizing: border-box;
 
   @include mq(tab) {
+    
     margin-left: 0;
     margin-right: 0;
-    width: 182px;
   }
 }
 
@@ -121,7 +140,7 @@
 
   width: 182px;
   height: 44px;
-  padding: 13px 51px;
+  // padding: 13px 51px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
