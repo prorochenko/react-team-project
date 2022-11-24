@@ -4,11 +4,13 @@ import scss from './DiaryProductsList.module.scss';
 
 export default function DiaryProductsList() {
   return (
-    <div className={scss.box}>
-      <ul className={scss.productsList}>
-        <DiaryProductsListItem />
-      </ul>
-    </div>
+    <>
+      <div className={scss.box}>
+        <ul className={scss.productsList}>
+          <DiaryProductsListItem />
+        </ul>
+      </div>
+    </>
   );
 }
 
