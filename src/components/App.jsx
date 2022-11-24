@@ -33,7 +33,6 @@ export const App = () => {
   return (
     <>
       {showModal && <Modal />}
-
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/calculator" />} />
