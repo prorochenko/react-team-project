@@ -1,29 +1,18 @@
 import DiaryAddProductForm from './DiaryAddProductForm/DiaryAddProductForm';
 import DiaryDateCalendar from './DiaryDateCalendar/DiaryDateCalendar';
 import DiaryProductsList from './DiaryProductsList/DiaryProductsList';
-import { useEffect } from 'react';
-import { selectIsLoggedIn } from 'redux/auth/selectors';
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { FiPlus } from 'react-icons/fi';
 import scss from './DiaryComp.module.scss';
 
-const DiaryComp = () => {
-  const isLoggedIn = useSelector(selectIsLoggedIn);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!isLoggedIn) {
-      navigate('/');
-      return;
-    }
-  }, [navigate, isLoggedIn]);
-
+export default function DiaryComp() {
   return (
-    <div className={scss.box}>
+    <div className={scss.container}>
       <DiaryDateCalendar />
       <DiaryAddProductForm />
       <DiaryProductsList />
+      <button className={scss.formBtn} type="button">
+        <FiPlus className={scss.icon} />
+      </button>
     </div>
   );
-};
-export default DiaryComp;
+}
