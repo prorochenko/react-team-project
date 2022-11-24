@@ -29,7 +29,6 @@ export const App = () => {
 
   return (
     <>
-      {/* {shoModal&&} */}
       {showModal && <Modal />}
 
       <Routes>

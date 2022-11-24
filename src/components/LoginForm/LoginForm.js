@@ -36,7 +36,6 @@ export const LoginForm = () => {
         <h3 className={css.header}>SIGN IN</h3>
         <form onSubmit={handleSubmit} autoComplete="off">
           <div className={css.register}>
-            {' '}
             <label className={css.label}>
               <input
                 className={css.input}
