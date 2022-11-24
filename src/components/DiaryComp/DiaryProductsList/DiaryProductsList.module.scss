@@ -4,9 +4,9 @@
   height: 271px;
 
   overflow-y: auto;
-  @include mq(desk) {
-    width: 660px;
-  }
+  // @include mq(desk) {
+  //   width: 660px;
+  // }
   // scrollbar-width: thin;
   // scrollbar-color: #264061;
 }

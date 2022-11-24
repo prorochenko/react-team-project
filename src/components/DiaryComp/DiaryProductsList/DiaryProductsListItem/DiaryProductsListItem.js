@@ -7,7 +7,9 @@ export const DiaryProductsListItem = () => {
       <li className={scss.productsListItem}>
         <div className={scss.productsName}>Eggplant</div>
         <div className={scss.productsGramm}>100 g</div>
-        <div className={scss.productsKcal}>320 kcal</div>
+        <div className={scss.productsKcal}>
+          320 <span className={scss.productsKcal__text}>kcal</span>
+        </div>
         <button className={scss.productsBtn} type="button">
           <FiX className={scss.productsIcon} />
         </button>
@@ -15,7 +17,9 @@ export const DiaryProductsListItem = () => {
       <li className={scss.productsListItem}>
         <div className={scss.productsName}>Eggplant</div>
         <div className={scss.productsGramm}>100 g</div>
-        <div className={scss.productsKcal}>320 kcal</div>
+        <div className={scss.productsKcal}>
+          320<span className={scss.productsKcal__text}>kcal</span>
+        </div>
         <button className={scss.productsBtn} type="button">
           <FiX className={scss.productsIcon} />
         </button>
@@ -23,7 +27,9 @@ export const DiaryProductsListItem = () => {
       <li className={scss.productsListItem}>
         <div className={scss.productsName}>Eggplant</div>
         <div className={scss.productsGramm}>100 g</div>
-        <div className={scss.productsKcal}>320 kcal</div>
+        <div className={scss.productsKcal}>
+          320 <span className={scss.productsKcal__text}>kcal</span>
+        </div>
         <button className={scss.productsBtn} type="button">
           <FiX className={scss.productsIcon} />
         </button>
@@ -31,7 +37,9 @@ export const DiaryProductsListItem = () => {
       <li className={scss.productsListItem}>
         <div className={scss.productsName}>Eggplant</div>
         <div className={scss.productsGramm}>100 g</div>
-        <div className={scss.productsKcal}>320 kcal</div>
+        <div className={scss.productsKcal}>
+          320 <span className={scss.productsKcal__text}>kcal</span>
+        </div>
         <button className={scss.productsBtn} type="button">
           <FiX className={scss.productsIcon} />
         </button>
@@ -39,7 +47,9 @@ export const DiaryProductsListItem = () => {
       <li className={scss.productsListItem}>
         <div className={scss.productsName}>Eggplant</div>
         <div className={scss.productsGramm}>100 g</div>
-        <div className={scss.productsKcal}>320 kcal</div>
+        <div className={scss.productsKcal}>
+          320 <span className={scss.productsKcal__text}>kcal</span>
+        </div>
         <button className={scss.productsBtn} type="button">
           <FiX className={scss.productsIcon} />
         </button>
@@ -47,7 +57,9 @@ export const DiaryProductsListItem = () => {
       <li className={scss.productsListItem}>
         <div className={scss.productsName}>Eggplant</div>
         <div className={scss.productsGramm}>100 g</div>
-        <div className={scss.productsKcal}>320 kcal</div>
+        <div className={scss.productsKcal}>
+          320 <span className={scss.productsKcal__text}>kcal</span>
+        </div>
         <button className={scss.productsBtn} type="button">
           <FiX className={scss.productsIcon} />
         </button>
