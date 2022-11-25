@@ -28,20 +28,20 @@ const initialValues = {
 
 const CalculatorForm = () => {
   const userId = useSelector(selectUserId);
+   const dispatch = useDispatch();
   const handleSubmit = (values, { resetForm }) => {
     if (userId === null) {
       dispatch(fetchCalculatorInfoNotId(values));
     } else {
       dispatch(fetchCalculatorInfoById({ ...values, userId }));
     }
+    dispatch(toggle(true));
     resetForm();
   };
 
-  const dispatch = useDispatch();
+ 
 
-  const onClick = () => {
-    dispatch(toggle(true));
-  };
+  
 
   return (
     // <div className={scss.box}>
@@ -151,7 +151,7 @@ const CalculatorForm = () => {
             </div>
           </span>
 
-          <button type="submit" className={scss.btnOrange} onClick={onClick}>
+          <button type="submit" className={scss.btnOrange} >
             Start losing weight
           </button>
         </Form>
