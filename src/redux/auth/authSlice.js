@@ -51,7 +51,7 @@ export const authSlice = createSlice({
     },
 
     [fetchRefreshToken.pending](state) {
-      // state.isLoggedIn = true;
+      state.isLoggedIn = true;
     },
     [fetchRefreshToken.fulfilled](state, action) {
       state.refreshToken = action.payload.newRefreshToken;
@@ -60,7 +60,8 @@ export const authSlice = createSlice({
       state.isRefreshing = true;
     },
     [fetchRefreshToken.rejected](state) {
-      state.isRefreshing = false;
+      state.isLoggedIn = false;
+      state.isRefreshing = true;
     },
     [fetchCurrentUser.fulfilled](state, action) {
       state.user.username = action.payload.username;
@@ -78,6 +79,7 @@ export const authSlice = createSlice({
     },
   },
 });
+
 const persistConfig = {
   key: 'token',
   storage,

@@ -6,9 +6,11 @@ import { selectIsRefreshing } from 'redux/auth/selectors';
 import { fetchRefreshToken, fetchCurrentUser } from 'redux/auth/operations';
 import { PrivateRoute } from './PrivateRoute.js';
 import { PublicRoute } from './PublicRoute.js';
+import BigLoader from './Loader/BigLoader';
 
 import Modal from '../components/Modal/Modal';
 import { Layout } from './Layout';
+
 const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
 const Diary = lazy(() => import('../pages/Diary'));
@@ -27,10 +29,13 @@ export const App = () => {
     if (!refresh) {
       return;
     }
+
     dispatch(fetchCurrentUser());
   }, [refresh, dispatch]);
 
-  return (
+  return !refresh ? (
+    <BigLoader />
+  ) : (
     <>
       {showModal && <Modal />}
       <Routes>
