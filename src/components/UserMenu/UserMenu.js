@@ -30,8 +30,10 @@ const UserMenu = () => {
           Calculator
         </NavItems>
       </div>
+
       <div className={scss.rightBar}>
         <p className={scss.user}>{user.username}</p>
+
         <button
           className={scss.btn}
           type="button"

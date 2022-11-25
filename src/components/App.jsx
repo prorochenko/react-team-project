@@ -22,16 +22,16 @@ export const App = () => {
   const showModal = useSelector(state => state.showModal);
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
+  // useEffect(() => {
+  //   if (isLoggedIn) {
+  //     return;
+  //   }
+  // }, [isLoggedIn]);
+
   useEffect(() => {
     if (!isLoggedIn) {
       return;
     }
-  }, [isLoggedIn]);
-
-  useEffect(() => {
-    // if (!isLoggedIn) {
-    //   return;
-    // }
     dispatch(fetchRefreshToken());
   }, [dispatch]);
 
