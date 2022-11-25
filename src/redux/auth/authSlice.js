@@ -60,6 +60,7 @@ export const authSlice = createSlice({
       state.isRefreshing = true;
     },
     [fetchRefreshToken.rejected](state) {
+      state.isLoggedIn = false;
       state.isRefreshing = false;
     },
     [fetchCurrentUser.fulfilled](state, action) {
