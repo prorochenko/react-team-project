@@ -6,7 +6,7 @@ import { selectIsRefreshing } from 'redux/auth/selectors';
 import { fetchRefreshToken, fetchCurrentUser } from 'redux/auth/operations';
 import { PrivateRoute } from './PrivateRoute.js';
 import { PublicRoute } from './PublicRoute.js';
-import LoadingComponent from './Loader/Loader.jsx';
+import BigLoader from './Loader/BigLoader';
 
 import Modal from '../components/Modal/Modal';
 import { Layout } from './Layout';
@@ -34,7 +34,7 @@ export const App = () => {
   }, [refresh, dispatch]);
 
   return !refresh ? (
-    <LoadingComponent />
+    <BigLoader />
   ) : (
     <>
       {showModal && <Modal />}
