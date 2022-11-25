@@ -96,7 +96,7 @@ export const fetchRefreshToken = createAsyncThunk(
 
 // USER INFO
 export const fetchCalculatorInfoNotId = createAsyncThunk(
-  'auth/user',
+  'auth/daily-rate',
   async (credentials, thunkAPI) => {
     try {
       const response = await axios.post('/daily-rate', credentials);
@@ -108,7 +108,7 @@ export const fetchCalculatorInfoNotId = createAsyncThunk(
 );
 
 export const fetchCalculatorInfoById = createAsyncThunk(
-  'auth/user',
+  'auth/daily-rate/id',
   async (credentials, thunkAPI) => {
     try {
       console.log(credentials);

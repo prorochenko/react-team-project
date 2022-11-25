@@ -12,7 +12,7 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 const initialState = {
-  user: { name: null, email: null, id: null },
+  user: { username: null, email: null, id: null },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
@@ -63,11 +63,14 @@ export const authSlice = createSlice({
       state.isRefreshing = false;
     },
     [fetchCurrentUser.fulfilled](state, action) {
-      state.user = action.payload;
+      state.user.username = action.payload.username;
+      state.user.email = action.payload.email;
+      state.user.id = action.payload.id;
+      state.user.userData = action.payload.userData;
     },
 
     [fetchCalculatorInfoNotId.fulfilled](state, action) {
-      state.user = action.payload;
+      state.user.userData = action.payload;
     },
 
     [fetchCalculatorInfoById.fulfilled](state, action) {
