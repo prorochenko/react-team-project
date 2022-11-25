@@ -5,12 +5,14 @@ import {
   logOut,
   fetchRefreshToken,
   fetchCurrentUser,
+  fetchCalculatorInfoNotId,
+  fetchCalculatorInfoById,
 } from './operations';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 const initialState = {
-  user: { name: null, email: null },
+  user: { username: null, email: null, id: null },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
@@ -48,7 +50,9 @@ export const authSlice = createSlice({
       state.refreshToken = '';
     },
 
-    [fetchRefreshToken.pending](state) {},
+    [fetchRefreshToken.pending](state) {
+      // state.isLoggedIn = true;
+    },
     [fetchRefreshToken.fulfilled](state, action) {
       state.refreshToken = action.payload.newRefreshToken;
       state.sid = action.payload.sid;
@@ -59,7 +63,18 @@ export const authSlice = createSlice({
       state.isRefreshing = false;
     },
     [fetchCurrentUser.fulfilled](state, action) {
-      state.user = action.payload;
+      state.user.username = action.payload.username;
+      state.user.email = action.payload.email;
+      state.user.id = action.payload.id;
+      state.user.userData = action.payload.userData;
+    },
+
+    [fetchCalculatorInfoNotId.fulfilled](state, action) {
+      state.user.userData = action.payload;
+    },
+
+    [fetchCalculatorInfoById.fulfilled](state, action) {
+      state.user.userData = action.payload;
     },
   },
 });

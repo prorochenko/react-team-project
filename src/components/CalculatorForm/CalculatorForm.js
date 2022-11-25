@@ -3,6 +3,11 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggle } from 'redux/store';
+import { selectUserId } from 'redux/auth/selectors';
+import {
+  fetchCalculatorInfoNotId,
+  fetchCalculatorInfoById,
+} from 'redux/auth/operations';
 
 // import { RightSideBar } from '../RightSideBar/RightSideBar';
 
@@ -22,8 +27,13 @@ const initialValues = {
 };
 
 const CalculatorForm = () => {
+  const userId = useSelector(selectUserId);
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
+    if (userId === null) {
+      dispatch(fetchCalculatorInfoNotId(values));
+    } else {
+      dispatch(fetchCalculatorInfoById({ ...values, userId }));
+    }
     resetForm();
   };
 
