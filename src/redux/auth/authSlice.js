@@ -61,7 +61,7 @@ export const authSlice = createSlice({
     },
     [fetchRefreshToken.rejected](state) {
       state.isLoggedIn = false;
-      state.isRefreshing = false;
+      state.isRefreshing = true;
     },
     [fetchCurrentUser.fulfilled](state, action) {
       state.user.username = action.payload.username;

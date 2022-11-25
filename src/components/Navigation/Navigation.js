@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import logo from '../../assets/images/logologoDesk1x.png';
-import logoSmall2x from '../../assets/images/logologoMob@2x.png';
-import logoSmall1x from '../../assets/images/logologoMob@1x.png';
+// import logoSmall2x from '../../assets/images/logologoMob@2x.png';
+// import logoSmall1x from '../../assets/images/logologoMob@1x.png';
 import logoTab1x from '../../assets/images/logologoTab@1x.png';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 

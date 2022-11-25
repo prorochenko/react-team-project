@@ -1,8 +1,8 @@
-import { Dna } from 'react-loader-spinner';
+// import { Dna } from 'react-loader-spinner';
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 
-import css from './Loader.module.scss';
+// import css from './Loader.module.scss';
 
 // export default function BigLoader() {
 //   return (
