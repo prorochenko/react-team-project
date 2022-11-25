@@ -29,10 +29,9 @@ const BigLoader = props => (
     foregroundColor="#ecebeb"
     {...props}
   >
-    <circle cx="21" cy="24" r="20" />
-    <rect x="54" y="5" rx="0" ry="0" width="1280" height="37" />
-    <rect x="40" y="58" rx="0" ry="0" width="600" height="500" />
-    <rect x="660" y="58" rx="0" ry="0" width="700" height="500" />
+    <rect x="16" y="50" rx="0" ry="0" width="1280" height="150" />
+    <rect x="16" y="250" rx="0" ry="0" width="730" height="500" />
+    <rect x="763" y="250" rx="0" ry="0" width="517" height="500" />
   </ContentLoader>
 );
 
