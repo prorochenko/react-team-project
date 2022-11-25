@@ -99,7 +99,7 @@ export const fetchCalculatorInfoNotId = createAsyncThunk(
   'auth/user',
   async (credentials, thunkAPI) => {
     try {
-      const response = await axios.get('/user', credentials);
+      const response = await axios.post('/daily-rate', credentials);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -109,9 +109,20 @@ export const fetchCalculatorInfoNotId = createAsyncThunk(
 
 export const fetchCalculatorInfoById = createAsyncThunk(
   'auth/user',
-  async (credentials, userId, thunkAPI) => {
+  async (credentials, thunkAPI) => {
     try {
-      const response = await axios.get(`/daily-rate/${userId}`, credentials);
+      console.log(credentials);
+      const response = await axios.post(
+        `/daily-rate/${credentials.userId}`,
+        {
+          height: credentials.height,
+          age: credentials.age,
+          weight: credentials.weight,
+          desiredWeight: credentials.desiredWeight,
+          bloodType: credentials.bloodType,
+        },
+        credentials
+      );
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

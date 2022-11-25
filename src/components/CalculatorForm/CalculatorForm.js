@@ -32,7 +32,7 @@ const CalculatorForm = () => {
     if (userId === null) {
       dispatch(fetchCalculatorInfoNotId(values));
     } else {
-      dispatch(fetchCalculatorInfoNotId(values, userId));
+      dispatch(fetchCalculatorInfoById({ ...values, userId }));
     }
     resetForm();
   };

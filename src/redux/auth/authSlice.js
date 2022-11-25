@@ -5,12 +5,14 @@ import {
   logOut,
   fetchRefreshToken,
   fetchCurrentUser,
+  fetchCalculatorInfoNotId,
+  fetchCalculatorInfoById,
 } from './operations';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 const initialState = {
-  user: { name: null, email: null, id:null, },
+  user: { name: null, email: null, id: null },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
@@ -62,6 +64,14 @@ export const authSlice = createSlice({
     },
     [fetchCurrentUser.fulfilled](state, action) {
       state.user = action.payload;
+    },
+
+    [fetchCalculatorInfoNotId.fulfilled](state, action) {
+      state.user = action.payload;
+    },
+
+    [fetchCalculatorInfoById.fulfilled](state, action) {
+      state.user.userData = action.payload;
     },
   },
 });
