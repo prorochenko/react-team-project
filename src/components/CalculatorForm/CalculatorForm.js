@@ -30,7 +30,7 @@ const CalculatorForm = () => {
   const userId = useSelector(selectUserId);
   const handleSubmit = (values, { resetForm }) => {
     if (userId === null) {
-      dispatch(fetchCalculatorInfoNotId(values));
+      dispatch(fetchCalculatorInfoNotId({ ...values }));
     } else {
       dispatch(fetchCalculatorInfoById({ ...values, userId }));
     }

@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={<LoadingComponent />} persistor={persistor}>
-        <BrowserRouter basename="/react-team-project">
+        <BrowserRouter>
           <HelmetProvider>
             <App />
           </HelmetProvider>
@@ -23,3 +23,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Provider>
   </React.StrictMode>
 );
+
+// basename="/react-team-project"

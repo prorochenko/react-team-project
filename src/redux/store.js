@@ -16,6 +16,7 @@ import { productsReducer } from './products/products-slice';
 const testPersistConfig = {
   key: 'test',
   storage,
+  whitelist: ['token'],
 };
 //modal
 export const toggle = createAction('showModal, toggle');

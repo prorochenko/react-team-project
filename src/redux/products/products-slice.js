@@ -1,8 +1,12 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { fetchProduct, fetchUserInfo } from './products-operations';
+import { addDay, fetchProduct } from './products-operations';
 
 const productsInitialState = {
-  infoUser: [],
+  day: {
+    date: null,
+    productId: null,
+    weight: null,
+  },
   product: null,
   isLoading: false,
   error: null,
@@ -13,11 +17,11 @@ const productsSlice = createSlice({
   initialState: productsInitialState,
   extraReducers: builder => {
     builder
-      .addCase(fetchUserInfo.fulfilled, (state, { payload }) => {
-        state.infoUser = payload;
-      })
       .addCase(fetchProduct.fulfilled, (state, { payload }) => {
         state.product = payload;
+      })
+      .addCase(addDay.fulfilled, (state, { payload }) => {
+        state.day = payload;
       });
   },
 });
