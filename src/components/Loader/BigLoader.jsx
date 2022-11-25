@@ -21,19 +21,18 @@ import css from './Loader.module.scss';
 
 const BigLoader = props => (
   <ContentLoader
-    className={css.loader}
     speed={2}
-    width={476}
-    height={124}
-    viewBox="0 0 476 124"
+    width={1280}
+    height={800}
+    viewBox="0 0 1280 800"
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"
     {...props}
   >
     <circle cx="21" cy="24" r="20" />
-    <rect x="54" y="5" rx="0" ry="0" width="566" height="37" />
-    <rect x="3" y="58" rx="0" ry="0" width="265" height="164" />
-    <rect x="279" y="57" rx="0" ry="0" width="265" height="92" />
+    <rect x="54" y="5" rx="0" ry="0" width="1280" height="37" />
+    <rect x="40" y="58" rx="0" ry="0" width="600" height="500" />
+    <rect x="660" y="58" rx="0" ry="0" width="700" height="500" />
   </ContentLoader>
 );
 
