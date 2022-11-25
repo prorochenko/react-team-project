@@ -31,7 +31,7 @@ const CalculatorForm = () => {
    const dispatch = useDispatch();
   const handleSubmit = (values, { resetForm }) => {
     if (userId === null) {
-      dispatch(fetchCalculatorInfoNotId(values));
+      dispatch(fetchCalculatorInfoNotId({ ...values }));
     } else {
       dispatch(fetchCalculatorInfoById({ ...values, userId }));
     }

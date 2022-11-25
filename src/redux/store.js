@@ -11,10 +11,12 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { persistAuthReducer } from './auth/authSlice';
+import { productsReducer } from './products/products-slice';
 
 const testPersistConfig = {
   key: 'test',
   storage,
+  whitelist: ['token'],
 };
 //modal
 export const toggle = createAction('showModal, toggle');
@@ -32,6 +34,7 @@ export const store = configureStore({
     }),
 
     auth: persistAuthReducer,
+    products: productsReducer,
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
