@@ -22,7 +22,7 @@ export const AppBar = () => {
         <Navigation />
         {/* {(isLoggedIn && !refresh) || refresh ? <UserMenu /> : ''} */}
         {/* {!isLoggedIn && !refresh && refresh ? <AuthNav /> : ''} */}
-        {isLoggedIn && user && <UserMenu />}
+        {isLoggedIn && <UserMenu />}
         {!isLoggedIn && <AuthNav />}
         {/* {!refresh ? <div>hey</div> : <UserMenu />}
         {!refresh ? <AuthNav /> } */}
