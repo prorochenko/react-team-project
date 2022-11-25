@@ -9,8 +9,9 @@ import { PublicRoute } from './PublicRoute.js';
 import BigLoader from './Loader/BigLoader';
 
 import Modal from '../components/Modal/Modal';
-import { Layout } from './Layout';
+import Layout from './Layout';
 
+// const Layout = lazy(() => import('./Layout'));
 const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
 const Diary = lazy(() => import('../pages/Diary'));

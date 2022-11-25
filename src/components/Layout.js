@@ -6,8 +6,9 @@ import { RightSideBar } from './RightSideBar/RightSideBar';
 import css from './Layout.module.scss';
 import LoadingComponent from './Loader/Loader.jsx';
 
-export const Layout = () => {
+const Layout = () => {
   return (
+    // <Suspense fallback={<LoadingComponent />}>
     <div>
       {/* <Suspense fallback={<LoadingComponent />}> */}
       <AppBar />
@@ -22,3 +23,5 @@ export const Layout = () => {
     </div>
   );
 };
+
+export default Layout;

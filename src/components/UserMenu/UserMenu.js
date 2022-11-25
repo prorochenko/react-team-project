@@ -20,6 +20,7 @@ const NavItems = styled(NavLink)`
 const UserMenu = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
+
   return (
     <div className={scss.box}>
       <div className={scss.nav}>
