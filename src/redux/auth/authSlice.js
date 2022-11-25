@@ -48,7 +48,9 @@ export const authSlice = createSlice({
       state.refreshToken = '';
     },
 
-    [fetchRefreshToken.pending](state) {},
+    [fetchRefreshToken.pending](state) {
+      // state.isLoggedIn = true;
+    },
     [fetchRefreshToken.fulfilled](state, action) {
       state.refreshToken = action.payload.newRefreshToken;
       state.sid = action.payload.sid;

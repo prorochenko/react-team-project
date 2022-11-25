@@ -9,7 +9,9 @@ import LoadingComponent from './Loader/Loader.jsx';
 export const Layout = () => {
   return (
     <div>
+      {/* <Suspense fallback={<LoadingComponent />}> */}
       <AppBar />
+      {/* </Suspense> */}
       <div className={css.box}>
         <Suspense fallback={<LoadingComponent />}>
           <Outlet />
