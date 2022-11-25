@@ -1,9 +1,12 @@
 import css from './RightSideBar.module.scss';
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
+import { selectorTest } from 'redux/Summary/summarySelectors';
+
 export const RightSideBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-
+  const test = useSelector(selectorTest);
+  console.log(test);
   return (
     <>
       {!isLoggedIn && <div className={css.pictures}></div>}

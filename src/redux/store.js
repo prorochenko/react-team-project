@@ -12,6 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { persistAuthReducer } from './auth/authSlice';
 import { productsReducer } from './products/products-slice';
+import { persistSummuryReducer } from './Summary/summarySlice';
 
 const testPersistConfig = {
   key: 'test',
@@ -35,6 +36,7 @@ export const store = configureStore({
 
     auth: persistAuthReducer,
     products: productsReducer,
+    day: persistSummuryReducer,
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({

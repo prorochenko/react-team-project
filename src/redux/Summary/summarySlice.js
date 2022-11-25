@@ -35,5 +35,5 @@ const daySlice = createSlice({
     },
   },
 });
-
+export const persistSummuryReducer = daySlice.reducer;
 export default daySlice.reducer;

@@ -15,7 +15,7 @@ export default function DiaryDateCalendar() {
   const [value, setValue] = useState(new Date());
 
   const test = useSelector(selectorTest);
-  console.log('test', test);
+  console.log(test);
   const dispatch = useDispatch();
   const handleChange = e => {
     setValue(e);
