@@ -15,7 +15,7 @@ const initialState = {
 const daySlice = createSlice({
   name: 'day',
   initialState,
-
+  //
   extraReducers: {
     [getInfoByDay.pending]: state => {
       state.loading = true;
