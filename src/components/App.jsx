@@ -6,6 +6,7 @@ import { selectIsRefreshing } from 'redux/auth/selectors';
 import { fetchRefreshToken, fetchCurrentUser } from 'redux/auth/operations';
 import { PrivateRoute } from './PrivateRoute.js';
 import { PublicRoute } from './PublicRoute.js';
+import LoadingComponent from './Loader/Loader.jsx';
 
 import Modal from '../components/Modal/Modal';
 import { Layout } from './Layout';
@@ -28,10 +29,13 @@ export const App = () => {
     if (!refresh) {
       return;
     }
+
     dispatch(fetchCurrentUser());
   }, [refresh, dispatch]);
 
-  return (
+  return !refresh ? (
+    <LoadingComponent />
+  ) : (
     <>
       {showModal && <Modal />}
       <Routes>
