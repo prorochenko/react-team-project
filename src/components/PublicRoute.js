@@ -6,7 +6,7 @@ import { selectIsLoggedIn } from 'redux/auth/selectors';
 export const PublicRoute = ({ children, restricted = false }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   // const refresh = useSelector(selectIsRefreshing);
-  console.log(isLoggedIn);
+
   // useEffect(() => {
   //   if (!isLoggedIn) {
   //     return;
