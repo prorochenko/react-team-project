@@ -13,9 +13,8 @@ const productsInitialState = {
     weight: null,
   },
   userDayInfo: {
-    id: null,
     date: null,
-    day: { eatenProducts: [] },
+    day: { eatenProducts: [], id: null },
     daySummary: {
       date: null,
       kcalLeft: null,
@@ -55,7 +54,7 @@ const productsSlice = createSlice({
       .addCase(getInfoByDay.fulfilled, (state, { payload }) => {
         if (payload.daySummary) {
           state.userDayInfo.day.eatenProducts = payload.eatenProducts;
-          state.userDayInfo.id = payload.id;
+          state.userDayInfo.day.id = payload.id;
           state.userDayInfo.daySummary = payload.daySummary;
         } else {
           state.userDayInfo.daySummary = payload;
