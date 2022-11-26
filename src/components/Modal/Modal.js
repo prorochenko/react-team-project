@@ -11,7 +11,7 @@ const modalRoot = document.querySelector('#modal-root');
 
 const Modal = () => {
   const dispatch = useDispatch();
-
+  console.log(false === undefined);
   const onClose = useCallback(() => {
     dispatch(toggle(false));
   }, [dispatch]);
