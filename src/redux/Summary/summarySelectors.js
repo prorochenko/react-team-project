@@ -1,1 +1,1 @@
-export const selectorTest = state => state.day;
+export const selectorTest = state => state.test;

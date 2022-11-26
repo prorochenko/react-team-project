@@ -2,12 +2,15 @@ import scss from './CalculatorForm.module.scss';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
 import { toggle } from 'redux/store';
 import { selectUserId } from 'redux/auth/selectors';
 import {
   fetchCalculatorInfoNotId,
   fetchCalculatorInfoById,
 } from 'redux/auth/operations';
+import moment from 'moment';
+import { getInfoByDay } from '../../redux/products/products-operations';
 
 // import { RightSideBar } from '../RightSideBar/RightSideBar';
 
@@ -27,8 +30,17 @@ const initialValues = {
 };
 
 const CalculatorForm = () => {
+  useEffect(e => {
+    // dispatch(addDay(moment(e).format('yyyy-MM-DD')));
+    dispatch(getInfoByDay({ date: moment(e).format('yyyy-MM-DD') }));
+  }, []);
+
   const userId = useSelector(selectUserId);
-   const dispatch = useDispatch();
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
+  const dispatch = useDispatch();
   const handleSubmit = (values, { resetForm }) => {
     if (userId === null) {
       dispatch(fetchCalculatorInfoNotId({ ...values }));
@@ -38,10 +50,6 @@ const CalculatorForm = () => {
     dispatch(toggle(true));
     resetForm();
   };
-
- 
-
-  
 
   return (
     // <div className={scss.box}>
@@ -151,7 +159,7 @@ const CalculatorForm = () => {
             </div>
           </span>
 
-          <button type="submit" className={scss.btnOrange} >
+          <button type="submit" className={scss.btnOrange}>
             Start losing weight
           </button>
         </Form>
