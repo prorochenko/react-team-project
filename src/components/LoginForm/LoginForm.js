@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
 import css from './LoginForm.module.scss';
 import leaver from '../../assets/images/animateMinDesk@2x.png';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 // import { bounceInLeft } from 'react-animations';
 // import Radium, { StyleRoot } from 'radium';
 
@@ -14,15 +14,6 @@ export const LoginForm = () => {
   const [passwordDirty, setPasswordDirty] = useState(false);
   const [emailError, setEmailError] = useState('Pleas enter email');
   const [passwordError, setPasswordError] = useState('Pleas enter password');
-  // const [formValid, setFormValid] = useState(false);
-
-  // useEffect(() => {
-  //   if (emailError || passwordError) {
-  //     setFormValid(false);
-  //   } else {
-  //     setFormValid(true);
-  //   }
-  // });
 
   const blurHandler = e => {
     switch (e.target.name) {
@@ -76,7 +67,7 @@ export const LoginForm = () => {
 
   // const styles = {
   //   bounce: {
-  //     animation: 'x 5s',
+  //     animation: 'x 10s',
   //     animationName: Radium.keyframes(bounceInLeft, 'bounceInLeft'),
   //   },
   // };
@@ -85,7 +76,6 @@ export const LoginForm = () => {
   return (
     <div className={css.box}>
       <img
-        // className="animate__animated"
         // style={styles.bounceInLeft}
         className={css.leaverSmall}
         src={leaverMin}
