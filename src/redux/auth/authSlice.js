@@ -18,6 +18,7 @@ const initialState = {
   isRefreshing: false,
   sid: '',
   refreshToken: '',
+  isRegister: false,
 
   showModal: false,
 };
@@ -37,6 +38,7 @@ export const authSlice = createSlice({
         state.user.email = action.payload.email;
         state.token = action.payload.id;
         state.isLoggedIn = false;
+        state.isRegister = true;
       })
 
       .addCase(logIn.fulfilled, (state, action) => {

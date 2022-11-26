@@ -7,7 +7,7 @@ import scss from './DiaryProductsListItem.module.scss';
 
 export const DiaryProductsListItem = ({ product }) => {
   const dispatch = useDispatch();
-  const dayId = useSelector(selectDayInfo).id;
+  const dayId = useSelector(selectDayInfo);
   const eatenProductId = product.id;
   const handleDelete = () =>
     dispatch(deleteProductDay({ dayId, eatenProductId }));

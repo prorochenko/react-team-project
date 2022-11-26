@@ -13,10 +13,8 @@ const productsInitialState = {
     weight: null,
   },
   userDayInfo: {
-    id: null,
-    eatenProducts: [],
     date: null,
-    day: { eatenProducts: [] },
+    day: { eatenProducts: [], id: null },
     daySummary: {
       date: null,
       kcalLeft: null,
@@ -33,7 +31,7 @@ const productsInitialState = {
 };
 
 const productsSlice = createSlice({
-  name: 'prodacts',
+  name: 'products',
   initialState: productsInitialState,
   extraReducers: builder => {
     builder
@@ -41,17 +39,23 @@ const productsSlice = createSlice({
         state.product = payload;
       })
       .addCase(addDay.fulfilled, (state, { payload }) => {
-        state.userDayInfo = payload;
+        if (payload.newDay) {
+          state.userDayInfo.day = payload.newDay;
+          state.userDayInfo.daySummary = payload.newSummary;
+        } else {
+          state.userDayInfo = payload;
+        }
       })
       .addCase(getInfoByDay.pending, state => {
+        state.userDayInfo.day.eatenProducts = [];
         state.isLoading = true;
         state.error = null;
       })
       .addCase(getInfoByDay.fulfilled, (state, { payload }) => {
         if (payload.daySummary) {
           state.userDayInfo.day.eatenProducts = payload.eatenProducts;
-          state.userDayInfo.id = payload.id;
-          state.userDayInfo.daySummary.date = payload.date;
+          state.userDayInfo.day.id = payload.id;
+          state.userDayInfo.daySummary = payload.daySummary;
         } else {
           state.userDayInfo.daySummary = payload;
         }

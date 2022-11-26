@@ -13,7 +13,7 @@ export const RightSideBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const summary = useSelector(selectSummary);
   const notAllowedProducts = useSelector(selectNotAllowedProducts);
-  console.log(summary);
+  // console.log(summary);
 
   return (
     <>

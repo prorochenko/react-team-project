@@ -87,7 +87,9 @@ export const RegisterForm = () => {
         password: form.elements.password.value,
       })
     );
-    form.reset();
+    setPassword('');
+    setEmail('');
+    setName('');
   };
 
   return (
@@ -148,15 +150,14 @@ export const RegisterForm = () => {
               <NavLink className={css.btnOrange} to="/login">
                 Login
               </NavLink>
-              <NavLink to="/login">
-                <button
-                  disabled={!formValid}
-                  className={css.btnTransperent}
-                  type="submit"
-                >
-                  Register
-                </button>
-              </NavLink>
+
+              <button
+                disabled={!formValid}
+                className={css.btnTransperent}
+                type="submit"
+              >
+                Register
+              </button>
             </div>
           </form>
         </div>
