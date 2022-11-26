@@ -4,6 +4,8 @@ import { logIn } from 'redux/auth/operations';
 import css from './LoginForm.module.scss';
 import leaver from '../../assets/images/animateMinDesk@2x.png';
 import { useEffect, useState } from 'react';
+// import { bounceInLeft } from 'react-animations';
+// import Radium, { StyleRoot } from 'radium';
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -72,10 +74,25 @@ export const LoginForm = () => {
     form.reset();
   };
 
+  // const styles = {
+  //   bounce: {
+  //     animation: 'x 5s',
+  //     animationName: Radium.keyframes(bounceInLeft, 'bounceInLeft'),
+  //   },
+  // };
+
   const leaverMin = leaver;
   return (
     <div className={css.box}>
-      {/* <img src={leaverMin} alt="" width="800px" height="800px" /> */}
+      <img
+        // className="animate__animated"
+        // style={styles.bounceInLeft}
+        className={css.leaverSmall}
+        src={leaverMin}
+        alt=""
+        width="95px"
+        height="75px"
+      />{' '}
       <div className={css.container}>
         <h3 className={css.header}>SIGN IN</h3>
         <form onSubmit={handleSubmit} autoComplete="off">
