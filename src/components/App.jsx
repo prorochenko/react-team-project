@@ -25,18 +25,19 @@ export const App = () => {
   const refresh = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
   const showModal = useSelector(state => state.auth.showModal);
+  const sid = useSelector(state => state.auth.sid);
 
   useEffect(() => {
     dispatch(fetchRefreshToken());
   }, [dispatch]);
 
   useEffect(() => {
-    if (!refresh) {
+    if (!refresh || sid === '') {
       return;
     }
 
     dispatch(fetchCurrentUser());
-  }, [refresh, dispatch]);
+  }, [refresh, sid, dispatch]);
 
   return !refresh ? (
     <BigLoader />
