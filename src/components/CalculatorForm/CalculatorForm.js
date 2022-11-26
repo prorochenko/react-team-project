@@ -36,10 +36,7 @@ const CalculatorForm = () => {
   }, []);
 
   const userId = useSelector(selectUserId);
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
   const dispatch = useDispatch();
   const handleSubmit = (values, { resetForm }) => {
     if (userId === null) {
