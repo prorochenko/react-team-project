@@ -30,60 +30,61 @@ export const authSlice = createSlice({
       state.showModal = action.payload;
     },
   },
-  extraReducers: {
-    [register.fulfilled]: (state, action) => {
-      state.user.name = action.payload.username;
-      state.user.email = action.payload.email;
-      state.token = action.payload.id;
-      state.isLoggedIn = false;
-    },
+  extraReducers: builder => {
+    builder
+      .addCase(register.fulfilled, (state, action) => {
+        state.user.name = action.payload.username;
+        state.user.email = action.payload.email;
+        state.token = action.payload.id;
+        state.isLoggedIn = false;
+      })
 
-    [logIn.fulfilled]: (state, action) => {
-      state.user = action.payload.user;
+      .addCase(logIn.fulfilled, (state, action) => {
+        state.user = action.payload.user;
 
-      state.token = action.payload.accessToken;
-      state.isLoggedIn = true;
-      state.sid = action.payload.sid;
-      state.refreshToken = action.payload.refreshToken;
-    },
+        state.token = action.payload.accessToken;
+        state.isLoggedIn = true;
+        state.sid = action.payload.sid;
+        state.refreshToken = action.payload.refreshToken;
+      })
 
-    [logOut.fulfilled]: state => {
-      state.user = initialState.user;
-      state.token = null;
-      state.isLoggedIn = false;
-      state.sid = '';
-      state.refreshToken = '';
-    },
+      .addCase(logOut.fulfilled, state => {
+        state.user = initialState.user;
+        state.token = null;
+        state.isLoggedIn = false;
+        state.sid = '';
+        state.refreshToken = '';
+      })
 
-    [fetchRefreshToken.pending](state) {
-      state.isLoggedIn = true;
-    },
-    [fetchRefreshToken.fulfilled](state, action) {
-      state.refreshToken = action.payload.newRefreshToken;
-      state.sid = action.payload.sid;
-      state.isLoggedIn = true;
-      state.isRefreshing = true;
-    },
-    [fetchRefreshToken.rejected](state) {
-      state.isLoggedIn = false;
-      state.isRefreshing = true;
-    },
-    [fetchCurrentUser.fulfilled](state, action) {
-      state.user.username = action.payload.username;
-      state.user.email = action.payload.email;
-      state.user.id = action.payload.id;
-      state.user.userData = action.payload.userData;
-    },
+      .addCase(fetchRefreshToken.pending, state => {
+        state.isLoggedIn = true;
+      })
+      .addCase(fetchRefreshToken.fulfilled, (state, action) => {
+        state.refreshToken = action.payload.newRefreshToken;
+        state.sid = action.payload.sid;
+        state.isLoggedIn = true;
+        state.isRefreshing = true;
+      })
+      .addCase(fetchRefreshToken.rejected, state => {
+        state.isLoggedIn = false;
+        state.isRefreshing = true;
+      })
+      .addCase(fetchCurrentUser.fulfilled, (state, action) => {
+        state.user.username = action.payload.username;
+        state.user.email = action.payload.email;
+        state.user.id = action.payload.id;
+        state.user.userData = action.payload.userData;
+      })
 
-    [fetchCalculatorInfoNotId.fulfilled](state, action) {
-      state.user.userData = action.payload;
-      state.showModal = true;
-    },
+      .addCase(fetchCalculatorInfoNotId.fulfilled, (state, action) => {
+        state.user.userData = action.payload;
+        state.showModal = true;
+      })
 
-    [fetchCalculatorInfoById.fulfilled](state, action) {
-      state.user.userData = action.payload;
-      state.showModal = true;
-    },
+      .addCase(fetchCalculatorInfoById.fulfilled, (state, action) => {
+        state.user.userData = action.payload;
+        state.showModal = true;
+      });
   },
 });
 

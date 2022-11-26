@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import { toggle } from 'redux/auth/authSlice';
 import {
   selectdailyRate,
-  selectnotAllowerProducts,
+  selectNotAllowedProducts,
 } from 'redux/auth/selectors';
 import { useSelector } from 'react-redux';
 
@@ -16,7 +16,7 @@ const modalRoot = document.querySelector('#modal-root');
 
 const Modal = () => {
   const dailyRate = useSelector(selectdailyRate);
-  const AllowerProducts = useSelector(selectnotAllowerProducts);
+  const AllowerProducts = useSelector(selectNotAllowedProducts);
 
   const dispatch = useDispatch();
   const onClose = useCallback(() => {
