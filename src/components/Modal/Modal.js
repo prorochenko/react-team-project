@@ -5,13 +5,23 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { IoReturnDownBackSharp } from 'react-icons/io5';
 // import { getProducts } from 'ourAPI';
 import { useDispatch } from 'react-redux';
-import { toggle } from 'redux/store';
+import { toggle } from 'redux/auth/authSlice';
+import {
+  selectdailyRate,
+  selectNotAllowedProducts,
+  selectIsLoggedIn,
+} from 'redux/auth/selectors';
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 const modalRoot = document.querySelector('#modal-root');
 
 const Modal = () => {
+  const dailyRate = useSelector(selectdailyRate);
+  const AllowerProducts = useSelector(selectNotAllowedProducts);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
   const dispatch = useDispatch();
-  console.log(false === undefined);
   const onClose = useCallback(() => {
     dispatch(toggle(false));
   }, [dispatch]);
@@ -40,6 +50,12 @@ const Modal = () => {
     };
   }, [escKeyDown]);
 
+  const button = (
+    <button className={css.btn} type="button" onClick={onClose}>
+      Start losing weight
+    </button>
+  );
+
   return createPortal(
     <div className={css.Modal__backdrop} onClick={handleBackdropClick}>
       <div className={css.Modal__content}>
@@ -56,52 +72,24 @@ const Modal = () => {
             Your recommended daily calorie intake is
           </h1>
           <p className={css.number}>
-            2800 <span className={css.smallText}>ккал</span>
+            {dailyRate}
+            <span className={css.smallText}>ккал</span>
           </p>
           <div className={css.box}>
             <h2 className={css.subtitle}>Foods you should not eat</h2>
             <ol className={css.list}>
-              {/* {products.map(product => (
-                <li>{product.name}</li>
-              ))} ++ сделать проверку, что когда данные есть, то тогда рендерить */}
-              <li className={css.item}>Flour products</li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
+              {AllowerProducts.map(product => (
+                <li key={product}>{product}</li>
+              ))}
+              {/* ++ сделать проверку, что когда данные есть, то тогда рендерить  */}
             </ol>
           </div>
-          <button className={css.btn} type="button" onClick={onClose}>
-            Start losing weight
-          </button>
+
+          {isLoggedIn ? (
+            <NavLink to="/diary">{button} </NavLink>
+          ) : (
+            <NavLink to="/register">{button} </NavLink>
+          )}
         </div>
       </div>
     </div>,
