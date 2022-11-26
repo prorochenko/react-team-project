@@ -13,6 +13,7 @@ export const RightSideBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const summary = useSelector(selectSummary);
   const notAllowedProducts = useSelector(selectNotAllowedProducts);
+  console.log(summary);
 
   return (
     <>
@@ -22,7 +23,7 @@ export const RightSideBar = () => {
           <div className={css.container}>
             <div className={css.summarySection}>
               <h3 className={css.header}>
-                Summary for {summary.date ? Math.floor(summary.date) : 'day'}
+                Summary for {summary.date ? summary.date : 'day'}
               </h3>
               <table className={css.table}>
                 <tbody>

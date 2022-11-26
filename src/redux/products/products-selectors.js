@@ -5,4 +5,4 @@ export const selectAddDayy = state => state.products.day;
 
 export const selectSummary = state => state.products.userDayInfo.daySummary;
 export const selectEaten = state =>
-  state.products.userDayInfo.day.eatenProducts;
+  state.products.userDayInfo.day?.eatenProducts;
