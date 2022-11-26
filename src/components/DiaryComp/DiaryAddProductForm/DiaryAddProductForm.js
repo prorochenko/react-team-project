@@ -18,14 +18,14 @@ export default function DiaryAddProductForm() {
 
   const [product, setProduct] = useState('');
   const [grams, setGrams] = useState('');
-  // const [date, setDate] = useState('');
+
   let date = null;
   const idProduct = () => {
     if (products) {
       return products[0]._id;
     }
   };
-  // products[0]._id;
+
   const productId = idProduct();
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -71,16 +71,12 @@ export default function DiaryAddProductForm() {
               value={product}
               onChange={handleChange}
               placeholder="Enter product name"
-              list="proproduct"
+              list="list"
             />
             {products && (
-              <datalist id="product">
+              <datalist id="list">
                 {products.map(product => (
-                  <option
-                    key={product._id}
-                    value={product.title.ru}
-                    // data-id={product._id}
-                  />
+                  <option key={product._id} value={product.title.ru} />
                 ))}
               </datalist>
             )}
@@ -103,32 +99,3 @@ export default function DiaryAddProductForm() {
     </>
   );
 }
-
-// <Formik className={scss.form}>
-//         <Form className={scss.formProduct} onSubmit={handleSubmit}>
-//           <label className={scss.formLabel}>
-// <Field
-//   className={scss.formInput}
-//   type="text"
-//   name="product"
-//   value={product}
-//   onChange={handleChange}
-//   placeholder="Enter product name"
-// />
-//           </label>
-
-//           <label className={scss.formLabel}>
-//             <Field
-//               className={scss.formInput + ' ' + scss.formInput__gram}
-//               type="text"
-//               name="grams"
-//               value={grams}
-//               onChange={handleChange}
-//               placeholder="Grams"
-//             />
-//           </label>
-//           <button className={scss.formButton} type="submit">
-//             <FiPlus className={scss.icon} />
-//           </button>
-//         </Form>
-//       </Formik>
