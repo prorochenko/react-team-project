@@ -23,7 +23,9 @@ export const addDay = createAsyncThunk(
   'day/addDay',
   async (data, { rejectWithValue }) => {
     try {
+      console.log(data);
       const response = await axios.post('/day', data);
+      console.log(response.data);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
