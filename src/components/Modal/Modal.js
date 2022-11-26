@@ -5,13 +5,23 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { IoReturnDownBackSharp } from 'react-icons/io5';
 // import { getProducts } from 'ourAPI';
 import { useDispatch } from 'react-redux';
-import { toggle } from 'redux/store';
+import { toggle } from 'redux/auth/authSlice';
+import {
+  selectdailyRate,
+  selectnotAllowerProducts,
+} from 'redux/auth/selectors';
+import { useSelector } from 'react-redux';
 
 const modalRoot = document.querySelector('#modal-root');
 
 const Modal = () => {
+  const dailyRate = useSelector(selectdailyRate);
+  console.log(dailyRate);
+  const AllowerProducts = useSelector(selectnotAllowerProducts);
+
+  console.log(AllowerProducts);
+
   const dispatch = useDispatch();
-  console.log(false === undefined);
   const onClose = useCallback(() => {
     dispatch(toggle(false));
   }, [dispatch]);
@@ -56,47 +66,16 @@ const Modal = () => {
             Your recommended daily calorie intake is
           </h1>
           <p className={css.number}>
-            2800 <span className={css.smallText}>ккал</span>
+            {dailyRate}
+            <span className={css.smallText}>ккал</span>
           </p>
           <div className={css.box}>
             <h2 className={css.subtitle}>Foods you should not eat</h2>
             <ol className={css.list}>
-              {/* {products.map(product => (
-                <li>{product.name}</li>
-              ))} ++ сделать проверку, что когда данные есть, то тогда рендерить */}
-              <li className={css.item}>Flour products</li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
-              <li className={css.item}></li> <li className={css.item}></li>
-              <li className={css.item}></li>
+              {AllowerProducts.map(product => (
+                <li>{product}</li>
+              ))}
+              {/* ++ сделать проверку, что когда данные есть, то тогда рендерить  */}
             </ol>
           </div>
           <button className={css.btn} type="button" onClick={onClose}>

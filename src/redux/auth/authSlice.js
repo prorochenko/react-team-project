@@ -12,19 +12,23 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 const initialState = {
-  user: { username: null, email: null, id: null },
+  user: { username: null, email: null, id: null, userData: {} },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
   sid: '',
   refreshToken: '',
-  userData: {},
+  showModal: false,
 };
 
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
-
+  reducers: {
+    toggle(state, action) {
+      state.showModal = action.payload;
+    },
+  },
   extraReducers: {
     [register.fulfilled]: (state, action) => {
       console.log(action.payload);
@@ -73,10 +77,12 @@ export const authSlice = createSlice({
 
     [fetchCalculatorInfoNotId.fulfilled](state, action) {
       state.user.userData = action.payload;
+      state.showModal = true;
     },
 
     [fetchCalculatorInfoById.fulfilled](state, action) {
       state.user.userData = action.payload;
+      state.showModal = true;
     },
   },
 });
@@ -90,3 +96,5 @@ export const persistAuthReducer = persistReducer(
   persistConfig,
   authSlice.reducer
 );
+
+export const { toggle } = authSlice.actions;
