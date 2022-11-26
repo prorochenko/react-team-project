@@ -5,5 +5,6 @@ export const selectUser = state => state.auth.user;
 export const selectIsRefreshing = state => state.auth.isRefreshing;
 export const selectRefreshToken = state => state.auth.refreshToken;
 export const selectUserId = state => state.auth.user.id;
-
+export const selectNotAllowedProducts = state =>
+  state.auth.user.userData?.notAllowedProducts;
 export const selectUserData = state => state.user.selectUserData;

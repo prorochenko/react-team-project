@@ -18,7 +18,6 @@ const initialState = {
   isRefreshing: false,
   sid: '',
   refreshToken: '',
-  userData: {},
 };
 
 export const authSlice = createSlice({
