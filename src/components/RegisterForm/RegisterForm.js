@@ -56,9 +56,11 @@ export const RegisterForm = () => {
               <NavLink className={css.btnOrange} to="/login">
                 Login
               </NavLink>
-              <button className={css.btnTransperent} type="submit">
-                Register
-              </button>
+              <NavLink to="/login">
+                <button className={css.btnTransperent} type="submit">
+                  Register
+                </button>
+              </NavLink>
             </div>
           </form>
         </div>
