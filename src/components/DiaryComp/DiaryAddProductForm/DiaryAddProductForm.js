@@ -4,10 +4,7 @@ import { useState } from 'react';
 import { FiPlus } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import { addDay, fetchProduct } from 'redux/products/products-operations';
-import {
-  selectProduct,
-  selectProductId,
-} from 'redux/products/products-selectors';
+import { selectProduct } from 'redux/products/products-selectors';
 import DiaryDateCalendar from '../DiaryDateCalendar/DiaryDateCalendar';
 import moment from 'moment';
 import scss from './DiaryAddProductForm.module.scss';
