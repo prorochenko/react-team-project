@@ -19,16 +19,16 @@ const testPersistConfig = {
   whitelist: ['token'],
 };
 //modal
-export const toggle = createAction('showModal, toggle');
+// export const toggle = createAction('showModal, toggle');
 
-const modalReducer = createReducer(false, {
-  [toggle]: (state, action) => !state,
-});
+// const modalReducer = createReducer(false, {
+//   [toggle]: (state, action) => !state,
+// });
 
 //modal
 export const store = configureStore({
   reducer: {
-    showModal: modalReducer,
+    // showModal: modalReducer,
     test: persistReducer(testPersistConfig, () => {
       return null;
     }),
