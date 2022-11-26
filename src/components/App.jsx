@@ -5,7 +5,7 @@ import { lazy } from 'react';
 import { selectIsRefreshing } from 'redux/auth/selectors';
 import { fetchRefreshToken, fetchCurrentUser } from 'redux/auth/operations';
 import { PrivateRoute } from './PrivateRoute.js';
-import { PublicRoute } from './PublicRoute.js';
+import { PublicRoute, PublicRouteLogin } from './PublicRoute.js';
 import BigLoader from './Loader/BigLoader';
 
 import Modal from '../components/Modal/Modal';
@@ -45,9 +45,9 @@ export const App = () => {
           <Route
             path="login"
             element={
-              <PublicRoute restricted>
+              <PublicRouteLogin restricted>
                 <Login />
-              </PublicRoute>
+              </PublicRouteLogin>
             }
           />
           <Route
