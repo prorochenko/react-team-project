@@ -1,5 +1,15 @@
+
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import {
+  addDay,
+  deleteProductDay,
+  fetchProduct,
+  getInfoByDay,
+} from './products-operations';
+
 import { createSlice } from '@reduxjs/toolkit';
 import { addDay, fetchProduct, getInfoByDay } from './products-operations';
+
 
 const productsInitialState = {
   day: {
@@ -54,6 +64,12 @@ const productsSlice = createSlice({
       .addCase(getInfoByDay.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.error = payload;
+      })
+      .addCase(deleteProductDay.fulfilled, (state, { payload }) => {
+        const index = state.eatenProducts.findIndex(
+          product => product.id === payload.id
+        );
+        state.eatenProducts.splice(index, 1);
       });
   },
 });
