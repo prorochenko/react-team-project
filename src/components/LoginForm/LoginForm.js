@@ -83,64 +83,62 @@ export const LoginForm = () => {
 
   const leaverMin = leaver;
   return (
-    <StyleRoot>
-      <div className={css.box}>
-        <img
-          // className="animate__animated"
-          // style={styles.bounceInLeft}
-          className={css.leaverSmall}
-          src={leaverMin}
-          alt=""
-          width="95px"
-          height="75px"
-        />{' '}
-        <div className={css.container}>
-          <h3 className={css.header}>SIGN IN</h3>
-          <form onSubmit={handleSubmit} autoComplete="off">
-            <div className={css.register}>
-              <label className={css.label}>
-                {emailDirty && emailError && (
-                  <div style={{ color: 'red' }}>{emailError}</div>
-                )}
-                <input
-                  required
-                  value={email}
-                  onChange={e => emailHandler(e)}
-                  onBlur={e => blurHandler(e)}
-                  className={css.input}
-                  type="email"
-                  name="email"
-                  placeholder="Email *"
-                />
-              </label>
-              <label>
-                {passwordDirty && passwordError && (
-                  <div style={{ color: 'red' }}>{passwordError}</div>
-                )}
-                <input
-                  required
-                  value={password}
-                  onChange={e => passwordHandler(e)}
-                  onBlur={e => blurHandler(e)}
-                  className={css.input}
-                  type="password"
-                  name="password"
-                  placeholder="Password *"
-                />
-              </label>
-            </div>
+    <div className={css.box}>
+      <img
+        // className="animate__animated"
+        // style={styles.bounceInLeft}
+        className={css.leaverSmall}
+        src={leaverMin}
+        alt=""
+        width="95px"
+        height="75px"
+      />{' '}
+      <div className={css.container}>
+        <h3 className={css.header}>SIGN IN</h3>
+        <form onSubmit={handleSubmit} autoComplete="off">
+          <div className={css.register}>
+            <label className={css.label}>
+              {emailDirty && emailError && (
+                <div style={{ color: 'red' }}>{emailError}</div>
+              )}
+              <input
+                required
+                value={email}
+                onChange={e => emailHandler(e)}
+                onBlur={e => blurHandler(e)}
+                className={css.input}
+                type="email"
+                name="email"
+                placeholder="Email *"
+              />
+            </label>
+            <label>
+              {passwordDirty && passwordError && (
+                <div style={{ color: 'red' }}>{passwordError}</div>
+              )}
+              <input
+                required
+                value={password}
+                onChange={e => passwordHandler(e)}
+                onBlur={e => blurHandler(e)}
+                className={css.input}
+                type="password"
+                name="password"
+                placeholder="Password *"
+              />
+            </label>
+          </div>
 
-            <div className={css.buttonSection}>
-              <button className={css.btnOrange} type="submit">
-                Login
-              </button>
-              <NavLink className={css.btnTransperent} to="/register">
-                Register
-              </NavLink>
-            </div>
-          </form>
-        </div>
+          <div className={css.buttonSection}>
+            <button className={css.btnOrange} type="submit">
+              Login
+            </button>
+            <NavLink className={css.btnTransperent} to="/register">
+              Register
+            </NavLink>
+          </div>
+        </form>
       </div>
-    </StyleRoot>
+    </div>
   );
 };
