@@ -4,6 +4,8 @@ import { logIn } from 'redux/auth/operations';
 import css from './LoginForm.module.scss';
 import leaver from '../../assets/images/animateMinDesk@2x.png';
 import { useEffect, useState } from 'react';
+// import { bounceInLeft } from 'react-animations';
+// import Radium, { StyleRoot } from 'radium';
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -72,56 +74,73 @@ export const LoginForm = () => {
     form.reset();
   };
 
+  // const styles = {
+  //   bounce: {
+  //     animation: 'x 5s',
+  //     animationName: Radium.keyframes(bounceInLeft, 'bounceInLeft'),
+  //   },
+  // };
+
   const leaverMin = leaver;
   return (
-    <div className={css.box}>
-      {/* <img src={leaverMin} alt="" width="800px" height="800px" /> */}
-      <div className={css.container}>
-        <h3 className={css.header}>SIGN IN</h3>
-        <form onSubmit={handleSubmit} autoComplete="off">
-          <div className={css.register}>
-            <label className={css.label}>
-              {emailDirty && emailError && (
-                <div style={{ color: 'red' }}>{emailError}</div>
-              )}
-              <input
-                required
-                value={email}
-                onChange={e => emailHandler(e)}
-                onBlur={e => blurHandler(e)}
-                className={css.input}
-                type="email"
-                name="email"
-                placeholder="Email *"
-              />
-            </label>
-            <label>
-              {passwordDirty && passwordError && (
-                <div style={{ color: 'red' }}>{passwordError}</div>
-              )}
-              <input
-                required
-                value={password}
-                onChange={e => passwordHandler(e)}
-                onBlur={e => blurHandler(e)}
-                className={css.input}
-                type="password"
-                name="password"
-                placeholder="Password *"
-              />
-            </label>
-          </div>
+    <StyleRoot>
+      <div className={css.box}>
+        <img
+          // className="animate__animated"
+          // style={styles.bounceInLeft}
+          className={css.leaverSmall}
+          src={leaverMin}
+          alt=""
+          width="95px"
+          height="75px"
+        />{' '}
+        <div className={css.container}>
+          <h3 className={css.header}>SIGN IN</h3>
+          <form onSubmit={handleSubmit} autoComplete="off">
+            <div className={css.register}>
+              <label className={css.label}>
+                {emailDirty && emailError && (
+                  <div style={{ color: 'red' }}>{emailError}</div>
+                )}
+                <input
+                  required
+                  value={email}
+                  onChange={e => emailHandler(e)}
+                  onBlur={e => blurHandler(e)}
+                  className={css.input}
+                  type="email"
+                  name="email"
+                  placeholder="Email *"
+                />
+              </label>
+              <label>
+                {passwordDirty && passwordError && (
+                  <div style={{ color: 'red' }}>{passwordError}</div>
+                )}
+                <input
+                  required
+                  value={password}
+                  onChange={e => passwordHandler(e)}
+                  onBlur={e => blurHandler(e)}
+                  className={css.input}
+                  type="password"
+                  name="password"
+                  placeholder="Password *"
+                />
+              </label>
+            </div>
 
-          <div className={css.buttonSection}>
-            <button className={css.btnOrange} type="submit">
-              Login
-            </button>
-            <NavLink className={css.btnTransperent} to="/register">
-              Register
-            </NavLink>
-          </div>
-        </form>
+            <div className={css.buttonSection}>
+              <button className={css.btnOrange} type="submit">
+                Login
+              </button>
+              <NavLink className={css.btnTransperent} to="/register">
+                Register
+              </NavLink>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </StyleRoot>
   );
 };

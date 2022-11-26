@@ -15,15 +15,15 @@ export const RegisterForm = () => {
   const [nameError, setNameError] = useState('Pleas enter name');
   const [emailError, setEmailError] = useState('Pleas enter email');
   const [passwordError, setPasswordError] = useState('Pleas enter password');
-  // const [formValid, setFormValid] = useState(false);
+  const [formValid, setFormValid] = useState(false);
 
-  // useEffect(() => {
-  //   if (emailError || passwordError || setNameError) {
-  //     setFormValid(false);
-  //   } else {
-  //     setFormValid(true);
-  //   }
-  // });
+  useEffect(() => {
+    if (emailError || passwordError || nameError) {
+      setFormValid(false);
+    } else {
+      setFormValid(true);
+    }
+  });
 
   const blurHandler = e => {
     switch (e.target.name) {
@@ -147,11 +147,15 @@ export const RegisterForm = () => {
               <NavLink className={css.btnOrange} to="/login">
                 Login
               </NavLink>
-              {/* <NavLink to="/login"> */}
-              <button className={css.btnTransperent} type="submit">
-                Register
-              </button>
-              {/* </NavLink> */}
+              <NavLink to="/login">
+                <button
+                  disabled={!formValid}
+                  className={css.btnTransperent}
+                  type="submit"
+                >
+                  Register
+                </button>
+              </NavLink>
             </div>
           </form>
         </div>
