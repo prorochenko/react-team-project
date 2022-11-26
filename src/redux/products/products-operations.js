@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { axiosDayInfo } from '../Summary/summaryApi';
+import { axiosDayInfo } from './summaryApi';
 
 import axios from 'axios';
 
