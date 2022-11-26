@@ -1,4 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { axiosDayInfo } from '../Summary/summaryApi';
+
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://slimmom-backend.goit.global';
@@ -25,6 +27,19 @@ export const addDay = createAsyncThunk(
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getInfoByDay = createAsyncThunk(
+  'day/info',
+  async (date, { rejectWithValue }) => {
+    try {
+      const result = await axiosDayInfo(date);
+      return result;
+    } catch (error) {
+      const { data, status } = error.response;
+      return rejectWithValue({ data, status });
     }
   }
 );

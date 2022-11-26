@@ -235,3 +235,53 @@
 
 // }
 // }
+.food {
+  width: 280px;
+}
+
+.title_sidebar {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+  @include mq(tab) {
+    margin-bottom: 35px;
+  }
+}
+
+.menuGroupList {
+  width: 280px;
+  height: 305px;
+  list-style-type: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @include mq(tab) {
+    width: 240px;
+    height: 305px;
+  }
+
+    @include mq(desk) {
+    height: 315px;
+  }
+}
+
+.menuGroupItems {
+  width: 255px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.214;
+  letter-spacing: 0.04em;
+  color: var(--second-text-color);
+
+  @include mq(tab) {
+        margin-bottom: 15px;
+    width: 235px;
+  }
+
+     @include mq(desk) {
+    width: 230px;
+  }
+}
