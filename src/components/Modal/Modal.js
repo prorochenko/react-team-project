@@ -16,10 +16,7 @@ const modalRoot = document.querySelector('#modal-root');
 
 const Modal = () => {
   const dailyRate = useSelector(selectdailyRate);
-  console.log(dailyRate);
   const AllowerProducts = useSelector(selectnotAllowerProducts);
-
-  console.log(AllowerProducts);
 
   const dispatch = useDispatch();
   const onClose = useCallback(() => {
@@ -73,7 +70,7 @@ const Modal = () => {
             <h2 className={css.subtitle}>Foods you should not eat</h2>
             <ol className={css.list}>
               {AllowerProducts.map(product => (
-                <li>{product}</li>
+                <li key={product}>{product}</li>
               ))}
               {/* ++ сделать проверку, что когда данные есть, то тогда рендерить  */}
             </ol>

@@ -20,7 +20,6 @@ const initialState = {
   refreshToken: '',
 
   showModal: false,
-
 };
 
 export const authSlice = createSlice({
@@ -33,7 +32,6 @@ export const authSlice = createSlice({
   },
   extraReducers: {
     [register.fulfilled]: (state, action) => {
-      console.log(action.payload);
       state.user.name = action.payload.username;
       state.user.email = action.payload.email;
       state.token = action.payload.id;

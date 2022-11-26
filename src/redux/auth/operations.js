@@ -117,7 +117,6 @@ export const fetchCalculatorInfoById = createAsyncThunk(
   'auth/daily-rate/id',
   async (credentials, thunkAPI) => {
     try {
-      console.log(credentials);
       const response = await axios.post(`/daily-rate/${credentials.userId}`, {
         height: +credentials.height,
         age: +credentials.age,
