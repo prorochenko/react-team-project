@@ -20,7 +20,7 @@ const Calculator = lazy(() => import('../pages/Calculator'));
 export const App = () => {
   const refresh = useSelector(selectIsRefreshing);
   const dispatch = useDispatch();
-  const showModal = useSelector(state => state.showModal);
+  const showModal = useSelector(state => state.auth.showModal);
 
   useEffect(() => {
     dispatch(fetchRefreshToken());

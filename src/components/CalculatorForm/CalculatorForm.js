@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
-import { toggle } from 'redux/store';
+// import { toggle } from 'redux/auth/authSlice';
 import { selectUserId } from 'redux/auth/selectors';
 import {
   fetchCalculatorInfoNotId,
@@ -30,10 +30,10 @@ const initialValues = {
 };
 
 const CalculatorForm = () => {
-  useEffect(e => {
-    // dispatch(addDay(moment(e).format('yyyy-MM-DD')));
-    dispatch(getInfoByDay({ date: moment(e).format('yyyy-MM-DD') }));
-  }, []);
+  // useEffect(e => {
+  //   dispatch(addDay(moment(e).format('yyyy-MM-DD')));
+  //   dispatch(getInfoByDay({ date: moment(e).format('yyyy-MM-DD') }));
+  // }, []);
 
   const userId = useSelector(selectUserId);
 
@@ -44,7 +44,6 @@ const CalculatorForm = () => {
     } else {
       dispatch(fetchCalculatorInfoById({ ...values, userId }));
     }
-    dispatch(toggle(true));
     resetForm();
   };
 
