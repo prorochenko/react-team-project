@@ -1,4 +1,4 @@
-import { createSelector } from '@reduxjs/toolkit';
+// import { createSelector } from '@reduxjs/toolkit';
 
 export const selectProduct = state => state.products.product;
 export const selectProductId = state => state.products.product._id;
