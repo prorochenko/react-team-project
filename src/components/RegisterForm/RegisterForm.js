@@ -23,7 +23,7 @@ export const RegisterForm = () => {
     } else {
       setFormValid(true);
     }
-  });
+  }, [emailError, passwordError, nameError]);
 
   const blurHandler = e => {
     switch (e.target.name) {
