@@ -9,14 +9,17 @@ import { toggle } from 'redux/auth/authSlice';
 import {
   selectdailyRate,
   selectNotAllowedProducts,
+  selectIsLoggedIn,
 } from 'redux/auth/selectors';
 import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 const modalRoot = document.querySelector('#modal-root');
 
 const Modal = () => {
   const dailyRate = useSelector(selectdailyRate);
   const AllowerProducts = useSelector(selectNotAllowedProducts);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const dispatch = useDispatch();
   const onClose = useCallback(() => {
@@ -47,6 +50,12 @@ const Modal = () => {
     };
   }, [escKeyDown]);
 
+  const button = (
+    <button className={css.btn} type="button" onClick={onClose}>
+      Start losing weight
+    </button>
+  );
+
   return createPortal(
     <div className={css.Modal__backdrop} onClick={handleBackdropClick}>
       <div className={css.Modal__content}>
@@ -75,9 +84,12 @@ const Modal = () => {
               {/* ++ сделать проверку, что когда данные есть, то тогда рендерить  */}
             </ol>
           </div>
-          <button className={css.btn} type="button" onClick={onClose}>
-            Start losing weight
-          </button>
+
+          {isLoggedIn ? (
+            <NavLink to="/diary">{button} </NavLink>
+          ) : (
+            <NavLink to="/register">{button} </NavLink>
+          )}
         </div>
       </div>
     </div>,
