@@ -3,8 +3,61 @@ import { NavLink } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
 import css from './LoginForm.module.scss';
 import leaver from '../../assets/images/animateMinDesk@2x.png';
+import { useEffect, useState } from 'react';
 
 export const LoginForm = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [emailDirty, setEmailDirty] = useState(false);
+  const [passwordDirty, setPasswordDirty] = useState(false);
+  const [emailError, setEmailError] = useState('Pleas enter email');
+  const [passwordError, setPasswordError] = useState('Pleas enter password');
+  // const [formValid, setFormValid] = useState(false);
+
+  // useEffect(() => {
+  //   if (emailError || passwordError) {
+  //     setFormValid(false);
+  //   } else {
+  //     setFormValid(true);
+  //   }
+  // });
+
+  const blurHandler = e => {
+    switch (e.target.name) {
+      case 'email':
+        setEmailDirty(true);
+        break;
+      case 'password':
+        setPasswordDirty(true);
+        break;
+      default:
+        return;
+    }
+  };
+
+  const emailHandler = e => {
+    setEmail(e.target.value);
+    const re =
+      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (!re.test(String(e.target.value).toLowerCase())) {
+      setEmailError('Pleas enter valid email');
+    } else {
+      setEmailError('');
+    }
+  };
+
+  const passwordHandler = e => {
+    setPassword(e.target.value);
+    if (e.target.value.length < 8) {
+      setPasswordError('Password must be at least 8 characters');
+      if (!e.target.value) {
+        setPasswordError('Pleas enter password');
+      }
+    } else {
+      setPasswordError('');
+    }
+  };
+
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -28,7 +81,14 @@ export const LoginForm = () => {
         <form onSubmit={handleSubmit} autoComplete="off">
           <div className={css.register}>
             <label className={css.label}>
+              {emailDirty && emailError && (
+                <div style={{ color: 'red' }}>{emailError}</div>
+              )}
               <input
+                required
+                value={email}
+                onChange={e => emailHandler(e)}
+                onBlur={e => blurHandler(e)}
                 className={css.input}
                 type="email"
                 name="email"
@@ -36,7 +96,14 @@ export const LoginForm = () => {
               />
             </label>
             <label>
+              {passwordDirty && passwordError && (
+                <div style={{ color: 'red' }}>{passwordError}</div>
+              )}
               <input
+                required
+                value={password}
+                onChange={e => passwordHandler(e)}
+                onBlur={e => blurHandler(e)}
                 className={css.input}
                 type="password"
                 name="password"
