@@ -18,7 +18,9 @@ const initialState = {
   isRefreshing: false,
   sid: '',
   refreshToken: '',
+
   showModal: false,
+
 };
 
 export const authSlice = createSlice({

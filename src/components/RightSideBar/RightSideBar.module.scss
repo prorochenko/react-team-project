@@ -61,13 +61,12 @@
   }
 
   @include mq(desk) {
-    // height: 100vh;
-    height: 900px;
+    height: 1000px;
     margin: -292px 0;
     padding-top: 292px;
     z-index: -1;
     background-image: url(../../assets/images/leavesBarDesk@1x.png);
-    background-position: calc(100% + 69px) calc(100% - 37px);
+    background-position: calc(100% + 69px) calc(100% - 135px);
     background-size: 740px 842px;
   }
 }
@@ -83,6 +82,7 @@
     width: 768px;
     display: flex;
     gap: 79px;
+   
   }
 
   @include mq(desk) {
@@ -93,6 +93,11 @@
 }
 
 .summarySection {
+  margin-bottom: 40px;
+  @include mq(tab) {
+      margin-bottom: 0px;
+  }
+
   @include mq(desk) {
     width: 288px;
     margin-left: auto;
@@ -106,6 +111,7 @@
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.04em;
+  // text-align: center;
   color: #212121;
 
   @include mq(tab) {
@@ -121,9 +127,6 @@
   color: #9b9faa;
 }
 
-/* .table:last-child{
-            padding-bottom: 0px;
-        } */
 
 .tableCellLeft {
   max-width: 160px;
@@ -160,7 +163,6 @@
 }
 
 .headerTwo {
-  /* margin-top: 25px; */
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
@@ -180,70 +182,19 @@
   margin-top: 20px;
 }
 
-@media screen and (min-width: 767.98px) {
-  // .container {
-  //     width: 768px;
-  //     display: flex;
-  //     gap: 79px;
-  // }
 
-  // .box {
-  //     padding-top: 80px;
-  //     padding-bottom: 80px;
-  // }
-
-  // .header {
-  //     margin-bottom: 37px;
-  // }
-
-  // .headerTwo {
-  //     margin-bottom: 37px;
-  // }
-
-  // .dietSection {
-  //     margin-top: 0;
-
-  // }
-
-  // .tableCellLeft {
-  //     max-width: 144px;
-
-  // }
-
-  // .tableCellRight {
-  //     max-width: 144px;
-  // }
-}
-
-// @media screen and (min-width: 1279.98px) {
-// .container {
-//     width: 517px;
-//     display: flex;
-//     flex-direction: column;
-// }
-
-// .summarySection {
-//     width: 288px;
-//     margin-left: auto;
-//     margin-right: auto;
-// }
-
-// .dietSection {
-//     width: 288px;
-//     margin-left: auto;
-//     margin-right: auto;
-
-// }
-// }
 .food {
   width: 280px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .title_sidebar {
   margin-bottom: 20px;
   font-weight: 700;
-  font-size: 14px;
-  line-height: 1.21;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
   letter-spacing: 0.04em;
   @include mq(tab) {
     margin-bottom: 35px;
@@ -251,11 +202,10 @@
 }
 
 .menuGroupList {
-  width: 280px;
   height: 305px;
-  list-style-type: none;
   overflow-y: auto;
   overflow-x: hidden;
+  padding-left: 0;
 
   @include mq(tab) {
     width: 240px;
@@ -274,7 +224,7 @@
   font-size: 12px;
   line-height: 1.214;
   letter-spacing: 0.04em;
-  color: var(--second-text-color);
+  color: #9b9faa;
 
   @include mq(tab) {
         margin-bottom: 15px;
@@ -284,4 +234,12 @@
      @include mq(desk) {
     width: 230px;
   }
+}
+
+.text_sidebar_food {
+  font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+  color: #9b9faa;
 }
