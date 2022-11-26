@@ -9,8 +9,9 @@ const productsInitialState = {
   },
   userDayInfo: {
     id: null,
-    eatenProduct: null,
+    eatenProducts: [],
     date: null,
+    day: { eatenProducts: [] },
     daySummary: {
       date: null,
       kcalLeft: null,
@@ -35,7 +36,7 @@ const productsSlice = createSlice({
         state.product = payload;
       })
       .addCase(addDay.fulfilled, (state, { payload }) => {
-        state.day = payload;
+        state.userDayInfo = payload;
       })
       .addCase(getInfoByDay.pending, state => {
         state.isLoading = true;
@@ -43,7 +44,9 @@ const productsSlice = createSlice({
       })
       .addCase(getInfoByDay.fulfilled, (state, { payload }) => {
         if (payload.daySummary) {
-          state.userDayInfo = payload;
+          state.userDayInfo.day.eatenProducts = payload.eatenProducts;
+          state.userDayInfo.id = payload.id;
+          state.userDayInfo.daySummary.date = payload.date;
         } else {
           state.userDayInfo.daySummary = payload;
         }
