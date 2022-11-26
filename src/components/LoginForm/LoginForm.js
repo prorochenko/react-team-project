@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
 import css from './LoginForm.module.scss';
+import leaver from '../../assets/images/animateMinDesk@2x.png';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -18,8 +19,10 @@ export const LoginForm = () => {
     form.reset();
   };
 
+  const leaverMin = leaver;
   return (
     <div className={css.box}>
+      {/* <img src={leaverMin} alt="" width="800px" height="800px" /> */}
       <div className={css.container}>
         <h3 className={css.header}>SIGN IN</h3>
         <form onSubmit={handleSubmit} autoComplete="off">
