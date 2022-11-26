@@ -23,6 +23,7 @@ export default function DiaryDateCalendar({ getCalendarDate }) {
 
   const handleChange = e => {
     setValue(e);
+
     // dispatch(addDay(moment(e).format('yyyy-MM-DD')));
     dispatch(getInfoByDay({ date: moment(e).format('yyyy-MM-DD') }));
   };
