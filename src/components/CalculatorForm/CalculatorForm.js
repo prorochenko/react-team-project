@@ -2,17 +2,13 @@ import scss from './CalculatorForm.module.scss';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
-import React, { useEffect } from 'react';
-import { toggle } from 'redux/store';
+import React from 'react';
+// import { toggle } from 'redux/auth/authSlice';
 import { selectUserId } from 'redux/auth/selectors';
 import {
   fetchCalculatorInfoNotId,
   fetchCalculatorInfoById,
 } from 'redux/auth/operations';
-import moment from 'moment';
-import { getInfoByDay } from '../../redux/products/products-operations';
-
-// import { RightSideBar } from '../RightSideBar/RightSideBar';
 
 const schema = yup.object().shape({
   height: yup.number().min(100).max(250).required(),
@@ -30,11 +26,6 @@ const initialValues = {
 };
 
 const CalculatorForm = () => {
-  useEffect(e => {
-    // dispatch(addDay(moment(e).format('yyyy-MM-DD')));
-    dispatch(getInfoByDay({ date: moment(e).format('yyyy-MM-DD') }));
-  }, []);
-
   const userId = useSelector(selectUserId);
 
   const dispatch = useDispatch();
@@ -44,12 +35,10 @@ const CalculatorForm = () => {
     } else {
       dispatch(fetchCalculatorInfoById({ ...values, userId }));
     }
-    dispatch(toggle(true));
     resetForm();
   };
 
   return (
-    // <div className={scss.box}>
     <div className={scss.calculatorFormContainer}>
       <h2 className={scss.calculatorFormTitle}>
         Calculate your daily calorie intake right now
@@ -162,8 +151,6 @@ const CalculatorForm = () => {
         </Form>
       </Formik>
     </div>
-    //   <RightSideBar />
-    // </div>
   );
 };
 export default CalculatorForm;

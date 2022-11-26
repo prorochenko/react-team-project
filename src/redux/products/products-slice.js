@@ -1,4 +1,4 @@
-import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { addDay, fetchProduct, getInfoByDay } from './products-operations';
 
 const productsInitialState = {
