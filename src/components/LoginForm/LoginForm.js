@@ -93,6 +93,7 @@ export const LoginForm = () => {
               )}
               <input
                 required
+                autoComplete="name"
                 value={email}
                 onChange={e => emailHandler(e)}
                 onBlur={e => blurHandler(e)}
@@ -108,6 +109,7 @@ export const LoginForm = () => {
               )}
               <input
                 required
+                autoComplete="email"
                 value={password}
                 onChange={e => passwordHandler(e)}
                 onBlur={e => blurHandler(e)}

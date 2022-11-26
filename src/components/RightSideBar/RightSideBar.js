@@ -57,7 +57,7 @@ export const RightSideBar = () => {
                     <td className={css.tableCellRight}>
                       {summary.percentsOfDailyRate
                         ? Math.floor(summary.percentsOfDailyRate)
-                        : '000'}
+                        : '000'}{' '}
                       kcal
                     </td>
                   </tr>
