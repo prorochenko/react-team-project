@@ -1,23 +1,36 @@
 import css from './RightSideBar.module.scss';
 import { useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-
 import {
   selectIsLoggedIn,
   selectNotAllowedProducts,
 } from 'redux/auth/selectors';
-
 import { selectSummary } from 'redux/products/products-selectors';
 
 export const RightSideBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const summary = useSelector(selectSummary);
   const notAllowedProducts = useSelector(selectNotAllowedProducts);
-  // console.log(summary);
 
   return (
     <>
-      {!isLoggedIn && <div className={css.pictures}></div>}
+      {!isLoggedIn && (
+        <>
+          <div className={css.pictures}>
+            <div id="parallax" className={css.background}>
+              <div id="parallaxbigLeaf" className={css.backgroundbigLeaf}></div>
+              <div id="parallaxTop" className={css.backgroundTop}></div>
+              <div id="parallaxRight" className={css.backgroundRight}></div>
+              <div id="parallaxBottom" className={css.backgroundBottom}></div>
+
+              <div
+                id="parallaxStrawberry"
+                className={css.backgroundStrawberry}
+              ></div>
+            </div>
+          </div>
+        </>
+      )}
       {isLoggedIn && (
         <div className={css.box}>
           <div className={css.container}>
