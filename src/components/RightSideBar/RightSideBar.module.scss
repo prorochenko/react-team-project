@@ -1,16 +1,20 @@
 @import 'assets/styles/index.scss';
 
-
 .pictures {
   @include mq(tab) {
     padding-left: 32px;
     padding-right: 32px;
     padding-bottom: 570px;
-        height: 910px;
-            margin-top: -500px;
+    height: 910px;
+    margin-top: -500px;
     z-index: -1;
-    background-image: url(../../assets/images/bananaDeskTab@1x.png), url(../../assets/images/strawberryBigDeskTab@1x.png), url(../../assets/images//vectorDeskTab@1x.png), url(../../assets//images/leavesTab@1x.png);
-    background-position: calc(100% - 0px) calc(100% + 104px), calc(100% + 61px) calc(100% - 231px), calc(100% + 32px) calc(100% + 185px), calc(100% - 0px) calc(100% - 265px);
+    background-image: url(../../assets/images/bananaDeskTab@1x.png),
+      url(../../assets/images/strawberryBigDeskTab@1x.png),
+      url(../../assets/images//vectorDeskTab@1x.png),
+      url(../../assets//images/leavesTab@1x.png);
+    background-position: calc(100% - 0px) calc(100% + 104px),
+      calc(100% + 61px) calc(100% - 231px), calc(100% + 32px) calc(100% + 185px),
+      calc(100% - 0px) calc(100% - 265px);
     background-size: 492px 431px, 355px 348px, 553px 750px, 740px 750px;
     background-repeat: no-repeat;
 
@@ -27,21 +31,39 @@
     padding-right: 16px;
     margin-left: -590px;
     margin-top: -366px;
-        height: 600px;
+    height: 600px;
     padding-top: 400px;
     padding-bottom: 595px;
-    background-image: url(../../assets//images/leavesDesk@1x.png), url(../../assets/images/bananaDeskTab@1x.png), url(../../assets/images/strawberryBigDeskTab@1x.png), url(../../assets/images//vectorDeskTab@1x.png);
-    background-position: calc(100% - 150px) calc(100% - 100px), calc(100% - 0px) calc(0% + 90px), calc(100% + 0px) calc(100% - 0px), calc(100% + 0px) calc(100% - 0px);
-    background-size: 980px 820px, 492px 431px, 355px 348px, 602px 816px;
+    background-image: url(../../assets/images/bananaDeskTab@1x.png),
+      url(../../assets/images//vectorDeskTab@1x.png);
+    background-position: calc(100% - 0px) calc(0% + 90px),
+      calc(100% + 0px) calc(100% - 0px);
+    background-size: 492px 431px, 602px 816px;
 
     @include mq(retina) {
-        background-image: url(../../assets//images/leavesDesk@2x.png), url(../../assets/images/bananaDeskTab@2x.png),
-          url(../../assets/images/strawberryBigDeskTab@2x.png),
-          url(../../assets/images//vectorDeskTab@2x.png);
-      }
+      background-image: url(../../assets/images/bananaDeskTab@2x.png),
+        url(../../assets/images//vectorDeskTab@2x.png);
+    }
   }
 }
-
+.background {
+  position: relative;
+  bottom: 32px;
+  left: 16px;
+  background-repeat: no-repeat;
+  @include mq(tab) {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 570px;
+    height: 910px;
+    margin-top: -500px;
+    z-index: -1;
+    // background-image: url(../../assets/images/strawberryBigDeskTab@1x.png),
+    //   url(../../assets//images/leavesTab@1x.png);
+    background-position: calc(100% + 61px) calc(100% - 231px),
+      calc(100% - 0px) calc(100% - 265px);
+    background-size: 355px 348px, 740px 750px;
+    background-repeat: no-repeat;
 
     @include mq(retina) {
       // background-image: url(../../assets/images/strawberryBigDeskTab@2x.png),
@@ -184,11 +206,11 @@
     background-image: url(../../assets/images/leavesBarTab@1x.png);
     background-position: calc(100% - 0px) calc(100% + 25px);
     background-size: 428px 602px;
-        background-repeat: no-repeat;
+    background-repeat: no-repeat;
 
-        @include mq(retina) {
-          background-image: url(../../assets/images/leavesBarTab@2x.png);
-        }
+    @include mq(retina) {
+      background-image: url(../../assets/images/leavesBarTab@2x.png);
+    }
   }
 
   @include mq(desk) {
@@ -213,7 +235,6 @@
     width: 768px;
     display: flex;
     gap: 79px;
-   
   }
 
   @include mq(desk) {
@@ -226,7 +247,7 @@
 .summarySection {
   margin-bottom: 40px;
   @include mq(tab) {
-      margin-bottom: 0px;
+    margin-bottom: 0px;
   }
 
   @include mq(desk) {
@@ -257,7 +278,6 @@
   letter-spacing: 0.04em;
   color: #9b9faa;
 }
-
 
 .tableCellLeft {
   max-width: 160px;
@@ -313,7 +333,6 @@
   margin-top: 20px;
 }
 
-
 .food {
   z-index: 100000;
   width: 280px;
@@ -324,9 +343,9 @@
 .title_sidebar {
   margin-bottom: 20px;
   font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    letter-spacing: 0.04em;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
   letter-spacing: 0.04em;
   @include mq(tab) {
     margin-bottom: 35px;
@@ -344,7 +363,7 @@
     height: 305px;
   }
 
-    @include mq(desk) {
+  @include mq(desk) {
     height: 315px;
   }
 }
@@ -359,19 +378,19 @@
   color: #9b9faa;
 
   @include mq(tab) {
-        margin-bottom: 15px;
+    margin-bottom: 15px;
     width: 235px;
   }
 
-     @include mq(desk) {
+  @include mq(desk) {
     width: 230px;
   }
 }
 
 .text_sidebar_food {
   font-weight: 700;
-    font-size: 14px;
-    line-height: 17px;
-    letter-spacing: 0.04em;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
   color: #9b9faa;
 }

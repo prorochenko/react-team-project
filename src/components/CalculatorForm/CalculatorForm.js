@@ -38,7 +38,6 @@ const CalculatorForm = () => {
     resetForm();
   };
 
-
   (function () {
     document.addEventListener('mousemove', parallax);
     const elem = document.querySelector('#parallax');
@@ -61,22 +60,26 @@ const CalculatorForm = () => {
       elemBigLeaf.style.transform =
         'translateX(' + _mouseX / -50 + '%) translateY(' + _mouseY / -50 + '%)';
       elemTop.style.transform =
-        'translateX(' + _mouseX / -400 + '%) translateY(' + _mouseY / 50 + '%)';
+        'translateX(' +
+        _mouseX / -400 +
+        '%) translateY(' +
+        _mouseY / -1950 +
+        '%)';
       elemRight.style.transform =
         'translateX(' +
-        _mouseX / -300 +
+        _mouseX / -600 +
         '%) translateY(' +
-        _mouseY / 300 +
+        _mouseY / 500 +
         '%)';
       elemBottom.style.transform =
         'translateX(' +
-        _mouseX / -70 +
+        _mouseX / -500 +
         '%) translateY(' +
         _mouseY / -300 +
         '%)';
       elemStrawberry.style.transform =
         'translateX(' +
-        _mouseX / -90 +
+        _mouseX / -300 +
         '%) translateY(' +
         _mouseY / -500 +
         '%)';

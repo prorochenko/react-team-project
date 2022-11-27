@@ -2,7 +2,6 @@ import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
 import css from './LoginForm.module.scss';
-import leaver from '../../assets/images/animateMinDesk@2x.png';
 import { useState } from 'react';
 // import { bounceInLeft } from 'react-animations';
 // import Radium, { StyleRoot } from 'radium';
@@ -15,7 +14,6 @@ export const LoginForm = () => {
   const [emailError, setEmailError] = useState('Pleas enter email');
   const [passwordError, setPasswordError] = useState('Pleas enter password');
 
-
   (function () {
     document.addEventListener('mousemove', parallax);
     const elem = document.querySelector('#parallax');
@@ -24,7 +22,7 @@ export const LoginForm = () => {
     const elemRight = document.querySelector('#parallaxRight');
     const elemBottom = document.querySelector('#parallaxBottom ');
     const elemStrawberry = document.querySelector('#parallaxStrawberry  ');
-    //animation
+
     function parallax(e) {
       let _mouseX = e.clientX;
       let _mouseY = e.clientY;
@@ -38,22 +36,26 @@ export const LoginForm = () => {
       elemBigLeaf.style.transform =
         'translateX(' + _mouseX / -50 + '%) translateY(' + _mouseY / -50 + '%)';
       elemTop.style.transform =
-        'translateX(' + _mouseX / -400 + '%) translateY(' + _mouseY / 50 + '%)';
+        'translateX(' +
+        _mouseX / -400 +
+        '%) translateY(' +
+        _mouseY / -1950 +
+        '%)';
       elemRight.style.transform =
         'translateX(' +
-        _mouseX / -300 +
+        _mouseX / -600 +
         '%) translateY(' +
-        _mouseY / 300 +
+        _mouseY / 500 +
         '%)';
       elemBottom.style.transform =
         'translateX(' +
-        _mouseX / -70 +
+        _mouseX / -500 +
         '%) translateY(' +
         _mouseY / -300 +
         '%)';
       elemStrawberry.style.transform =
         'translateX(' +
-        _mouseX / -90 +
+        _mouseX / -300 +
         '%) translateY(' +
         _mouseY / -500 +
         '%)';
@@ -117,17 +119,17 @@ export const LoginForm = () => {
   //   },
   // };
 
-  const leaverMin = leaver;
+  // const leaverMin = leaver;
   return (
     <div className={css.box}>
-      <img
+      {/* <img
         // style={styles.bounceInLeft}
         className={css.leaverSmall}
         src={leaverMin}
         alt=""
         width="95px"
         height="75px"
-      />{' '}
+      />{' '} */}
       <div className={css.container}>
         <h3 className={css.header}>SIGN IN</h3>
         <form onSubmit={handleSubmit} autoComplete="off">
