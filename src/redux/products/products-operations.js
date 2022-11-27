@@ -2,8 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { axiosDayInfo } from './summaryApi';
 
 import axios from 'axios';
-import Notiflix, { Notify } from 'notiflix';
-import { Confirm } from 'notiflix/build/notiflix-confirm-aio';
+import { Notify } from 'notiflix';
 
 axios.defaults.baseURL = 'https://slimmom-backend.goit.global';
 
@@ -16,6 +15,7 @@ export const fetchProduct = createAsyncThunk(
       });
       // console.log(response.data);
       return response.data;
+      // throw new Error('Sid NULL');
     } catch (error) {
       // Confirm.show(
       //   'Предупреждение',
@@ -27,6 +27,7 @@ export const fetchProduct = createAsyncThunk(
       Notify.warning(
         `Возможно ${product} запрещен к употреблению или не найден`
       );
+      console.log(error.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -36,9 +37,7 @@ export const addDay = createAsyncThunk(
   'day/addDay',
   async (data, { rejectWithValue }) => {
     try {
-      // console.log(data);
       const response = await axios.post('/day', data);
-      // console.log(response.data);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
