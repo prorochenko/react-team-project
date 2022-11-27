@@ -1,5 +1,7 @@
 @import 'assets/styles/index.scss';
 
+
+
 .container {
   width: 320px;
   padding-left: 20px;
@@ -19,7 +21,7 @@
 
   @include mq(desk) {
     padding-top: 80px;
-    padding-bottom: 180px;
+    padding-bottom: 180px; 
   }
 }
 
@@ -110,26 +112,4 @@
     margin-left: 0;
     margin-right: 0;
   }
-}
-
-.imgBox {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.imgBox img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  object-fit: contain;
-}
-
-@media (max-width: 800px) {
 }
