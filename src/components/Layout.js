@@ -9,7 +9,7 @@ import LoadingComponent from './Loader/Loader.jsx';
 const Layout = () => {
   return (
     // <Suspense fallback={<LoadingComponent />}>
-    <div className={css.temp}>
+    <div>
       {/* <Suspense fallback={<LoadingComponent />}> */}
       <AppBar />
       {/* </Suspense> */}

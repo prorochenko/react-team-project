@@ -1,4 +1,3 @@
-// import { Field, Form, Formik } from 'formik';
 import { useState } from 'react';
 
 import { FiPlus } from 'react-icons/fi';
@@ -12,8 +11,6 @@ import scss from './DiaryAddProductForm.module.scss';
 export default function DiaryAddProductForm() {
   const dispatch = useDispatch();
   const products = useSelector(selectProduct);
-
-  // console.log(notAllowedProducts);
 
   const [product, setProduct] = useState('');
   const [grams, setGrams] = useState('');
@@ -46,15 +43,8 @@ export default function DiaryAddProductForm() {
     e.preventDefault();
 
     const form = e.target;
-
     const weight = +form.elements.grams.value;
-    // if (weight === 0) {
-    //   alert('Введите сумму грамм');
-    //   return;
-    // }
-    // console.log(productId);
-    // console.log(weight);
-    // console.log(date);
+
     dispatch(addDay({ date, productId, weight }));
     setProduct('');
     setGrams('');

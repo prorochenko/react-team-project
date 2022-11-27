@@ -1,5 +1,4 @@
 import css from './Modal.module.scss';
-import { createPortal } from 'react-dom';
 import { useEffect, useCallback } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { IoReturnDownBackSharp } from 'react-icons/io5';
@@ -13,8 +12,7 @@ import {
 } from 'redux/auth/selectors';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-
-const modalRoot = document.querySelector('#modal-root');
+import ModalUniversal from './ModaUniversal';
 
 const Modal = () => {
   const dailyRate = useSelector(selectdailyRate);
@@ -56,9 +54,9 @@ const Modal = () => {
     </button>
   );
 
-  return createPortal(
-    <div className={css.Modal__backdrop} onClick={handleBackdropClick}>
-      <div className={css.Modal__content}>
+  return (
+    <ModalUniversal>
+      <div onClick={handleBackdropClick}>
         <div className={css.topbox}>
           <button className={css.btnCloseMob} onClick={onClose}>
             <IoReturnDownBackSharp />
@@ -84,7 +82,6 @@ const Modal = () => {
               {/* ++ сделать проверку, что когда данные есть, то тогда рендерить  */}
             </ol>
           </div>
-
           {isLoggedIn ? (
             <NavLink to="/diary">{button} </NavLink>
           ) : (
@@ -92,8 +89,7 @@ const Modal = () => {
           )}
         </div>
       </div>
-    </div>,
-    modalRoot
+    </ModalUniversal>
   );
 };
 
