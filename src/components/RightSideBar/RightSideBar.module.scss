@@ -28,10 +28,8 @@
   }
 
   @include mq(desk) {
-    // padding-right: 16px;
     margin-left: -593px;
     margin-top: -366px;
-    // height: 600px;
     padding-bottom: 923px;
     background-image: url(../../assets/images/bananaDeskTab@1x.png),
       url(../../assets/images//vectorDeskTab@1x.png);
@@ -58,13 +56,6 @@
     height: 910px;
     margin-top: -500px;
     z-index: -1;
-  }
-
-  @include mq(desk) {
-    // margin-left: -590px;
-    // margin-top: -366px;
-    // padding-top: 400px;
-    // padding-bottom: 595px;
   }
 }
 
@@ -94,7 +85,6 @@
     background-repeat: no-repeat;
     padding-top: 80px;
     padding-bottom: 90px;
-
     bottom: 791px;
     left: 40px;
     background-image: url(../../assets/images/leavesDeskTop@2x.png);
@@ -111,7 +101,6 @@
     position: relative;
     background-repeat: no-repeat;
     padding-top: 260px;
-
     bottom: 860px;
     margin-right: 300px;
     width: 700px;
@@ -131,7 +120,6 @@
     padding-top: 450px;
     left: 250px;
     bottom: 770px;
-
     width: 700px;
     background-image: url(../../assets/images/leavesDeskBottom@2x.png);
     background-position: calc(100% - 150px) calc(100% - 100px);
@@ -148,13 +136,9 @@
     display: flex;
     background-repeat: no-repeat;
     padding-top: 450px;
-    // padding-left: 200px;
-    // margin-left: -200px;
     left: 690px;
     bottom: 1150px;
     align-items: center;
-    // margin-top: 190px;
-    // margin-right: 270px;
     margin-left: 0;
     width: 500px;
     background-image: url(../../assets/images/strawberryBigDeskTab@2x.png);
@@ -165,7 +149,6 @@
     }
   }
 }
-//sdsd
 
 .box {
   background-color: hsl(220, 11%, 95%);
