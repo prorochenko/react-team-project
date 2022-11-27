@@ -1,6 +1,7 @@
 @import 'assets/styles/index.scss';
 
 .pictures {
+  overflow: hidden;
   @include mq(tab) {
     padding-left: 32px;
     padding-right: 32px;
@@ -27,13 +28,11 @@
   }
 
   @include mq(desk) {
-    padding-left: 16px;
-    padding-right: 16px;
-    margin-left: -590px;
+    // padding-right: 16px;
+    margin-left: -593px;
     margin-top: -366px;
-    height: 600px;
-    padding-top: 400px;
-    padding-bottom: 595px;
+    // height: 600px;
+    padding-bottom: 923px;
     background-image: url(../../assets/images/bananaDeskTab@1x.png),
       url(../../assets/images//vectorDeskTab@1x.png);
     background-position: calc(100% - 0px) calc(0% + 90px),
@@ -46,6 +45,7 @@
     }
   }
 }
+
 .background {
   @include mq(tab) {
     position: relative;
@@ -58,35 +58,13 @@
     height: 910px;
     margin-top: -500px;
     z-index: -1;
-    // background-image: url(../../assets/images/strawberryBigDeskTab@1x.png),
-    //   url(../../assets//images/leavesTab@1x.png);
-    background-position: calc(100% + 61px) calc(100% - 231px),
-      calc(100% - 0px) calc(100% - 265px);
-    background-size: 355px 348px, 740px 750px;
-    background-repeat: no-repeat;
-
-    @include mq(retina) {
-      // background-image: url(../../assets/images/strawberryBigDeskTab@2x.png),
-      //   url(../../assets//images/leavesTab@2x.png);
-    }
   }
 
   @include mq(desk) {
-    padding-left: 16px;
-    padding-right: 16px;
-    margin-left: -590px;
-    margin-top: -366px;
-    height: 600px;
-    padding-top: 400px;
-    padding-bottom: 595px;
-    // background-image: url(../../assets//images/leavesDesk@1x.png);
-
-    background-position: calc(100% - 150px) calc(100% - 100px);
-    background-size: 980px 820px;
-
-    @include mq(retina) {
-      // background-image: url(../../assets//images/leavesDesk@2x.png);
-    }
+    // margin-left: -590px;
+    // margin-top: -366px;
+    // padding-top: 400px;
+    // padding-bottom: 595px;
   }
 }
 
@@ -97,7 +75,8 @@
     padding-top: 150px;
     padding-bottom: 292px;
     left: 970px;
-    // transform: rotate(12deg);
+    margin-left: -570px;
+    margin-top: 950px;
     bottom: 150px;
     width: 500px;
     background-image: url(../../assets/images/leavesDeskBigLeaf@2x.png);
@@ -108,17 +87,16 @@
     }
   }
 }
-//animation
+
 .backgroundTop {
   @include mq(desk) {
     position: relative;
     background-repeat: no-repeat;
-    padding-top: 150px;
+    padding-top: 80px;
     padding-bottom: 90px;
-    padding-left: 110px;
-    margin-left: 220px;
-    bottom: 850px;
-    left: 10px;
+
+    bottom: 791px;
+    left: 40px;
     background-image: url(../../assets/images/leavesDeskTop@2x.png);
     background-position: calc(100% - 150px) calc(100% - 100px);
     background-size: 200px;
@@ -127,21 +105,19 @@
     }
   }
 }
+
 .backgroundRight {
   @include mq(desk) {
     position: relative;
     background-repeat: no-repeat;
     padding-top: 260px;
-    padding-bottom: -490px;
-    // padding-left: 200px;
-    margin-left: -470px;
-    left: 970px;
-    bottom: 890px;
+
+    bottom: 860px;
     margin-right: 300px;
     width: 700px;
     background-image: url(../../assets/images/leavesDeskRight@2x.png);
     background-position: calc(100% - 150px) calc(100% - 100px);
-    background-size: 500px;
+    background-size: 350px;
     @include mq(retina) {
       background-image: url(../../assets/images/leavesDeskRight@2x.png);
     }
@@ -153,18 +129,13 @@
     position: relative;
     background-repeat: no-repeat;
     padding-top: 450px;
-    // padding-left: 200px;
-    // margin-left: -200px;
-    left: 970px;
-    bottom: 890px;
+    left: 250px;
+    bottom: 770px;
 
-    margin-top: 200px;
-    margin-right: 290px;
-    margin-left: -60px;
     width: 700px;
     background-image: url(../../assets/images/leavesDeskBottom@2x.png);
     background-position: calc(100% - 150px) calc(100% - 100px);
-    background-size: 500px;
+    background-size: 320px;
     @include mq(retina) {
       background-image: url(../../assets/images/leavesDeskBottom@2x.png);
     }
@@ -174,17 +145,18 @@
 .backgroundStrawberry {
   @include mq(desk) {
     position: relative;
+    display: flex;
     background-repeat: no-repeat;
-    padding-top: 650px;
+    padding-top: 450px;
     // padding-left: 200px;
     // margin-left: -200px;
-    left: 970px;
-    bottom: 1700px;
-
-    margin-top: 170px;
-    margin-right: 270px;
-    margin-left: 130px;
-    width: 700px;
+    left: 690px;
+    bottom: 1150px;
+    align-items: center;
+    // margin-top: 190px;
+    // margin-right: 270px;
+    margin-left: 0;
+    width: 500px;
     background-image: url(../../assets/images/strawberryBigDeskTab@2x.png);
     background-position: calc(100% - 150px) calc(100% - 100px);
     background-size: 360px;
