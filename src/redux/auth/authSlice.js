@@ -12,7 +12,12 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 const initialState = {
-  user: { username: null, email: null, id: null, userData: {} },
+  user: {
+    username: null,
+    email: null,
+    id: null,
+    userData: { notAllowedProducts: [] },
+  },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
@@ -56,6 +61,7 @@ export const authSlice = createSlice({
         state.isLoggedIn = false;
         state.sid = '';
         state.refreshToken = '';
+        state.isRegister = false;
       })
 
       .addCase(fetchRefreshToken.pending, state => {

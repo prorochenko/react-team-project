@@ -13,6 +13,8 @@ export default function DiaryAddProductForm() {
   const dispatch = useDispatch();
   const products = useSelector(selectProduct);
 
+  // console.log(notAllowedProducts);
+
   const [product, setProduct] = useState('');
   const [grams, setGrams] = useState('');
 
@@ -27,7 +29,10 @@ export default function DiaryAddProductForm() {
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
       case 'product':
-        dispatch(fetchProduct(value));
+        setTimeout(() => {
+          dispatch(fetchProduct(value));
+        }, 1000);
+
         return setProduct(value);
 
       case 'grams':

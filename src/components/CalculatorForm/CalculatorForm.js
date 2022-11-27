@@ -38,6 +38,7 @@ const CalculatorForm = () => {
     resetForm();
   };
 
+
   (function () {
     document.addEventListener('mousemove', parallax);
     const elem = document.querySelector('#parallax');
@@ -82,6 +83,7 @@ const CalculatorForm = () => {
     }
   })();
   //animation
+
   return (
     <div className={scss.calculatorFormContainer}>
       <h2 className={scss.calculatorFormTitle}>

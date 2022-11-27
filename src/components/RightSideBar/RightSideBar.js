@@ -1,22 +1,22 @@
 import css from './RightSideBar.module.scss';
 import { useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
+
 import {
   selectIsLoggedIn,
   selectNotAllowedProducts,
 } from 'redux/auth/selectors';
+
 import { selectSummary } from 'redux/products/products-selectors';
 
 export const RightSideBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const summary = useSelector(selectSummary);
   const notAllowedProducts = useSelector(selectNotAllowedProducts);
-  //animation
+
   return (
     <>
-      {!isLoggedIn && (
-        <>
-          <div className={css.pictures}>
+      {!isLoggedIn &&     <div className={css.pictures}>
             <div id="parallax" className={css.background}>
               <div id="parallaxbigLeaf" className={css.backgroundbigLeaf}></div>
               <div id="parallaxTop" className={css.backgroundTop}></div>
@@ -28,9 +28,7 @@ export const RightSideBar = () => {
                 className={css.backgroundStrawberry}
               ></div>
             </div>
-          </div>
-        </>
-      )}
+          </div>}
       {isLoggedIn && (
         <div className={css.box}>
           <div className={css.container}>
@@ -70,7 +68,7 @@ export const RightSideBar = () => {
                     <td className={css.tableCellRight}>
                       {summary.percentsOfDailyRate
                         ? Math.floor(summary.percentsOfDailyRate)
-                        : '000'}
+                        : '000'}{' '}
                       kcal
                     </td>
                   </tr>

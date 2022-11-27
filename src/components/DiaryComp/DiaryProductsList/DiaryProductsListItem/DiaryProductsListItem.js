@@ -9,8 +9,10 @@ export const DiaryProductsListItem = ({ product }) => {
   const dispatch = useDispatch();
   const dayId = useSelector(selectDayInfo);
   const eatenProductId = product.id;
-  const handleDelete = () =>
+  const handleDelete = () => {
+    console.log(dayId, eatenProductId);
     dispatch(deleteProductDay({ dayId, eatenProductId }));
+  };
 
   return (
     <li className={scss.productsListItem}>

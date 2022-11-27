@@ -25,6 +25,7 @@ export const RegisterForm = () => {
     }
   }, [emailError, passwordError, nameError]);
 
+
   //animation
   (function () {
     document.addEventListener('mousemove', parallax);
@@ -69,6 +70,7 @@ export const RegisterForm = () => {
         '%)';
     }
   })();
+
 
   const blurHandler = e => {
     switch (e.target.name) {
@@ -149,6 +151,7 @@ export const RegisterForm = () => {
                   <div style={{ color: 'red' }}>{nameError}</div>
                 )}
                 <input
+                  autoComplete="name"
                   required
                   value={name}
                   onChange={e => nameHandler(e)}
@@ -164,6 +167,7 @@ export const RegisterForm = () => {
                   <div style={{ color: 'red' }}>{emailError}</div>
                 )}
                 <input
+                  autoComplete="email"
                   required
                   value={email}
                   onChange={e => emailHandler(e)}
@@ -179,6 +183,7 @@ export const RegisterForm = () => {
                   <div style={{ color: 'red' }}>{passwordError}</div>
                 )}
                 <input
+                  autoComplete="password"
                   required
                   value={password}
                   onChange={e => passwordHandler(e)}
