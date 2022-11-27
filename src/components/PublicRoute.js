@@ -20,7 +20,9 @@ export const PublicRoute = ({ children, restricted = false }) => {
 
 export const PublicRouteLogin = ({ children, restricted = false }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  // const refresh = useSelector(selectIsRefreshing);
+  const paramsHuman = useSelector(
+    state => state.auth.user.userData.notAllowedProducts
+  );
 
   // useEffect(() => {
   //   if (!isLoggedIn) {
@@ -28,9 +30,16 @@ export const PublicRouteLogin = ({ children, restricted = false }) => {
   //   }
   // }, [isLoggedIn]);
 
-  const shouldRedirect = isLoggedIn && restricted;
+  const shouldRedirect = isLoggedIn && paramsHuman.length > 0;
 
-  return shouldRedirect ? <Navigate to="/diary" /> : children;
+  // return shouldRedirect ? <Navigate to="/diary" /> : children;
+  if (shouldRedirect) {
+    return <Navigate to="/diary" />;
+  } else if (isLoggedIn && paramsHuman.length === 0) {
+    return <Navigate to="/calculator" />;
+  } else {
+    return children;
+  }
 };
 
 export const PublicRouteRegister = ({ children, restricted = false }) => {

@@ -61,7 +61,12 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 export const fetchCurrentUser = createAsyncThunk(
   'auth/user',
   async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedSid = state.auth.sid;
     try {
+      if (persistedSid === '') {
+        throw new Error('Sid NULL');
+      }
       const response = await axios.get('/user');
       return response.data;
     } catch (error) {
