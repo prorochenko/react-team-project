@@ -5,7 +5,7 @@ const modalRoot = document.querySelector('#modal-root');
 
 const ModalUniversal = prop => {
   return createPortal(
-    <div className={css.Modal__backdrop}>
+    <div className={css.Modal__backdrop} onClick={prop.onClick}>
       <div className={css.Modal__content}>{prop.children}</div>
     </div>,
     modalRoot

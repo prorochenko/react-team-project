@@ -14,21 +14,78 @@ export const RightSideBar = () => {
   const summary = useSelector(selectSummary);
   const notAllowedProducts = useSelector(selectNotAllowedProducts);
 
+  if (!isLoggedIn) {
+    setTimeout(() => {
+      document.addEventListener('mousemove', parallax);
+      const elem = document.querySelector('#parallax');
+      const elemBigLeaf = document.querySelector('#parallaxbigLeaf');
+      const elemTop = document.querySelector('#parallaxTop');
+      const elemRight = document.querySelector('#parallaxRight');
+      const elemBottom = document.querySelector('#parallaxBottom ');
+      const elemStrawberry = document.querySelector('#parallaxStrawberry  ');
+
+      function parallax(e) {
+        let _mouseX = e.clientX;
+        let _mouseY = e.clientY;
+
+        elem.style.transform =
+          'translateX(' +
+          _mouseX / -300 +
+          '%) translateY(' +
+          _mouseY / -300 +
+          '%)';
+
+        elemBigLeaf.style.transform =
+          'translateX(' +
+          _mouseX / -50 +
+          '%) translateY(' +
+          _mouseY / -50 +
+          '%)';
+        elemTop.style.transform =
+          'translateX(' +
+          _mouseX / -700 +
+          '%) translateY(' +
+          _mouseY / -1950 +
+          '%)';
+        elemRight.style.transform =
+          'translateX(' +
+          _mouseX / -150 +
+          '%) translateY(' +
+          _mouseY / 500 +
+          '%)';
+        elemBottom.style.transform =
+          'translateX(' +
+          _mouseX / -700 +
+          '%) translateY(' +
+          _mouseY / -300 +
+          '%)';
+        elemStrawberry.style.transform =
+          'translateX(' +
+          _mouseX / -150 +
+          '%) translateY(' +
+          _mouseY / -500 +
+          '%)';
+      }
+    }, 0);
+  }
+
   return (
     <>
-      {!isLoggedIn &&     <div className={css.pictures}>
-            <div id="parallax" className={css.background}>
-              <div id="parallaxbigLeaf" className={css.backgroundbigLeaf}></div>
-              <div id="parallaxTop" className={css.backgroundTop}></div>
-              <div id="parallaxRight" className={css.backgroundRight}></div>
-              <div id="parallaxBottom" className={css.backgroundBottom}></div>
+      {!isLoggedIn && (
+        <div className={css.pictures}>
+          <div id="parallax" className={css.background}>
+            <div id="parallaxbigLeaf" className={css.backgroundbigLeaf}></div>
+            <div id="parallaxTop" className={css.backgroundTop}></div>
+            <div id="parallaxRight" className={css.backgroundRight}></div>
+            <div id="parallaxBottom" className={css.backgroundBottom}></div>
 
-              <div
-                id="parallaxStrawberry"
-                className={css.backgroundStrawberry}
-              ></div>
-            </div>
-          </div>}
+            <div
+              id="parallaxStrawberry"
+              className={css.backgroundStrawberry}
+            ></div>
+          </div>
+        </div>
+      )}
       {isLoggedIn && (
         <div className={css.box}>
           <div className={css.container}>

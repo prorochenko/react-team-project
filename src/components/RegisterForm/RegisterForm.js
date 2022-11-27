@@ -1,8 +1,9 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { register } from 'redux/auth/operations';
 import { useEffect, useState } from 'react';
 import css from './RegisterForm.module.scss';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ export const RegisterForm = () => {
   const [emailError, setEmailError] = useState('Pleas enter email');
   const [passwordError, setPasswordError] = useState('Pleas enter password');
   const [formValid, setFormValid] = useState(false);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
     if (emailError || passwordError || nameError) {
@@ -26,53 +28,60 @@ export const RegisterForm = () => {
   }, [emailError, passwordError, nameError]);
 
   //animation
-  (function () {
-    document.addEventListener('mousemove', parallax);
-    const elem = document.querySelector('#parallax');
-    const elemBigLeaf = document.querySelector('#parallaxbigLeaf');
-    const elemTop = document.querySelector('#parallaxTop');
-    const elemRight = document.querySelector('#parallaxRight');
-    const elemBottom = document.querySelector('#parallaxBottom ');
-    const elemStrawberry = document.querySelector('#parallaxStrawberry  ');
 
-    function parallax(e) {
-      let _mouseX = e.clientX;
-      let _mouseY = e.clientY;
-      elem.style.transform =
-        'translateX(' +
-        _mouseX / -300 +
-        '%) translateY(' +
-        _mouseY / -300 +
-        '%)';
+  // if (!isLoggedIn) {
+  //   (function () {
+  //     document.addEventListener('mousemove', parallax);
+  //     const elem = document.querySelector('#parallax');
+  //     const elemBigLeaf = document.querySelector('#parallaxbigLeaf');
+  //     const elemTop = document.querySelector('#parallaxTop');
+  //     const elemRight = document.querySelector('#parallaxRight');
+  //     const elemBottom = document.querySelector('#parallaxBottom ');
+  //     const elemStrawberry = document.querySelector('#parallaxStrawberry  ');
 
-      elemBigLeaf.style.transform =
-        'translateX(' + _mouseX / -50 + '%) translateY(' + _mouseY / -50 + '%)';
-      elemTop.style.transform =
-        'translateX(' +
-        _mouseX / -400 +
-        '%) translateY(' +
-        _mouseY / -1900 +
-        '%)';
-      elemRight.style.transform =
-        'translateX(' +
-        _mouseX / -600 +
-        '%) translateY(' +
-        _mouseY / 500 +
-        '%)';
-      elemBottom.style.transform =
-        'translateX(' +
-        _mouseX / -500 +
-        '%) translateY(' +
-        _mouseY / -300 +
-        '%)';
-      elemStrawberry.style.transform =
-        'translateX(' +
-        _mouseX / -300 +
-        '%) translateY(' +
-        _mouseY / -500 +
-        '%)';
-    }
-  })();
+  //     function parallax(e) {
+  //       let _mouseX = e.clientX;
+  //       let _mouseY = e.clientY;
+  //       elem.style.transform =
+  //         'translateX(' +
+  //         _mouseX / -300 +
+  //         '%) translateY(' +
+  //         _mouseY / -300 +
+  //         '%)';
+
+  //       elemBigLeaf.style.transform =
+  //         'translateX(' +
+  //         _mouseX / -50 +
+  //         '%) translateY(' +
+  //         _mouseY / -50 +
+  //         '%)';
+  //       elemTop.style.transform =
+  //         'translateX(' +
+  //         _mouseX / -700 +
+  //         '%) translateY(' +
+  //         _mouseY / -1950 +
+  //         '%)';
+  //       elemRight.style.transform =
+  //         'translateX(' +
+  //         _mouseX / -150 +
+  //         '%) translateY(' +
+  //         _mouseY / 500 +
+  //         '%)';
+  //       elemBottom.style.transform =
+  //         'translateX(' +
+  //         _mouseX / -700 +
+  //         '%) translateY(' +
+  //         _mouseY / -300 +
+  //         '%)';
+  //       elemStrawberry.style.transform =
+  //         'translateX(' +
+  //         _mouseX / -150 +
+  //         '%) translateY(' +
+  //         _mouseY / -500 +
+  //         '%)';
+  //     }
+  //   })();
+  // }
 
   const blurHandler = e => {
     switch (e.target.name) {
