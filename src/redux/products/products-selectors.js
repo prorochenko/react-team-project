@@ -1,4 +1,4 @@
-export const selectProduct = state => state.products.product;
+export const selectProduct = state => state.products?.product;
 export const selectProductId = state => state.products.product._id;
 
 export const selectAddDay = state => state.products.day;
