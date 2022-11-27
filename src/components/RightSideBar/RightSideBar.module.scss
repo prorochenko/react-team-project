@@ -47,11 +47,11 @@
   }
 }
 .background {
-  position: relative;
-  bottom: 32px;
-  left: 16px;
-  background-repeat: no-repeat;
   @include mq(tab) {
+    position: relative;
+    bottom: 32px;
+    left: 16px;
+    background-repeat: no-repeat;
     padding-left: 32px;
     padding-right: 32px;
     padding-bottom: 570px;
@@ -91,15 +91,15 @@
 }
 
 .backgroundbigLeaf {
-  position: relative;
-  background-repeat: no-repeat;
-  padding-top: 150px;
-  padding-bottom: 292px;
-  left: 970px;
-  // transform: rotate(12deg);
-  bottom: 150px;
-  width: 500px;
   @include mq(desk) {
+    position: relative;
+    background-repeat: no-repeat;
+    padding-top: 150px;
+    padding-bottom: 292px;
+    left: 970px;
+    // transform: rotate(12deg);
+    bottom: 150px;
+    width: 500px;
     background-image: url(../../assets/images/leavesDeskBigLeaf@2x.png);
     background-position: calc(100% - 150px) calc(100% - 100px);
     background-size: 258px 295px;
@@ -110,15 +110,15 @@
 }
 //animation
 .backgroundTop {
-  position: relative;
-  background-repeat: no-repeat;
-  padding-top: 150px;
-  padding-bottom: 90px;
-  padding-left: 110px;
-  margin-left: 220px;
-  bottom: 850px;
-  left: 10px;
   @include mq(desk) {
+    position: relative;
+    background-repeat: no-repeat;
+    padding-top: 150px;
+    padding-bottom: 90px;
+    padding-left: 110px;
+    margin-left: 220px;
+    bottom: 850px;
+    left: 10px;
     background-image: url(../../assets/images/leavesDeskTop@2x.png);
     background-position: calc(100% - 150px) calc(100% - 100px);
     background-size: 200px;
@@ -128,17 +128,17 @@
   }
 }
 .backgroundRight {
-  position: relative;
-  background-repeat: no-repeat;
-  padding-top: 260px;
-  padding-bottom: -490px;
-  // padding-left: 200px;
-  margin-left: -470px;
-  left: 970px;
-  bottom: 890px;
-  margin-right: 300px;
-  width: 700px;
   @include mq(desk) {
+    position: relative;
+    background-repeat: no-repeat;
+    padding-top: 260px;
+    padding-bottom: -490px;
+    // padding-left: 200px;
+    margin-left: -470px;
+    left: 970px;
+    bottom: 890px;
+    margin-right: 300px;
+    width: 700px;
     background-image: url(../../assets/images/leavesDeskRight@2x.png);
     background-position: calc(100% - 150px) calc(100% - 100px);
     background-size: 500px;
@@ -149,19 +149,19 @@
 }
 
 .backgroundBottom {
-  position: relative;
-  background-repeat: no-repeat;
-  padding-top: 450px;
-  // padding-left: 200px;
-  // margin-left: -200px;
-  left: 970px;
-  bottom: 890px;
-
-  margin-top: 200px;
-  margin-right: 290px;
-  margin-left: -60px;
-  width: 700px;
   @include mq(desk) {
+    position: relative;
+    background-repeat: no-repeat;
+    padding-top: 450px;
+    // padding-left: 200px;
+    // margin-left: -200px;
+    left: 970px;
+    bottom: 890px;
+
+    margin-top: 200px;
+    margin-right: 290px;
+    margin-left: -60px;
+    width: 700px;
     background-image: url(../../assets/images/leavesDeskBottom@2x.png);
     background-position: calc(100% - 150px) calc(100% - 100px);
     background-size: 500px;
@@ -172,19 +172,19 @@
 }
 
 .backgroundStrawberry {
-  position: relative;
-  background-repeat: no-repeat;
-  padding-top: 650px;
-  // padding-left: 200px;
-  // margin-left: -200px;
-  left: 970px;
-  bottom: 1700px;
-
-  margin-top: 170px;
-  margin-right: 270px;
-  margin-left: 130px;
-  width: 700px;
   @include mq(desk) {
+    position: relative;
+    background-repeat: no-repeat;
+    padding-top: 650px;
+    // padding-left: 200px;
+    // margin-left: -200px;
+    left: 970px;
+    bottom: 1700px;
+
+    margin-top: 170px;
+    margin-right: 270px;
+    margin-left: 130px;
+    width: 700px;
     background-image: url(../../assets/images/strawberryBigDeskTab@2x.png);
     background-position: calc(100% - 150px) calc(100% - 100px);
     background-size: 360px;
