@@ -11,7 +11,7 @@ export const RightSideBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const summary = useSelector(selectSummary);
   const notAllowedProducts = useSelector(selectNotAllowedProducts);
-
+  //animation
   return (
     <>
       {!isLoggedIn && (

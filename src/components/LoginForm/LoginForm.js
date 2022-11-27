@@ -46,7 +46,7 @@ export const LoginForm = () => {
     const elemRight = document.querySelector('#parallaxRight');
     const elemBottom = document.querySelector('#parallaxBottom ');
     const elemStrawberry = document.querySelector('#parallaxStrawberry  ');
-
+    //animation
     function parallax(e) {
       let _mouseX = e.clientX;
       let _mouseY = e.clientY;

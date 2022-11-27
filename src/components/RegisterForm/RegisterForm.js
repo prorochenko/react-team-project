@@ -25,6 +25,7 @@ export const RegisterForm = () => {
     }
   }, [emailError, passwordError, nameError]);
 
+  //animation
   (function () {
     document.addEventListener('mousemove', parallax);
     const elem = document.querySelector('#parallax');
