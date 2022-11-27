@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
 import css from './LoginForm.module.scss';
+import leaver from '../../assets/images/animateMinDesk@2x.png';
 import { useState } from 'react';
 // import { bounceInLeft } from 'react-animations';
 // import Radium, { StyleRoot } from 'radium';
@@ -13,74 +14,7 @@ export const LoginForm = () => {
   const [passwordDirty, setPasswordDirty] = useState(false);
   const [emailError, setEmailError] = useState('Pleas enter email');
   const [passwordError, setPasswordError] = useState('Pleas enter password');
-  // (function () {
-  //   // Add event listener
-  //   document.addEventListener('mousemove', parallax);
-  //   const elem = document.querySelector('#parallax');
-  //   // Magic happens here
-  //   function parallax(e) {
-  //     let _w = window.innerWidth / 2;
-  //     let _h = window.innerHeight / 2;
-  //     let _mouseX = e.clientX;
-  //     let _mouseY = e.clientY;
-  //     let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${
-  //       50 - (_mouseY - _h) * 0.01
-  //     }%`;
-  //     let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${
-  //       50 - (_mouseY - _h) * 0.02
-  //     }%`;
-  //     let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${
-  //       50 - (_mouseY - _h) * 0.06
-  //     }%`;
-  //     let x = `${_depth3}, ${_depth2}, ${_depth1}`;
-  //     // console.log(x);
-  //     elem.style.backgroundPosition = x;
-  //   }
-  // })();
 
-  (function () {
-    document.addEventListener('mousemove', parallax);
-    const elem = document.querySelector('#parallax');
-    const elemBigLeaf = document.querySelector('#parallaxbigLeaf');
-    const elemTop = document.querySelector('#parallaxTop');
-    const elemRight = document.querySelector('#parallaxRight');
-    const elemBottom = document.querySelector('#parallaxBottom ');
-    const elemStrawberry = document.querySelector('#parallaxStrawberry  ');
-
-    function parallax(e) {
-      let _mouseX = e.clientX;
-      let _mouseY = e.clientY;
-      elem.style.transform =
-        'translateX(' +
-        _mouseX / -300 +
-        '%) translateY(' +
-        _mouseY / -300 +
-        '%)';
-
-      elemBigLeaf.style.transform =
-        'translateX(' + _mouseX / -50 + '%) translateY(' + _mouseY / -50 + '%)';
-      elemTop.style.transform =
-        'translateX(' + _mouseX / -400 + '%) translateY(' + _mouseY / 50 + '%)';
-      elemRight.style.transform =
-        'translateX(' +
-        _mouseX / -300 +
-        '%) translateY(' +
-        _mouseY / 300 +
-        '%)';
-      elemBottom.style.transform =
-        'translateX(' +
-        _mouseX / -70 +
-        '%) translateY(' +
-        _mouseY / -300 +
-        '%)';
-      elemStrawberry.style.transform =
-        'translateX(' +
-        _mouseX / -90 +
-        '%) translateY(' +
-        _mouseY / -500 +
-        '%)';
-    }
-  })();
   const blurHandler = e => {
     switch (e.target.name) {
       case 'email':
@@ -138,8 +72,17 @@ export const LoginForm = () => {
   //   },
   // };
 
+  const leaverMin = leaver;
   return (
     <div className={css.box}>
+      <img
+        // style={styles.bounceInLeft}
+        className={css.leaverSmall}
+        src={leaverMin}
+        alt=""
+        width="95px"
+        height="75px"
+      />{' '}
       <div className={css.container}>
         <h3 className={css.header}>SIGN IN</h3>
         <form onSubmit={handleSubmit} autoComplete="off">
@@ -150,6 +93,7 @@ export const LoginForm = () => {
               )}
               <input
                 required
+                autoComplete="name"
                 value={email}
                 onChange={e => emailHandler(e)}
                 onBlur={e => blurHandler(e)}
@@ -165,6 +109,7 @@ export const LoginForm = () => {
               )}
               <input
                 required
+                autoComplete="email"
                 value={password}
                 onChange={e => passwordHandler(e)}
                 onBlur={e => blurHandler(e)}

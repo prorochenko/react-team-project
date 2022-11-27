@@ -65,10 +65,11 @@ const productsSlice = createSlice({
         state.error = payload;
       })
       .addCase(deleteProductDay.fulfilled, (state, { payload }) => {
-        const index = state.eatenProducts.findIndex(
-          product => product.id === payload.id
+        const index = state.userDayInfo.day.eatenProducts.findIndex(
+          product => product.id === payload.eatenProductId
         );
-        state.eatenProducts.splice(index, 1);
+        state.userDayInfo.day.eatenProducts.splice(index, 1);
+        state.userDayInfo.daySummary = payload.result.newDaySummary;
       });
   },
 });

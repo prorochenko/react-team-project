@@ -7,4 +7,5 @@ export const selectSummary = state => state.products.userDayInfo.daySummary;
 export const selectEaten = state =>
   state.products.userDayInfo.day?.eatenProducts;
 
-export const selectDayInfo = state => state.products.userDayInfo.daySummary.id;
+// export const selectDayInfo = state => state.products.userDayInfo.daySummary.id;
+export const selectDayInfo = state => state.products.userDayInfo.day.id;
