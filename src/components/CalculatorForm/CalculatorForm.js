@@ -81,7 +81,7 @@ const CalculatorForm = () => {
         '%)';
     }
   })();
-
+  //animation
   return (
     <div className={scss.calculatorFormContainer}>
       <h2 className={scss.calculatorFormTitle}>
