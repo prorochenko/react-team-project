@@ -25,6 +25,50 @@ export const RegisterForm = () => {
     }
   }, [emailError, passwordError, nameError]);
 
+  (function () {
+    document.addEventListener('mousemove', parallax);
+    const elem = document.querySelector('#parallax');
+    const elemBigLeaf = document.querySelector('#parallaxbigLeaf');
+    const elemTop = document.querySelector('#parallaxTop');
+    const elemRight = document.querySelector('#parallaxRight');
+    const elemBottom = document.querySelector('#parallaxBottom ');
+    const elemStrawberry = document.querySelector('#parallaxStrawberry  ');
+
+    function parallax(e) {
+      let _mouseX = e.clientX;
+      let _mouseY = e.clientY;
+      elem.style.transform =
+        'translateX(' +
+        _mouseX / -300 +
+        '%) translateY(' +
+        _mouseY / -300 +
+        '%)';
+
+      elemBigLeaf.style.transform =
+        'translateX(' + _mouseX / -50 + '%) translateY(' + _mouseY / -50 + '%)';
+      elemTop.style.transform =
+        'translateX(' + _mouseX / -400 + '%) translateY(' + _mouseY / 50 + '%)';
+      elemRight.style.transform =
+        'translateX(' +
+        _mouseX / -300 +
+        '%) translateY(' +
+        _mouseY / 300 +
+        '%)';
+      elemBottom.style.transform =
+        'translateX(' +
+        _mouseX / -70 +
+        '%) translateY(' +
+        _mouseY / -300 +
+        '%)';
+      elemStrawberry.style.transform =
+        'translateX(' +
+        _mouseX / -90 +
+        '%) translateY(' +
+        _mouseY / -500 +
+        '%)';
+    }
+  })();
+
   const blurHandler = e => {
     switch (e.target.name) {
       case 'name':
