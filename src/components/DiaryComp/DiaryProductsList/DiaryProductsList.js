@@ -7,12 +7,15 @@ export default function DiaryProductsList() {
   const products = useSelector(selectEaten);
   return (
     <div className={scss.box}>
-      <ul className={scss.productsList}>
-        {products.length > 0 &&
-          products.map(product => (
+      {products.length > 0 ? (
+        <ul className={scss.productsList}>
+          {products.map(product => (
             <DiaryProductsListItem product={product} key={product.id} />
           ))}
-      </ul>
+        </ul>
+      ) : (
+        <div>No product selected</div>
+      )}
     </div>
   );
 }

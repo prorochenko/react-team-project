@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import {
   addDay,
   deleteProductDay,
@@ -30,6 +30,8 @@ const productsInitialState = {
   error: null,
 };
 
+const actions = [fetchProduct, addDay, getInfoByDay, deleteProductDay];
+
 const productsSlice = createSlice({
   name: 'products',
   initialState: productsInitialState,
@@ -48,8 +50,6 @@ const productsSlice = createSlice({
       })
       .addCase(getInfoByDay.pending, state => {
         state.userDayInfo.day.eatenProducts = [];
-        state.isLoading = true;
-        state.error = null;
       })
       .addCase(getInfoByDay.fulfilled, (state, { payload }) => {
         if (payload.daySummary) {
@@ -60,17 +60,31 @@ const productsSlice = createSlice({
           state.userDayInfo.daySummary = payload;
         }
       })
-      .addCase(getInfoByDay.rejected, (state, { payload }) => {
-        state.isLoading = false;
-        state.error = payload;
-      })
       .addCase(deleteProductDay.fulfilled, (state, { payload }) => {
         const index = state.userDayInfo.day.eatenProducts.findIndex(
           product => product.id === payload.eatenProductId
         );
         state.userDayInfo.day.eatenProducts.splice(index, 1);
         state.userDayInfo.daySummary = payload.result.newDaySummary;
-      });
+      })
+      .addMatcher(
+        isAnyOf(...actions.map(action => action.fulfilled)),
+        state => {
+          state.isLoading = false;
+          state.error = null;
+        }
+      )
+      .addMatcher(isAnyOf(...actions.map(action => action.pending)), state => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addMatcher(
+        isAnyOf(...actions.map(action => action.rejected)),
+        (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+        }
+      );
   },
 });
 
