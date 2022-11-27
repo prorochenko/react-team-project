@@ -28,7 +28,6 @@
     "react-scripts": "5.0.1",
     "react-side-effect": "^2.1.2",
     "react-spinners": "^0.13.6",
-    "react-spring": "^9.5.5",
     "redux-persist": "^6.0.0",
     "sass": "^1.56.1",
     "styled-components": "^5.3.6",
