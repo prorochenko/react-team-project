@@ -29,9 +29,9 @@ export default function DiaryAddProductForm() {
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
       case 'product':
-        setTimeout(() => {
+        if (value.length > 2) {
           dispatch(fetchProduct(value));
-        }, 1000);
+        }
 
         return setProduct(value);
 
@@ -48,6 +48,10 @@ export default function DiaryAddProductForm() {
     const form = e.target;
 
     const weight = +form.elements.grams.value;
+    // if (weight === 0) {
+    //   alert('Введите сумму грамм');
+    //   return;
+    // }
     // console.log(productId);
     // console.log(weight);
     // console.log(date);
@@ -74,8 +78,10 @@ export default function DiaryAddProductForm() {
               onChange={handleChange}
               placeholder="Enter product name"
               list="list"
+              autoComplete="off"
+              required
             />
-            {products && (
+            {products?.length > 0 && (
               <datalist id="list">
                 {products.map(product => (
                   <option key={product._id} value={product.title.ru} />
@@ -87,10 +93,13 @@ export default function DiaryAddProductForm() {
             <input
               className={scss.formInput + ' ' + scss.formInput__gram}
               type="text"
+              pattern="[0-9]+"
               name="grams"
               value={grams}
               onChange={handleChange}
               placeholder="Grams"
+              required
+              autoComplete="off"
             />
           </label>
           <button className={scss.formButton} type="submit">
