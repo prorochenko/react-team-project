@@ -61,6 +61,7 @@ export const authSlice = createSlice({
         state.isLoggedIn = false;
         state.sid = '';
         state.refreshToken = '';
+        state.isRegister = false;
       })
 
       .addCase(fetchRefreshToken.pending, state => {
