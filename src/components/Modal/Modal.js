@@ -63,7 +63,7 @@ const Modal = () => {
           </button>
         </div> */}
         <button className={css.btnClose} onClick={onClose}>
-          <AiOutlineClose />
+          <AiOutlineClose size={24} />
         </button>
         <div className={css.container}>
           <h1 className={css.title}>
