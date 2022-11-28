@@ -15,9 +15,12 @@
 
   align-items: center;
   padding-left: 20px;
-
+  border-left: 2px solid #e0e0e0;
   @include mq(not-desk) {
     display: none;
+  }
+  @include mq(desk) {
+    border-left: 2px solid #e0e0e0;
   }
 }
 
