@@ -55,13 +55,13 @@ const Modal = () => {
   );
 
   return (
-    <ModalUniversal onClick={handleBackdropClick}>
+    <ModalUniversal onClick={handleBackdropClick} onClose={onClose}>
       <div>
-        <div className={css.topbox}>
-          <button className={css.btnCloseMob} onClick={onClose}>
+        {/* <div className={css.topbox}>
+          <button className={css.btnCloseMob} >
             <IoReturnDownBackSharp />
           </button>
-        </div>
+        </div> */}
         <button className={css.btnClose} onClick={onClose}>
           <AiOutlineClose />
         </button>
