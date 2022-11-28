@@ -36,12 +36,15 @@ export const authSlice = createSlice({
   reducers: {
     toggle(state, action) {
       state.showModal = action.payload;
-      // state.showModalMenu = action.payload;
+    },
+    toggleBurger(state, action) {
+      state.showModalMenu = action.payload;
     },
     createParamsRegisterUser(state, action) {
       state.paramsRegisterUser = action.payload;
     },
   },
+
   extraReducers: builder => {
     builder
       .addCase(register.fulfilled, (state, action) => {
@@ -113,4 +116,5 @@ export const persistAuthReducer = persistReducer(
   authSlice.reducer
 );
 
-export const { toggle, createParamsRegisterUser } = authSlice.actions;
+export const { toggle, createParamsRegisterUser, toggleBurger } =
+  authSlice.actions;
