@@ -17,11 +17,11 @@ const NavItems = styled(NavLink)`
 const AuthNav = () => {
   return (
     <div className={css.nav}>
-      <NavItems className={css.text} to="/register">
-        Registration
-      </NavItems>
       <NavItems className={css.text} to="/login">
         SIGN IN
+      </NavItems>
+      <NavItems className={css.text} to="/register">
+        Registration
       </NavItems>
     </div>
   );

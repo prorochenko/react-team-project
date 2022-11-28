@@ -1,12 +1,14 @@
 import { NavLink } from 'react-router-dom';
 // import { useAuth } from 'hooks/useAuth';
-// import css from './Navigation.module.css';
+import css from './Navigation.module.scss';
 import { useSelector } from 'react-redux';
 
-import logo from '../../assets/images/logologoDesk1x.png';
-// import logoSmall2x from '../../assets/images/logologoMob@2x.png';
-// import logoSmall1x from '../../assets/images/logologoMob@1x.png';
+import logoDesk1x from '../../assets/images/logologoDesk1x.png';
+import logoDesk2x from '../../assets/images/logologoDesk2x.png';
+import logoSmall2x from '../../assets/images/logologoMob@2x.png';
+import logoSmall1x from '../../assets/images/logologoMob@1x.png';
 import logoTab1x from '../../assets/images/logologoTab@1x.png';
+import logoTab2x from '../../assets/images/logologoTab@2x.png';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 export const Navigation = () => {
@@ -14,51 +16,64 @@ export const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <nav>
+    <nav className={css.logo}>
       <NavLink to="/">
         <picture>
-          {/* <source
-            srcSet="
-                  ./images/hero/img_desk_001@1x.webp 1x,
-                  ./images/hero/img_desk_001@2x.webp 2x
-                "
-            type="image/webp"
-            media="(min-width: 1280px)"
-          />
-          <source
-            srcSet="
-                  ./images/hero/img_desk_001@1x.png 1x,
-                  ./images/hero/img_desk_001@2x.png 2x
-                "
-            type="image/png"
-            media="(min-width: 1280px)"
-          />*/}
+          {isLoggedIn && (
+            <source
+              srcSet={logoSmall1x}
+              type="image/png"
+              media="(max-width: 767px)"
+            />
+          )}
+          {!isLoggedIn && (
+            <source
+              srcSet={logoSmall2x}
+              type="image/png"
+              media="(max-width: 767px)"
+            />
+          )}
           {isLoggedIn && (
             <source
               srcSet={logoTab1x}
               type="image/png"
-              media="(min-width: 320px)"
+              media="( max-width: 1279px)"
+            />
+          )}
+          {isLoggedIn && (
+            <source
+              srcSet={logoTab2x}
+              type="image/png"
+              media="( max-width: 1279px)"
             />
           )}
           {!isLoggedIn && (
-            <source srcSet={logo} type="image/png" media="(min-width: 320px)" />
+            <source
+              srcSet={logoTab2x}
+              type="image/png"
+              media="( max-width: 1279px)"
+              width="162px"
+            />
           )}
-          <source srcSet={logo} type="image/png" media="(min-width: 768px)" />
 
-          <img
-            // class="slider__img"
-            src={logo}
-            alt="logo"
-            loading="lazy"
-            // width="528"
-            // height="528"
-          />
+          {isLoggedIn && (
+            <source
+              srcSet={logoDesk1x}
+              type="image/png"
+              media="(min-width: 1280px)"
+            />
+          )}
+          {!isLoggedIn && (
+            <source
+              srcSet={logoDesk2x}
+              type="image/png"
+              media="(min-width: 1280px)"
+            />
+          )}
+
+          <img src={logoDesk2x} alt="logo" loading="lazy" />
         </picture>
-
-        {/* <img src={logo} alt="logo" /> */}
       </NavLink>
-      {/* {isLoggedIn && */}
-      {/* <NavLink to="/tasks">Tasks</NavLink> */}
     </nav>
   );
 };
