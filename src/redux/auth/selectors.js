@@ -1,4 +1,5 @@
 export const selectIsLoggedIn = state => state.auth.isLoggedIn;
+export const selectParamsRegisterUser = state => state.auth.paramsRegisterUser;
 
 export const selectUser = state => state.auth.user;
 

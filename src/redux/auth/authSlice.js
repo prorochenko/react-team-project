@@ -24,6 +24,7 @@ const initialState = {
   sid: '',
   refreshToken: '',
   isRegister: false,
+  paramsRegisterUser: null,
 
   showModal: false,
   showModalMenu: false,
@@ -36,6 +37,9 @@ export const authSlice = createSlice({
     toggle(state, action) {
       state.showModal = action.payload;
       // state.showModalMenu = action.payload;
+    },
+    createParamsRegisterUser(state, action) {
+      state.paramsRegisterUser = action.payload;
     },
   },
   extraReducers: builder => {
@@ -94,6 +98,7 @@ export const authSlice = createSlice({
       .addCase(fetchCalculatorInfoById.fulfilled, (state, action) => {
         state.user.userData = action.payload;
         state.showModal = true;
+        state.paramsRegisterUser = null;
       });
   },
 });
@@ -101,11 +106,11 @@ export const authSlice = createSlice({
 const persistConfig = {
   key: 'token',
   storage,
-  whitelist: ['sid', 'refreshToken'],
+  whitelist: ['sid', 'refreshToken', 'paramsRegisterUser'],
 };
 export const persistAuthReducer = persistReducer(
   persistConfig,
   authSlice.reducer
 );
 
-export const { toggle } = authSlice.actions;
+export const { toggle, createParamsRegisterUser } = authSlice.actions;
