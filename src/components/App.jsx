@@ -15,7 +15,7 @@ import BigLoader from './Loader/BigLoader';
 import Modal from '../components/Modal/Modal';
 import Layout from './Layout';
 import ModalDiary from './Modal/ModalDiary.js';
-import ModalMenu from './Modal/ModalMenu.js';
+import ModalMenu from './Modal/ModalMenu';
 
 // const Layout = lazy(() => import('./Layout'));
 const Login = lazy(() => import('../pages/Login'));
