@@ -126,7 +126,7 @@ export const RightSideBar = () => {
                       {summary.percentsOfDailyRate
                         ? Math.floor(summary.percentsOfDailyRate)
                         : '000'}{' '}
-                      kcal
+                      %
                     </td>
                   </tr>
                 </tbody>
