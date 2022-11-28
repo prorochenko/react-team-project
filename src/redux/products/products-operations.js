@@ -25,7 +25,8 @@ export const fetchProduct = createAsyncThunk(
       // );
       // Notify.warning(`${product} запрещен к употреблению`);
       Notify.warning(
-        `Возможно ${product} запрещен к употреблению или не найден`
+        `Возможно ${product} запрещен к употреблению или не найден`,
+        { showOnlyTheLastOne: true }
       );
       console.log(error.message);
       return thunkAPI.rejectWithValue(error.message);
