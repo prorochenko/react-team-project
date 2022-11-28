@@ -22,7 +22,7 @@ export default function DiaryAddProductForm({ date }) {
       }
     }
   };
-
+  //dfdfdf
   // const idProduct = () => {
   //   if (products) {
   //     return products[0]._id;
