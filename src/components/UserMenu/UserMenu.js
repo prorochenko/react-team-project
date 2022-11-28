@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { selectUser } from 'redux/auth/selectors';
 import { BiMenu } from 'react-icons/bi';
+import { useCallback } from 'react';
+import { toggle } from 'redux/auth/authSlice';
 
 const NavItems = styled(NavLink)`
   color: #9b9faa;
@@ -21,6 +23,10 @@ const NavItems = styled(NavLink)`
 const UserMenu = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
+
+  const openModal = useCallback(() => {
+    dispatch(toggle(true));
+  }, [dispatch]);
 
   return (
     <div className={scss.box}>
@@ -44,11 +50,7 @@ const UserMenu = () => {
           Exit
         </button>
       </div>
-      <button
-        className={scss.btn_modal}
-        type="button"
-        // onClick={() => dispatch(logOut())}
-      >
+      <button className={scss.btn_modal} type="button" onClick={openModal}>
         <BiMenu className={scss.btn_icon} />
       </button>
     </div>

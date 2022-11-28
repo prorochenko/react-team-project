@@ -36,6 +36,9 @@
   align-items: center;
   gap: 20px;
   padding-right: 36px;
+  @include mq(mob-only) {
+    display: none;
+  }
 }
 
 .user {

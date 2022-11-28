@@ -26,6 +26,7 @@ const initialState = {
   isRegister: false,
 
   showModal: false,
+  showModalMenu: false,
 };
 
 export const authSlice = createSlice({
@@ -34,6 +35,7 @@ export const authSlice = createSlice({
   reducers: {
     toggle(state, action) {
       state.showModal = action.payload;
+      // state.showModalMenu = action.payload;
     },
   },
   extraReducers: builder => {

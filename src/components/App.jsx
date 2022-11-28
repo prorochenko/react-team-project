@@ -15,6 +15,7 @@ import BigLoader from './Loader/BigLoader';
 import Modal from '../components/Modal/Modal';
 import Layout from './Layout';
 import ModalDiary from './Modal/ModalDiary.js';
+import ModalMenu from './Modal/ModalMenu.js';
 
 // const Layout = lazy(() => import('./Layout'));
 const Login = lazy(() => import('../pages/Login'));
@@ -27,6 +28,7 @@ export const App = () => {
   const dispatch = useDispatch();
   const showModal = useSelector(state => state.auth.showModal);
   const showModalDiary = useSelector(state => state.products.showModalDiary);
+  const showModalMenu = useSelector(state => state.auth.showModalMenu);
 
   useEffect(() => {
     dispatch(fetchRefreshToken());
@@ -46,6 +48,7 @@ export const App = () => {
     <>
       {showModal && <Modal />}
       {showModalDiary && <ModalDiary />}
+      {showModalMenu && <ModalMenu />}
 
       <Routes>
         <Route path="/" element={<Layout />}>

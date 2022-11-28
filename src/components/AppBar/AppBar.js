@@ -7,6 +7,7 @@ import { selectIsLoggedIn } from 'redux/auth/selectors';
 import { Navigation } from '../Navigation/Navigation';
 import UserMenu from '../UserMenu/UserMenu';
 import css from './AppBar.module.scss';
+import UserMenuMobile from 'components/UserMenu/UserMenuMobile';
 
 export const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -19,10 +20,13 @@ export const AppBar = () => {
         {isLoggedIn && (
           // <Suspense fallback={<LoadingComponent />}>
           <UserMenu />
+
           // </Suspense>
         )}
+
         {!isLoggedIn && <AuthNav />}
       </div>
+      {isLoggedIn && <UserMenuMobile className={css.mob} />}
     </header>
   );
 };

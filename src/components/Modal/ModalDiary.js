@@ -44,7 +44,6 @@ export default function ModalDiary() {
         if (value.length > 2) {
           dispatch(fetchProduct(value));
         }
-
         return setProduct(value);
 
       case 'grams':
