@@ -65,7 +65,7 @@ const UserMenu = () => {
         </button>
       ) : (
         <button
-          className={scss.btn_modal_close}
+          className={scss.btn_modal}
           type="button"
           onClick={onClose}
         >

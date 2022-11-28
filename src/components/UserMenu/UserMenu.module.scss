@@ -74,11 +74,12 @@
 
 .btn_modal {
   border: none;
-
+  z-index: 100;
   padding: 0;
   background-color: #ffffff;
   cursor: pointer;
   display: block;
+  background-color: transparent;
 
   @include mq(desk) {
     display: none;
