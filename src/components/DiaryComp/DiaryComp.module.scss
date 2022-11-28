@@ -1,12 +1,15 @@
 @import 'assets/styles/index.scss';
 
 .container {
+  margin-top: 40px;
   padding-left: 20px;
   width: 320px;
   //   padding-right: 20px;
 
   @include mq(tab) {
+    margin-top: 100px;
     padding-left: 32px;
+
     width: 610px;
   }
 
