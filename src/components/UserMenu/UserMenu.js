@@ -3,10 +3,11 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
-import { selectUser } from 'redux/auth/selectors';
+import { selectShowModalMenu, selectUser } from 'redux/auth/selectors';
 import { BiMenu } from 'react-icons/bi';
 import { useCallback } from 'react';
-import { toggle } from 'redux/auth/authSlice';
+import { toggleBurger } from 'redux/auth/authSlice';
+import { IoClose } from 'react-icons/io5';
 
 const NavItems = styled(NavLink)`
   color: #9b9faa;
@@ -24,8 +25,14 @@ const UserMenu = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
 
+  const showModalMenu = useSelector(selectShowModalMenu);
+
   const openModal = useCallback(() => {
-    dispatch(toggle(true));
+    dispatch(toggleBurger(true));
+  }, [dispatch]);
+
+  const onClose = useCallback(() => {
+    dispatch(toggleBurger(false));
   }, [dispatch]);
 
   return (
@@ -52,9 +59,19 @@ const UserMenu = () => {
           Exit
         </button>
       </div>
-      <button className={scss.btn_modal} type="button" onClick={openModal}>
-        <BiMenu className={scss.btn_icon} />
-      </button>
+      {!showModalMenu ? (
+        <button className={scss.btn_modal} type="button" onClick={openModal}>
+          <BiMenu className={scss.btn_icon} />
+        </button>
+      ) : (
+        <button
+          className={scss.btn_modal_close}
+          type="button"
+          onClick={onClose}
+        >
+          <IoClose className={scss.btn_icon} />
+        </button>
+      )}
     </div>
   );
 };

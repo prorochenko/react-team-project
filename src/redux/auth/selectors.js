@@ -16,3 +16,5 @@ export const selectUserData = state => state.user.selectUserData;
 export const selectdailyRate = state => state.auth.user.userData.dailyRate;
 export const selectNotAllowedProducts = state =>
   state.auth.user.userData?.notAllowedProducts;
+
+export const selectShowModalMenu = state => state.auth.showModalMenu;
