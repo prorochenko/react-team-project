@@ -27,62 +27,6 @@ export const RegisterForm = () => {
     }
   }, [emailError, passwordError, nameError]);
 
-  //animation
-
-  // if (!isLoggedIn) {
-  //   (function () {
-  //     document.addEventListener('mousemove', parallax);
-  //     const elem = document.querySelector('#parallax');
-  //     const elemBigLeaf = document.querySelector('#parallaxbigLeaf');
-  //     const elemTop = document.querySelector('#parallaxTop');
-  //     const elemRight = document.querySelector('#parallaxRight');
-  //     const elemBottom = document.querySelector('#parallaxBottom ');
-  //     const elemStrawberry = document.querySelector('#parallaxStrawberry  ');
-
-  //     function parallax(e) {
-  //       let _mouseX = e.clientX;
-  //       let _mouseY = e.clientY;
-  //       elem.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -300 +
-  //         '%) translateY(' +
-  //         _mouseY / -300 +
-  //         '%)';
-
-  //       elemBigLeaf.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -50 +
-  //         '%) translateY(' +
-  //         _mouseY / -50 +
-  //         '%)';
-  //       elemTop.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -700 +
-  //         '%) translateY(' +
-  //         _mouseY / -1950 +
-  //         '%)';
-  //       elemRight.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -150 +
-  //         '%) translateY(' +
-  //         _mouseY / 500 +
-  //         '%)';
-  //       elemBottom.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -700 +
-  //         '%) translateY(' +
-  //         _mouseY / -300 +
-  //         '%)';
-  //       elemStrawberry.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -150 +
-  //         '%) translateY(' +
-  //         _mouseY / -500 +
-  //         '%)';
-  //     }
-  //   })();
-  // }
-
   const blurHandler = e => {
     switch (e.target.name) {
       case 'name':
@@ -208,13 +152,13 @@ export const RegisterForm = () => {
             </div>
 
             <div className={css.buttonSection}>
-              <NavLink className={css.btnOrange} to="/login">
+              <NavLink className={css.btnTransperent} to="/login">
                 Login
               </NavLink>
 
               <button
                 disabled={!formValid}
-                className={css.btnTransperent}
+                className={css.btnOrange}
                 type="submit"
               >
                 Register
