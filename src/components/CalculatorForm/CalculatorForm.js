@@ -3,12 +3,18 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
 import React from 'react';
-// import { toggle } from 'redux/auth/authSlice';
-import { selectUserId } from 'redux/auth/selectors';
+import { createParamsRegisterUser } from 'redux/auth/authSlice';
+import {
+  selectUserId,
+  selectIsLoggedIn,
+  selectParamsRegisterUser,
+  selectIsRegister,
+} from 'redux/auth/selectors';
 import {
   fetchCalculatorInfoNotId,
   fetchCalculatorInfoById,
 } from 'redux/auth/operations';
+import { useEffect } from 'react';
 
 const schema = yup.object().shape({
   height: yup.number().min(100).max(250).required(),
@@ -27,10 +33,21 @@ const initialValues = {
 
 const CalculatorForm = () => {
   const userId = useSelector(selectUserId);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const paramsRegisterUser = useSelector(selectParamsRegisterUser);
+  const isRegister = useSelector(selectIsRegister);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isLoggedIn && paramsRegisterUser && isRegister) {
+      dispatch(fetchCalculatorInfoById({ ...paramsRegisterUser, userId }));
+    }
+  }, [isLoggedIn, paramsRegisterUser, dispatch, userId, isRegister]);
+
   const handleSubmit = (values, { resetForm }) => {
     if (userId === null) {
+      dispatch(createParamsRegisterUser(values));
       dispatch(fetchCalculatorInfoNotId({ ...values }));
     } else {
       dispatch(fetchCalculatorInfoById({ ...values, userId }));
