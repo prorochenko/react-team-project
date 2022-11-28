@@ -1,0 +1,115 @@
+@import 'assets/styles/index.scss';
+
+
+
+.container {
+  width: 320px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq(tab) {
+    padding-top: 140px;
+    width: 704px;
+    min-height: 509px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include mq(desk) {
+    padding-top: 80px;
+    padding-bottom: 180px; 
+  }
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq(tab) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.header {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #fc842d;
+  margin-bottom: 60px;
+
+  @include mq(tab) {
+    text-align: left;
+  }
+}
+
+.buttonSection {
+  margin-top: 60px;
+  @include mq(tab) {
+    display: flex;
+    gap: 32px;
+  }
+}
+
+.input {
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 280px;
+  height: 36px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  outline: none;
+}
+.input:focus {
+  outline: none;
+  border-bottom: 1px solid #fc842d;
+}
+
+.label {
+  margin-bottom: 40px;
+}
+.label:last-of-type {
+  margin-bottom: 0px;
+}
+
+.btnOrange {
+  @extend %btnOrange;
+  width: 182px;
+  height: 44px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq(tab) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.btnTransperent {
+  @extend %btnTransperent;
+
+  width: 182px;
+  height: 44px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+
+  @include mq(tab) {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

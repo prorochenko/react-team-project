@@ -1,0 +1,78 @@
+@import 'assets/styles/index.scss';
+
+.formProduct {
+  @include mq(mob-only) {
+    display: none;
+  }
+
+  margin-bottom: 60px;
+}
+
+.formLabel {
+  &:first-child {
+    margin-right: 22px;
+
+    @include mq(desk) {
+      margin-right: 50px;
+    }
+  }
+}
+
+.formInput {
+  font-family: 'Verdana';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  width: 240px;
+
+  letter-spacing: 0.04em;
+
+  // color: black;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 20px;
+
+  ::placeholder {
+    color: #9b9faa;
+  }
+
+  &:hover,
+  &:focus {
+    border: 0px;
+    border-bottom: 1px solid #e0e0e0;
+    outline: none;
+  }
+}
+
+.formInput__gram {
+  text-align: right;
+  width: 106px;
+}
+
+.formButton {
+  width: 48px;
+  height: 48px;
+  // padding: 0;
+  border-radius: 50%;
+  margin-left: 60px;
+
+  background-color: var(--main-accent-color);
+  border: none;
+  color: var(--secondary-text-color);
+
+  cursor: pointer;
+
+  @include mq(tab) {
+    margin-left: 87px;
+  }
+
+  @include mq(desk) {
+    margin-left: 60px;
+  }
+}
+
+.icon {
+  width: 23px;
+  height: 23px;
+}

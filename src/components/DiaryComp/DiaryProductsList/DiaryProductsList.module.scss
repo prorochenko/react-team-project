@@ -1,0 +1,36 @@
+@import 'assets/styles/index.scss';
+
+.box {
+  height: 271px;
+
+  overflow-y: auto;
+  // @include mq(desk) {
+  //   width: 660px;
+  // }
+  // scrollbar-width: thin;
+  // scrollbar-color: #264061;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background: #f0f1f3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #264061;
+}
+
+.productsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  font-family: 'Verdana';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.04em;
+
+  color: var(--accent-text-color);
+}

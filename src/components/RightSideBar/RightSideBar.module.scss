@@ -1,0 +1,351 @@
+@import 'assets/styles/index.scss';
+
+.pictures {
+  overflow: hidden;
+  @include mq(tab) {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 570px;
+    height: 910px;
+    margin-top: -500px;
+    z-index: -1;
+    background-image: url(../../assets/images/bananaDeskTab@1x.png),
+      url(../../assets/images/strawberryBigDeskTab@1x.png),
+      url(../../assets/images//vectorDeskTab@1x.png),
+      url(../../assets//images/leavesTab@1x.png);
+    background-position: calc(100% - 0px) calc(100% + 104px),
+      calc(100% + 61px) calc(100% - 231px), calc(100% + 32px) calc(100% + 185px),
+      calc(100% - 0px) calc(100% - 265px);
+    background-size: 492px 431px, 355px 348px, 553px 750px, 740px 750px;
+    background-repeat: no-repeat;
+
+    @include mq(retina) {
+      background-image: url(../../assets/images/bananaDeskTab@2x.png),
+        url(../../assets/images/strawberryBigDeskTab@2x.png),
+        url(../../assets/images//vectorDeskTab@2x.png),
+        url(../../assets//images/leavesTab@2x.png);
+    }
+  }
+
+  @include mq(desk) {
+    margin-left: -593px;
+    margin-top: -366px;
+    padding-bottom: 923px;
+    background-image: url(../../assets/images/bananaDeskTab@1x.png),
+      url(../../assets/images//vectorDeskTab@1x.png);
+    background-position: calc(100% - 0px) calc(0% + 90px),
+      calc(100% + 0px) calc(100% - 0px);
+    background-size: 492px 431px, 602px 816px;
+
+    @include mq(retina) {
+      background-image: url(../../assets/images/bananaDeskTab@2x.png),
+        url(../../assets/images//vectorDeskTab@2x.png);
+    }
+  }
+}
+
+.background {
+  @include mq(tab) {
+    position: relative;
+    bottom: 32px;
+    left: 16px;
+    background-repeat: no-repeat;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 570px;
+    height: 910px;
+    margin-top: -500px;
+    z-index: -1;
+  }
+}
+
+.backgroundbigLeaf {
+  @include mq(desk) {
+    position: relative;
+    background-repeat: no-repeat;
+    padding-top: 150px;
+    padding-bottom: 292px;
+    left: 970px;
+    margin-left: -570px;
+    margin-top: 950px;
+    bottom: 150px;
+    width: 500px;
+    background-image: url(../../assets/images/leavesDeskBigLeaf@2x.png);
+    background-position: calc(100% - 150px) calc(100% - 100px);
+    background-size: 258px 295px;
+    @include mq(retina) {
+      background-image: url(../../assets/images/leavesDeskBigLeaf@2x.png);
+    }
+  }
+}
+
+.backgroundTop {
+  @include mq(desk) {
+    position: relative;
+    background-repeat: no-repeat;
+    padding-top: 80px;
+    padding-bottom: 90px;
+    bottom: 791px;
+    left: 40px;
+    background-image: url(../../assets/images/leavesDeskTop@2x.png);
+    background-position: calc(100% - 150px) calc(100% - 100px);
+    background-size: 200px;
+    @include mq(retina) {
+      background-image: url(../../assets/images/leavesDeskTop@2x.png);
+    }
+  }
+}
+
+.backgroundRight {
+  @include mq(desk) {
+    position: relative;
+    background-repeat: no-repeat;
+    padding-top: 260px;
+    bottom: 860px;
+    margin-right: 300px;
+    width: 700px;
+    background-image: url(../../assets/images/leavesDeskRight@2x.png);
+    background-position: calc(100% - 150px) calc(100% - 100px);
+    background-size: 350px;
+    @include mq(retina) {
+      background-image: url(../../assets/images/leavesDeskRight@2x.png);
+    }
+  }
+}
+
+.backgroundBottom {
+  @include mq(desk) {
+    position: relative;
+    background-repeat: no-repeat;
+    padding-top: 450px;
+    left: 250px;
+    bottom: 770px;
+    width: 700px;
+    background-image: url(../../assets/images/leavesDeskBottom@2x.png);
+    background-position: calc(100% - 150px) calc(100% - 100px);
+    background-size: 320px;
+    @include mq(retina) {
+      background-image: url(../../assets/images/leavesDeskBottom@2x.png);
+    }
+  }
+}
+
+.backgroundStrawberry {
+  @include mq(desk) {
+    position: relative;
+    display: flex;
+    background-repeat: no-repeat;
+    padding-top: 450px;
+    left: 690px;
+    bottom: 1150px;
+    align-items: center;
+    margin-left: 0;
+    width: 500px;
+    background-image: url(../../assets/images/strawberryBigDeskTab@2x.png);
+    background-position: calc(100% - 150px) calc(100% - 100px);
+    background-size: 360px;
+    @include mq(retina) {
+      background-image: url(../../assets/images/strawberryBigDeskTab@2x.png);
+    }
+  }
+}
+
+.box {
+  background-color: hsl(220, 11%, 95%);
+  padding-top: 40px;
+  padding-bottom: 70px;
+
+  @include mq(tab) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-image: url(../../assets/images/leavesBarTab@1x.png);
+    background-position: calc(100% - 0px) calc(100% + 25px);
+    background-size: 428px 602px;
+    background-repeat: no-repeat;
+
+    @include mq(retina) {
+      background-image: url(../../assets/images/leavesBarTab@2x.png);
+    }
+  }
+
+  @include mq(desk) {
+    height: 1000px;
+    margin: -292px 0;
+    padding-top: 292px;
+    z-index: -1;
+    background-image: url(../../assets/images/leavesBarDesk@1x.png);
+    background-position: calc(100% + 69px) calc(100% - 135px);
+    background-size: 740px 842px;
+  }
+}
+
+.container {
+  width: 320px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq(tab) {
+    width: 768px;
+    display: flex;
+    gap: 79px;
+  }
+
+  @include mq(desk) {
+    width: 517px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.summarySection {
+  margin-bottom: 40px;
+  @include mq(tab) {
+    margin-bottom: 0px;
+  }
+
+  @include mq(desk) {
+    width: 288px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.header {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  // text-align: center;
+  color: #212121;
+
+  @include mq(tab) {
+    margin-bottom: 37px;
+  }
+}
+
+.table {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: #9b9faa;
+}
+
+.tableCellLeft {
+  max-width: 160px;
+  padding-bottom: 15px;
+
+  @include mq(tab) {
+    max-width: 144px;
+  }
+}
+
+.dietSection {
+  margin-top: 25px;
+  min-height: 104px;
+
+  @include mq(tab) {
+    margin-top: 0;
+  }
+
+  @include mq(desk) {
+    width: 288px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.tableCellRight {
+  width: 160px;
+  text-align: right;
+  padding-bottom: 15px;
+
+  @include mq(tab) {
+    max-width: 144px;
+  }
+}
+
+.headerTwo {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: #212121;
+
+  @include mq(tab) {
+    margin-bottom: 37px;
+  }
+}
+
+.textDiet {
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: #9b9faa;
+  margin-top: 20px;
+}
+
+.food {
+  z-index: 100000;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title_sidebar {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
+  @include mq(tab) {
+    margin-bottom: 35px;
+  }
+}
+
+.menuGroupList {
+  height: 305px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-left: 0;
+
+  @include mq(tab) {
+    width: 240px;
+    height: 305px;
+  }
+
+  @include mq(desk) {
+    height: 315px;
+  }
+}
+
+.menuGroupItems {
+  width: 255px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.214;
+  letter-spacing: 0.04em;
+  color: #9b9faa;
+
+  @include mq(tab) {
+    margin-bottom: 15px;
+    width: 235px;
+  }
+
+  @include mq(desk) {
+    width: 230px;
+  }
+}
+
+.text_sidebar_food {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: #9b9faa;
+}

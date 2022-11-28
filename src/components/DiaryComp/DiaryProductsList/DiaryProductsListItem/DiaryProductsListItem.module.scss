@@ -1,0 +1,77 @@
+@import 'assets/styles/index.scss';
+
+.productsListItem {
+  padding-bottom: 20px;
+  display: flex;
+  //   border-bottom: 1px solid #e0e0e0;
+}
+
+.productsName,
+.productsGramm,
+.productsKcal {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.productsName {
+  min-width: 130px;
+  margin-right: 8px;
+
+  @include mq(tab) {
+    width: 240px;
+    margin-right: 48px;
+  }
+}
+
+.productsGramm {
+  margin-right: 8px;
+  min-width: 49px;
+
+  @include mq(tab) {
+    width: 107px;
+  }
+}
+
+.productsKcal {
+  margin-right: 17px;
+  min-width: 58px;
+
+  @include mq(tab) {
+    width: 106px;
+  }
+}
+
+.productsKcal__text {
+  @include mq(mob-only) {
+    font-size: 10px;
+  }
+}
+
+.productsGramm,
+.productsKcal {
+  text-align: right;
+
+  @include mq(tab) {
+    margin-right: 32px;
+  }
+}
+
+.productsBtn {
+  border: none;
+  padding: 0;
+  margin-right: 20px;
+  background-color: var(--secondary-text-color);
+  color: var(--main-text-color);
+  cursor: pointer;
+  @include mq(tab) {
+    margin-right: 40px;
+  }
+}
+
+.productsIcon {
+  width: 10px;
+  height: 10px;
+  @include mq(tab) {
+    width: 12px;
+    height: 12px;
+  }
+}

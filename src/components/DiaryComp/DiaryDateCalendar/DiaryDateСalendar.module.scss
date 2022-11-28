@@ -1,0 +1,30 @@
+.wrap {
+  margin-bottom: 60px;
+}
+
+.calendarWrap div {
+  border: none;
+}
+
+.calendarWrap div button svg {
+  color: brown;
+  & :enabled:hover,
+  & :enabled:focus {
+    stroke: var(--main-accent-color);
+  }
+}
+
+.calendar {
+  background-color: var(--main-accent-color);
+}
+
+.calendarDate {
+  background-color: var(--secondary-background-color);
+}
+
+.calendarDate button {
+  & :hover,
+  & :focus {
+    background-color: var(--main-accent-color);
+  }
+}

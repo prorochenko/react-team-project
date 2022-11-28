@@ -1,0 +1,48 @@
+@import 'assets/styles/index.scss';
+
+.container {
+  margin-top: 40px;
+  padding-left: 20px;
+  width: 320px;
+  //   padding-right: 20px;
+
+  @include mq(tab) {
+    margin-top: 100px;
+    padding-left: 32px;
+
+    width: 610px;
+  }
+
+  @include mq(desk) {
+    padding-left: 16px;
+    width: 623px;
+  }
+}
+
+.formBtn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background-color: var(--main-accent-color);
+  border: none;
+  color: var(--secondary-text-color);
+
+  cursor: pointer;
+
+  @include mq(tab) {
+    display: none;
+  }
+}
+
+.icon {
+  width: 23px;
+  height: 23px;
+}

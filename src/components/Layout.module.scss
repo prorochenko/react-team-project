@@ -1,0 +1,17 @@
+@import 'assets/styles/index.scss';
+
+.box {
+  display: grid;
+
+  @include mq(tab-only) {
+  }
+
+  @include mq(desk) {
+    min-width: 1280px;
+    height: 1px;
+    margin-right: auto;
+    margin-left: auto;
+    grid-template-columns: 1fr 517px;
+    align-items: start;
+  }
+}

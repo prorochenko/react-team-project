@@ -1,0 +1,13 @@
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+<symbol id="icon-ticket1" viewBox="0 0 35 25">
+<path d="M3.836 0.992h-3.836v23.016h3.836v-23.016z"></path>
+<path d="M13.484 0.992h-3.836v23.016h3.836v-23.016z"></path>
+<path d="M19.296 0.992h-3.836v23.016h3.836v-23.016z"></path>
+<path d="M34.524 0.992h-5.696v23.016h5.696v-23.016z"></path>
+<path d="M7.672 0.992h-1.86v23.016h1.86v-23.016z"></path>
+<path d="M23.016 0.992h-1.86v23.016h1.86v-23.016z"></path>
+<path d="M26.852 0.992h-1.86v23.016h1.86v-23.016z"></path>
+</symbol>
+  </defs>
+</svg>

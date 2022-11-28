@@ -1,0 +1,84 @@
+@import 'assets/styles/index.scss';
+
+
+.text {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.93;
+  color: #212121;
+}
+
+.nav {    
+     
+
+
+  @include mq(mob-only) {
+  border-left: none;
+  display: flex;
+    gap: 16px;
+  
+    
+    
+    height: 32px;   
+    color: #212121;
+    margin-left: auto;
+    
+   
+  }
+
+
+         @include mq(tab-only) {
+      border-left: none;
+        display: flex;
+          gap: 16px;
+        
+        
+        height: 32px;
+        color: #212121;
+        margin-left: auto;
+        
+        justify-content: center;
+       
+         } 
+
+
+                     @include mq(desk) {
+                       border-left: 2px solid #E0E0E0;
+                       display: flex;
+                       gap: 16px;
+                      
+                       height: 32px;
+                       color: #212121;
+                       padding-left: 17px;
+                       align-items: center;
+          
+                     }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+
+
+
+
+
+
+  
+
+  
+

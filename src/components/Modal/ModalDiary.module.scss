@@ -1,0 +1,79 @@
+@import 'assets/styles/index.scss';
+
+.form {
+  padding-left: 20px;
+  padding-right: 15px;
+  //   @include mq(tab) {
+  //     display: none;
+  //   }
+}
+
+.formProduct {
+  //   margin-bottom: 60px;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 320px;
+}
+
+.formLabel {
+  width: 100%;
+
+  & :first-child {
+    margin-bottom: 30px;
+  }
+}
+
+.formInput {
+  width: 100%;
+  font-family: 'Verdana';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+
+  letter-spacing: 0.04em;
+
+  // color: black;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 5px;
+
+  ::placeholder {
+    color: #9b9faa;
+  }
+
+  &:hover,
+  &:focus {
+    border: 0px;
+    border-bottom: 1px solid #e0e0e0;
+    outline: none;
+  }
+}
+
+.btnOrange {
+  @extend %btnOrange;
+  padding: 13px 46px;
+}
+
+.formButton {
+  width: 48px;
+  height: 48px;
+  // padding: 0;
+  border-radius: 50%;
+  margin-top: 60px;
+
+  background-color: var(--main-accent-color);
+  border: none;
+  color: var(--secondary-text-color);
+
+  cursor: pointer;
+}
+
+.icon {
+  width: 23px;
+  height: 23px;
+}

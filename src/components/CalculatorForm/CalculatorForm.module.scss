@@ -1,0 +1,168 @@
+@import 'assets/styles/index.scss';
+
+.cfasc {
+  @include mq(tab) {
+  }
+}
+
+.calculatorFormTitle {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 32px;
+  font-family: 'Verdana';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--accent-text-color);
+  @include mq(tab) {
+    font-size: 34px;
+    line-height: 41px;
+    width: 600px;
+  }
+}
+
+.calculatorFormContainer {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+  padding: 32px 20px 41px 20px;
+  @include mq(tab) {
+    width: 704px;
+    padding: 100px 32px 151px 32px;
+  }
+  @include mq(desk) {
+    margin-left: 0;
+    width: 763px;
+    padding: 0 214px 0 16px;
+  }
+}
+
+.calculatorForm {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  @include mq(tab) {
+    gap: 0;
+  }
+}
+
+.calculatorFormInputContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  @include mq(tab) {
+    flex-wrap: wrap;
+    margin-top: 68px;
+
+    height: 190px;
+  }
+}
+
+.calculatorFormInput {
+  width: 240px;
+  height: 24px;
+  border: 0px;
+  border-bottom: 1px solid #e0e0e0;
+  font-family: 'Verdana';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: #9b9faa;
+  &:hover,
+  &:focus {
+    border: 0px;
+    border-bottom: 1px solid #e0e0e0;
+    outline: none;
+  }
+  //   &::placeholder {
+  //     font-size: 14px;
+  //     line-height: 17px;
+  //   }
+}
+
+.calculatorFormRadioText {
+  font-family: 'Verdana';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: #9b9faa;
+}
+
+.calculatorFormRadioInputBox {
+  display: flex;
+  gap: 4px;
+}
+
+.calculatorFormRadioBox {
+  display: flex;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.calculatorFormRadioInput {
+  appearance: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  width: 20px;
+  height: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  &::after {
+    content: '';
+    background-color: #fc842d;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+  }
+  &:checked::after {
+    transform: scale(1);
+  }
+  &:focus::after,
+  &:hover::after {
+    transform: scale(1);
+  }
+  &:checked + span {
+    color: #fc842d;
+  }
+}
+
+.btnOrange {
+  max-width: 210px;
+  display: block;
+  padding: 13px 25px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @extend %btnOrange;
+  @include mq(tab) {
+    margin-left: 0;
+  }
+  @include mq(desk) {
+    // margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+.errorMessage {
+  font-size: 9px;
+  color: red;
+}
+
+// .box{
+//   @include mq(desk) {
+//     display: flex;
+//   }
+// }
