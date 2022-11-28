@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { selectUser } from 'redux/auth/selectors';
+import { BiMenu } from 'react-icons/bi';
 
 const NavItems = styled(NavLink)`
   color: #9b9faa;
@@ -43,6 +44,13 @@ const UserMenu = () => {
           Exit
         </button>
       </div>
+      <button
+        className={scss.btn_modal}
+        type="button"
+        // onClick={() => dispatch(logOut())}
+      >
+        <BiMenu className={scss.btn_icon} />
+      </button>
     </div>
   );
 };
