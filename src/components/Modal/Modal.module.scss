@@ -43,6 +43,7 @@ body {
   @include mq(tab) {
     width: 672px;
     align-items: center;
+    border-radius: 15px;
   }
 }
 
