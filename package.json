@@ -14,6 +14,7 @@
     "nanoid": "^4.0.0",
     "notiflix": "^3.2.5",
     "react": "^18.2.0",
+    "react-animated-modal": "^1.1.1",
     "react-animations": "^1.0.0",
     "react-content-loader": "^6.2.0",
     "react-date-picker": "^9.1.0",

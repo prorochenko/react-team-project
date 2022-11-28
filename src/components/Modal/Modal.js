@@ -1,7 +1,7 @@
 import css from './Modal.module.scss';
 import { useEffect, useCallback } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
-import { IoReturnDownBackSharp } from 'react-icons/io5';
+// import { IoReturnDownBackSharp } from 'react-icons/io5';
 // import { getProducts } from 'ourAPI';
 import { useDispatch } from 'react-redux';
 import { toggle } from 'redux/auth/authSlice';
