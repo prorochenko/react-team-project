@@ -40,7 +40,9 @@ const UserMenu = () => {
       </div>
 
       <div className={scss.rightBar}>
-        <p className={scss.user}>{user.username}</p>
+        <NavLink className={scss.user} to="/diary">
+          {user.username}
+        </NavLink>
 
         <button
           className={scss.btn}
