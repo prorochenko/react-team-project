@@ -12,7 +12,6 @@ import logoTab2x from '../../assets/images/logologoTab@2x.png';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 export const Navigation = () => {
-  // const { isLoggedIn } = useAuth();
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (

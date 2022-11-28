@@ -1,9 +1,8 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { register } from 'redux/auth/operations';
 import { useEffect, useState } from 'react';
 import css from './RegisterForm.module.scss';
-import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -17,7 +16,6 @@ export const RegisterForm = () => {
   const [emailError, setEmailError] = useState('Pleas enter email');
   const [passwordError, setPasswordError] = useState('Pleas enter password');
   const [formValid, setFormValid] = useState(false);
-  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
     if (emailError || passwordError || nameError) {

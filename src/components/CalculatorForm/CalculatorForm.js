@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import { useSelector, useDispatch } from 'react-redux';
 import React from 'react';
 // import { toggle } from 'redux/auth/authSlice';
-import { selectUserId, selectIsLoggedIn } from 'redux/auth/selectors';
+import { selectUserId } from 'redux/auth/selectors';
 import {
   fetchCalculatorInfoNotId,
   fetchCalculatorInfoById,
@@ -27,7 +27,6 @@ const initialValues = {
 
 const CalculatorForm = () => {
   const userId = useSelector(selectUserId);
-  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const dispatch = useDispatch();
   const handleSubmit = (values, { resetForm }) => {
@@ -38,60 +37,6 @@ const CalculatorForm = () => {
     }
     resetForm();
   };
-
-  // if (!isLoggedIn) {
-  //   (function () {
-  //     document.addEventListener('mousemove', parallax);
-  //     const elem = document.querySelector('#parallax');
-  //     const elemBigLeaf = document.querySelector('#parallaxbigLeaf');
-  //     const elemTop = document.querySelector('#parallaxTop');
-  //     const elemRight = document.querySelector('#parallaxRight');
-  //     const elemBottom = document.querySelector('#parallaxBottom ');
-  //     const elemStrawberry = document.querySelector('#parallaxStrawberry  ');
-
-  //     function parallax(e) {
-  //       let _mouseX = e.clientX;
-  //       let _mouseY = e.clientY;
-  //       elem.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -300 +
-  //         '%) translateY(' +
-  //         _mouseY / -300 +
-  //         '%)';
-
-  //       elemBigLeaf.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -50 +
-  //         '%) translateY(' +
-  //         _mouseY / -50 +
-  //         '%)';
-  //       elemTop.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -700 +
-  //         '%) translateY(' +
-  //         _mouseY / -1950 +
-  //         '%)';
-  //       elemRight.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -150 +
-  //         '%) translateY(' +
-  //         _mouseY / 500 +
-  //         '%)';
-  //       elemBottom.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -700 +
-  //         '%) translateY(' +
-  //         _mouseY / -300 +
-  //         '%)';
-  //       elemStrawberry.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -150 +
-  //         '%) translateY(' +
-  //         _mouseY / -500 +
-  //         '%)';
-  //     }
-  //   })();
-  // }
 
   return (
     <div className={scss.calculatorFormContainer}>
