@@ -1,7 +1,6 @@
 @import 'assets/styles/index.scss';
 
-
-.leaverSmall{
+.leaverSmall {
   margin-left: 570px;
   margin-top: -128px;
 }
@@ -11,18 +10,19 @@
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 40px;
 
   @include mq(tab) {
-      padding-top: 140px;
-      width: 704px;
-      min-height: 509px;
+    padding-top: 140px;
+    width: 704px;
+    min-height: 509px;
     margin-left: 0;
     margin-right: 0;
-  padding-left: 32px;
+    padding-left: 32px;
     padding-right: 32px;
   }
   @include mq(desk) {
-        padding-top: 80px;
+    padding-top: 80px;
   }
 }
 
@@ -93,7 +93,7 @@
   width: 182px;
   height: 44px;
   margin-left: auto;
-    margin-right: auto;
+  margin-right: auto;
 
   @include mq(tab) {
     margin-left: 0;

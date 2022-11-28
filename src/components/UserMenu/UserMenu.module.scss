@@ -1,3 +1,62 @@
+@import 'assets/styles/index.scss';
+
+.text {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.93;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+  height: 32px;
+
+  align-items: center;
+  padding-left: 20px;
+
+  @include mq(not-desk) {
+    display: none;
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+  @include mq(not-desk) {
+    justify-content: flex-end;
+  }
+}
+
+.rightBar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 36px;
+  @include mq(mob-only) {
+    display: none;
+  }
+}
+
+.user {
+  // display: flex;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 0.93;
+  letter-spacing: 0.04em;
+  padding-right: 20px;
+  // height: 32px;
+  border-right: 2px solid #e0e0e0;
+  color: #212121;
+  // align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .btn {
   font-weight: 700;
   font-size: 14px;
@@ -13,45 +72,20 @@
   // @extend %btnTransperent;
 }
 
-.text {
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 0.93;
+.btn_modal {
+  border: none;
+
+  padding: 0;
+  background-color: #ffffff;
+  cursor: pointer;
+  display: block;
+
+  @include mq(desk) {
+    display: none;
+  }
 }
 
-.nav {
-  display: flex;
-  gap: 16px;
-  height: 32px;
-  
-  align-items: center;
-  padding-left: 20px;
-}
-
-.box {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.rightBar {
-  display: flex;
-  gap: 20px;
-  padding-right: 36px;
-}
-
-.user {
-  display: flex;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 0.93;
-  letter-spacing: 0.04em;
-  padding-right: 20px;
-  height: 32px;
-  border-right: 2px solid #e0e0e0;
-  color: #212121;
-  align-items: center;
-  
+.btn_icon {
+  width: 24px;
+  height: 24px;
 }

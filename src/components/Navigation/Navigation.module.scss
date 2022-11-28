@@ -1,11 +1,7 @@
 @import 'assets/styles/index.scss';
 
-.logo { 
-   
-
-        padding-bottom: 5px;
-
-   
-   
-
+.logo {
+  @include mq(desk) {
+    padding-bottom: 8px;
+  }
 }
