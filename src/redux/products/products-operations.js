@@ -50,7 +50,6 @@ export const deleteProductDay = createAsyncThunk(
   'day/deleteProductDay',
   async (data, { rejectWithValue }) => {
     try {
-      console.log({ data });
       // const eatenProductId = data.eatenProductId;
       const result = await axios.delete('/day', { data });
       // console.log({ result: result.data, eatenProductId: data.eatenProductId });
