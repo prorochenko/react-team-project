@@ -17,6 +17,9 @@ export default function DiaryDateCalendar({ getCalendarDate }) {
     },
     [dispatch]
   );
+  useEffect(() => {
+    getCalendarDate(value);
+  }, [getCalendarDate, value]);
 
   const handleChange = e => {
     setValue(e);
@@ -25,7 +28,7 @@ export default function DiaryDateCalendar({ getCalendarDate }) {
     dispatch(getInfoByDay({ date: moment(e).format('yyyy-MM-DD') }));
   };
 
-  getCalendarDate(value);
+  
 
   return (
     <div className={css.wrap}>
