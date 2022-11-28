@@ -8,7 +8,7 @@ import moment from 'moment';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useCallback } from 'react';
-import { toggle } from 'redux/auth/authSlice';
+import { toggle } from 'redux/products/products-slice';
 
 export default function DiaryComp() {
   const dispatch = useDispatch();

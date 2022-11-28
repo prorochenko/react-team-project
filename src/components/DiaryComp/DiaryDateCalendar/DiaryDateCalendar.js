@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-date-picker';
 import css from './DiaryDateСalendar.module.scss';
 import { getInfoByDay } from '../../../redux/products/products-operations';
-
+import styled from 'styled-components';
 export default function DiaryDateCalendar({ getCalendarDate }) {
   const [value, setValue] = useState(new Date());
 
@@ -28,8 +28,6 @@ export default function DiaryDateCalendar({ getCalendarDate }) {
     dispatch(getInfoByDay({ date: moment(e).format('yyyy-MM-DD') }));
   };
 
-  
-
   return (
     <div className={css.wrap}>
       <DatePicker
@@ -37,7 +35,10 @@ export default function DiaryDateCalendar({ getCalendarDate }) {
         value={value}
         clearIcon={null}
         format={'dd.MM.y'}
-        className={css.calendar}
+        className={css.calendarWrap}
+        calendarClassName={css.calendar}
+        tileClassName={css.calendarDate}
+        // calendarIcon={styled: {}}
       />
     </div>
   );

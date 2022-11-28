@@ -28,6 +28,7 @@ const productsInitialState = {
   product: null,
   isLoading: false,
   error: null,
+  showModalDiary: false,
 };
 
 const actions = [fetchProduct, addDay, getInfoByDay, deleteProductDay];
@@ -35,6 +36,11 @@ const actions = [fetchProduct, addDay, getInfoByDay, deleteProductDay];
 const productsSlice = createSlice({
   name: 'products',
   initialState: productsInitialState,
+  reducers: {
+    toggle(state, action) {
+      state.showModalDiary = action.payload;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchProduct.fulfilled, (state, { payload }) => {
@@ -90,3 +96,5 @@ const productsSlice = createSlice({
 });
 
 export const productsReducer = productsSlice.reducer;
+
+export const { toggle } = productsSlice.actions;
