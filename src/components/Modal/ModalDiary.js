@@ -62,6 +62,7 @@ export default function ModalDiary() {
     dispatch(addDay({ date, productId, weight }));
     setProduct('');
     setGrams('');
+    onClose();
   };
 
   const getCalendarDate = newDate => {
@@ -105,7 +106,7 @@ export default function ModalDiary() {
               autoComplete="off"
             />
           </label>
-          <button className={scss.btnOrange} type="submit" onClick={onClose}>
+          <button className={scss.btnOrange} type="submit">
             Add
           </button>
         </form>
