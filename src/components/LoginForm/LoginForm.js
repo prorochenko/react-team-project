@@ -1,11 +1,8 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
 import css from './LoginForm.module.scss';
 import { useState } from 'react';
-// import { bounceInLeft } from 'react-animations';
-// import Radium, { StyleRoot } from 'radium';
-import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -14,61 +11,7 @@ export const LoginForm = () => {
   const [passwordDirty, setPasswordDirty] = useState(false);
   const [emailError, setEmailError] = useState('Pleas enter email');
   const [passwordError, setPasswordError] = useState('Pleas enter password');
-  const isLoggedIn = useSelector(selectIsLoggedIn);
 
-  // if (!isLoggedIn) {
-  //   (function () {
-  //     document.addEventListener('mousemove', parallax);
-  //     const elem = document.querySelector('#parallax');
-  //     const elemBigLeaf = document.querySelector('#parallaxbigLeaf');
-  //     const elemTop = document.querySelector('#parallaxTop');
-  //     const elemRight = document.querySelector('#parallaxRight');
-  //     const elemBottom = document.querySelector('#parallaxBottom ');
-  //     const elemStrawberry = document.querySelector('#parallaxStrawberry  ');
-
-  //     function parallax(e) {
-  //       let _mouseX = e.clientX;
-  //       let _mouseY = e.clientY;
-  //       elem.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -300 +
-  //         '%) translateY(' +
-  //         _mouseY / -300 +
-  //         '%)';
-
-  //       elemBigLeaf.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -50 +
-  //         '%) translateY(' +
-  //         _mouseY / -50 +
-  //         '%)';
-  //       elemTop.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -700 +
-  //         '%) translateY(' +
-  //         _mouseY / -1950 +
-  //         '%)';
-  //       elemRight.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -150 +
-  //         '%) translateY(' +
-  //         _mouseY / 500 +
-  //         '%)';
-  //       elemBottom.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -700 +
-  //         '%) translateY(' +
-  //         _mouseY / -300 +
-  //         '%)';
-  //       elemStrawberry.style.transform =
-  //         'translateX(' +
-  //         _mouseX / -150 +
-  //         '%) translateY(' +
-  //         _mouseY / -500 +
-  //         '%)';
-  //     }
-  //   })();
-  // }
   const blurHandler = e => {
     switch (e.target.name) {
       case 'email':
@@ -119,14 +62,7 @@ export const LoginForm = () => {
     form.reset();
   };
 
-  // const styles = {
-  //   bounce: {
-  //     animation: 'x 10s',
-  //     animationName: Radium.keyframes(bounceInLeft, 'bounceInLeft'),
-  //   },
-  // };
 
-  // const leaverMin = leaver;
   return (
     <div className={css.box}>
       {/* <img

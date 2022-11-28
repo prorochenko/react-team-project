@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-date-picker';
 import css from './DiaryDateСalendar.module.scss';
 import { getInfoByDay } from '../../../redux/products/products-operations';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 export default function DiaryDateCalendar({ getCalendarDate }) {
   const [value, setValue] = useState(new Date());
 
