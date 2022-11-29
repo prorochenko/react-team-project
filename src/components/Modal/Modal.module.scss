@@ -18,7 +18,14 @@ body {
     overflow: auto;
   }
 }
+::-webkit-scrollbar {
+  width: 6px;
+  background: #f0f1f3;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #264061;
+}
 .Modal__content {
   position: absolute;
   display: flex;
