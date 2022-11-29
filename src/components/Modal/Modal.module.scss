@@ -71,6 +71,18 @@ body {
     display: none;
   }
 }
+// .topbox1 {
+//   @include mq(mob-only) {
+//     background-color: var(--modal-mobile-background);
+//     min-width: 320px;
+//     height: 30px;
+//     top: -30px;
+//     z-index: 10;
+//   }
+//   @include mq(tab) {
+//     display: none;
+//   }
+// }
 
 // text and buttons
 
