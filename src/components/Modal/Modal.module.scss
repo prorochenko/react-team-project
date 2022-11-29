@@ -61,7 +61,7 @@ body {
 }
 
 .topbox {
-  background-color: transparent;
+  // background-color: transparent;
   height: 30px;
 
   @include mq(mob-only) {

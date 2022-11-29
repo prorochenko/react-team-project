@@ -70,7 +70,7 @@ export default function ModalDiary() {
   };
 
   return (
-    <ModalUniversal onClick={getCalendarDate}>
+    <ModalUniversal onClick={getCalendarDate} onClose={onClose}>
       <div className={scss.form}>
         <form className={scss.formProduct} onSubmit={handleSubmit}>
           <label className={scss.formLabel}>
