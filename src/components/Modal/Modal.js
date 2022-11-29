@@ -13,7 +13,7 @@ import {
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import ModalUniversal from './ModaUniversal';
-import { IoReturnDownBackSharp } from 'react-icons/io5';
+// import { IoReturnDownBackSharp } from 'react-icons/io5';
 
 const Modal = () => {
   const dailyRate = useSelector(selectdailyRate);
