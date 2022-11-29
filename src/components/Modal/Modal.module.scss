@@ -61,7 +61,7 @@ body {
 }
 
 .topbox {
-  background-color: var(--modal-mobile-background);
+  background-color: transparent;
   height: 30px;
 
   @include mq(mob-only) {
