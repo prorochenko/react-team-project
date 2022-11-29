@@ -38,7 +38,7 @@ body {
   @include mq(mob-only) {
     width: 100vw;
     height: 100vh;
-    margin-top: 80px;
+    margin-top: 123px;
   }
   @include mq(tab) {
     width: 672px;
@@ -224,7 +224,7 @@ body {
   padding: 0;
 
   @include mq(mob-only) {
-    top: 0;
+    top: -35px;
     left: 20px;
     width: 25px;
     height: 25px;
