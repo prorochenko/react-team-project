@@ -7,12 +7,17 @@ import {
   selectNotAllowedProducts,
 } from 'redux/auth/selectors';
 
-import { selectSummary } from 'redux/products/products-selectors';
+import {
+  selectDateCalendar,
+  selectSummary,
+} from 'redux/products/products-selectors';
 
 export const RightSideBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const summary = useSelector(selectSummary);
   const notAllowedProducts = useSelector(selectNotAllowedProducts);
+
+  const date = useSelector(selectDateCalendar);
 
   if (!isLoggedIn) {
     setTimeout(() => {
@@ -91,7 +96,7 @@ export const RightSideBar = () => {
           <div className={css.container}>
             <div className={css.summarySection}>
               <h3 className={css.header}>
-                Summary for {summary.date ? summary.date : 'day'}
+                Summary for {summary.date ? summary.date : date}
               </h3>
               <table className={css.table}>
                 <tbody>

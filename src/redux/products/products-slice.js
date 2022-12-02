@@ -29,6 +29,7 @@ const productsInitialState = {
   isLoading: false,
   error: null,
   showModalDiary: false,
+  dateCalendar: null,
 };
 
 const actions = [fetchProduct, addDay, getInfoByDay, deleteProductDay];
@@ -39,6 +40,9 @@ const productsSlice = createSlice({
   reducers: {
     toggle(state, action) {
       state.showModalDiary = action.payload;
+    },
+    getDateCalendar(state, action) {
+      state.dateCalendar = action.payload;
     },
   },
   extraReducers: builder => {
@@ -97,4 +101,4 @@ const productsSlice = createSlice({
 
 export const productsReducer = productsSlice.reducer;
 
-export const { toggle } = productsSlice.actions;
+export const { toggle, getDateCalendar } = productsSlice.actions;
