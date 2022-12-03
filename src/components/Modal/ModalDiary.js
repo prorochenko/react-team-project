@@ -5,19 +5,21 @@ import ModalUniversal from './ModaUniversal';
 import { useState } from 'react';
 
 import { addDay, fetchProduct } from 'redux/products/products-operations';
-import { selectProduct } from 'redux/products/products-selectors';
+import {
+  selectDateCalendar,
+  selectProduct,
+} from 'redux/products/products-selectors';
 
 import scss from './ModalDiary.module.scss';
-import moment from 'moment';
 
 export default function ModalDiary() {
-  const [date, setDate] = useState('');
   const dispatch = useDispatch();
   const onClose = useCallback(() => {
     dispatch(toggle(false));
   }, [dispatch]);
 
   const products = useSelector(selectProduct);
+  const date = useSelector(selectDateCalendar);
 
   const [product, setProduct] = useState('');
   const [grams, setGrams] = useState('');
@@ -30,12 +32,6 @@ export default function ModalDiary() {
       }
     }
   };
-
-  // const idProduct = () => {
-  //   if (products) {
-  //     return products[0]._id;
-  //   }
-  // };
 
   const productId = idProduct();
   const handleChange = ({ target: { name, value } }) => {
@@ -65,12 +61,8 @@ export default function ModalDiary() {
     onClose();
   };
 
-  const getCalendarDate = newDate => {
-    setDate(moment(newDate).format('yyyy-MM-DD'));
-  };
-
   return (
-    <ModalUniversal onClick={getCalendarDate} onClose={onClose}>
+    <ModalUniversal onClose={onClose}>
       <div className={scss.form}>
         <form className={scss.formProduct} onSubmit={handleSubmit}>
           <label className={scss.formLabel}>

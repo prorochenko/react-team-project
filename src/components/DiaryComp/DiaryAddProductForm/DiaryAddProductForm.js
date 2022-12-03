@@ -3,13 +3,17 @@ import { useState } from 'react';
 import { FiPlus } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import { addDay, fetchProduct } from 'redux/products/products-operations';
-import { selectProduct } from 'redux/products/products-selectors';
+import {
+  selectDateCalendar,
+  selectProduct,
+} from 'redux/products/products-selectors';
 
 import scss from './DiaryAddProductForm.module.scss';
 
-export default function DiaryAddProductForm({ date }) {
+export default function DiaryAddProductForm() {
   const dispatch = useDispatch();
   const products = useSelector(selectProduct);
+  const date = useSelector(selectDateCalendar);
 
   const [product, setProduct] = useState('');
   const [grams, setGrams] = useState('');
