@@ -11,14 +11,14 @@
   width: 250px;
   @include mq(mob-only) {
     font-size: 18px;
-    width: 150px;
+    // width: 150px;
   }
 }
 
 .calendarWrap div input {
-  width: 250px;
+  // width: 250px;
   @include mq(mob-only) {
-    width: 150px;
+    // width: 150px;
   }
 }
 
